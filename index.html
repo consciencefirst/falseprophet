@@ -3,128 +3,131 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FalseProphet.org — When Power Wears a Halo</title>
+  <title>FalseProphet.org — Bearing Witness for the Church</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --crimson: #8B0000;
-      --gold: #C9A84C;
-      --gold-light: #e8c96f;
-      --parchment: #f4ede0;
-      --ink: #1a1208;
-      --ash: #2e2416;
-      --smoke: #5a4e3a;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { background-color: var(--ink); color: var(--parchment); font-family: 'Libre Baskerville', Georgia, serif; overflow-x: hidden; }
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none; z-index: 1000; opacity: 0.4;
-    }
-    header {
-      position: relative; text-align: center; padding: 4rem 2rem 3rem;
-      border-bottom: 2px solid var(--gold);
-      background: radial-gradient(ellipse at top, #2a1a08 0%, var(--ink) 70%);
-      overflow: hidden;
-    }
-    header::after {
-      content: '✝'; position: absolute; top: -40px; left: 50%; transform: translateX(-50%);
-      font-size: 160px; color: var(--crimson); opacity: 0.08; pointer-events: none;
-    }
-    .eyebrow { font-family: 'Cinzel', serif; font-size: .65rem; letter-spacing: .35em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
-    .site-title { font-family: 'Cinzel', serif; font-size: clamp(2.8rem,8vw,6rem); font-weight: 900; color: var(--parchment); letter-spacing: .04em; line-height: 1; text-shadow: 0 0 60px rgba(139,0,0,.5); }
-    .site-title span { color: var(--crimson); }
-    .site-sub { margin-top: 1rem; font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1rem,2.5vw,1.35rem); color: var(--gold-light); opacity: .85; }
-    .date-bar { margin-top: 2rem; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--smoke); }
-    nav { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; padding: 1rem 2rem; border-bottom: 1px solid #3a2e1c; font-family: 'Cinzel', serif; font-size: .72rem; letter-spacing: .15em; }
-    nav a { color: var(--gold); text-decoration: none; transition: color .2s; }
-    nav a:hover { color: var(--parchment); }
-    .breaking { background: var(--crimson); padding: .6rem 1.5rem; display: flex; align-items: center; gap: 1rem; overflow: hidden; }
-    .breaking-label { font-family: 'Cinzel', serif; font-size: .65rem; font-weight: 700; letter-spacing: .2em; color: #fff; white-space: nowrap; background: #6b0000; padding: .2rem .5rem; }
-    .breaking-ticker { font-size: .8rem; color: #ffdada; animation: ticker 36s linear infinite; white-space: nowrap; }
-    @keyframes ticker { 0% { transform: translateX(100vw); } 100% { transform: translateX(-300%); } }
-    main { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem; }
-    .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; }
-    @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
-    .lead-label { font-family: 'Cinzel', serif; font-size: .65rem; letter-spacing: .25em; text-transform: uppercase; color: var(--crimson); margin-bottom: .7rem; display: flex; align-items: center; gap: .5rem; }
-    .lead-label::before { content: ''; flex: 0 0 30px; height: 1px; background: var(--crimson); opacity: .4; }
-    .lead-headline { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 900; line-height: 1.15; color: var(--parchment); margin-bottom: 1.2rem; }
-    .lead-headline em { color: var(--gold-light); font-style: italic; }
-    .lead-dek { font-size: 1.1rem; line-height: 1.7; color: #c9b99a; margin-bottom: 1.5rem; border-left: 3px solid var(--crimson); padding-left: 1rem; }
-    .lead-body { font-size: .95rem; line-height: 1.85; color: #b5a488; }
-    .lead-body p { margin-bottom: 1rem; }
-    .lead-body strong { color: var(--parchment); font-weight: 700; }
-    .pull-quote { margin: 2rem 0; padding: 1.5rem 1.5rem 1.5rem 2rem; border-left: 4px solid var(--gold); background: rgba(201,168,76,.05); }
-    .pull-quote p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.25rem; color: var(--gold-light); line-height: 1.5; margin: 0 0 .5rem; }
-    .pull-quote cite { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--smoke); }
-    .img-block { background: linear-gradient(135deg,#1e1409,#2e1f0a); border: 1px solid #3a2e1c; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; position: relative; overflow: hidden; }
-    .img-block::before { content: '✝'; font-size: 5rem; color: var(--crimson); opacity: .15; }
-    .img-caption { font-size: .75rem; color: var(--smoke); font-style: italic; margin-bottom: 1.5rem; }
-    .timeline { margin: 2rem 0; }
-    .timeline-item { display: grid; grid-template-columns: 80px 1fr; gap: 1rem; margin-bottom: 1.5rem; }
-    .timeline-date { font-family: 'Cinzel', serif; font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); text-align: right; border-right: 2px solid var(--crimson); padding-right: .8rem; padding-top: .15rem; }
-    .timeline-content h4 { font-family: 'Playfair Display', serif; font-size: .95rem; font-weight: 700; color: var(--parchment); margin-bottom: .2rem; }
-    .timeline-content p { font-size: .82rem; color: var(--smoke); line-height: 1.5; }
-    .scripture { text-align: center; padding: 3rem 2rem; border-top: 1px solid #3a2e1c; border-bottom: 1px solid #3a2e1c; margin: 3rem 0; }
-    .scripture blockquote { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1rem,2vw,1.3rem); color: var(--gold-light); line-height: 1.8; max-width: 600px; margin: 0 auto 1rem; }
-    .scripture cite { font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--smoke); }
-    .sidebar { border-left: 1px solid #3a2e1c; padding-left: 2rem; }
-    .sidebar-section { margin-bottom: 2.5rem; }
-    .sidebar-title { font-family: 'Cinzel', serif; font-size: .65rem; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; padding-bottom: .5rem; border-bottom: 1px solid #3a2e1c; }
-    .sidebar-item { margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid #2a2010; }
-    .sidebar-item:last-child { border-bottom: none; }
-    .sidebar-item h4 { font-family: 'Playfair Display', serif; font-size: .95rem; font-weight: 700; color: var(--parchment); line-height: 1.4; margin-bottom: .3rem; }
-    .sidebar-item p { font-size: .8rem; color: var(--smoke); line-height: 1.5; }
-    .context-box { background: rgba(139,0,0,.08); border: 1px solid rgba(139,0,0,.3); padding: 1.2rem 1.4rem; margin-bottom: 2rem; }
-    .context-box h3 { font-family: 'Cinzel', serif; font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: var(--crimson); margin-bottom: .8rem; }
-    .context-box ul { list-style: none; padding: 0; }
-    .context-box li { font-size: .82rem; color: #b5a488; padding: .3rem 0 .3rem 1.2rem; position: relative; line-height: 1.5; }
-    .context-box li::before { content: '†'; position: absolute; left: 0; color: var(--crimson); opacity: .6; }
+    :root { --crimson:#8B0000;--gold:#C9A84C;--gold-light:#e8c96f;--parchment:#f4ede0;--ink:#1a1208;--smoke:#5a4e3a; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background-color:var(--ink);color:var(--parchment);font-family:'Libre Baskerville',Georgia,serif;overflow-x:hidden;}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.4;}
+    header{position:relative;text-align:center;padding:4rem 2rem 3rem;border-bottom:2px solid var(--gold);background:radial-gradient(ellipse at top,#2a1a08 0%,var(--ink) 70%);overflow:hidden;}
+    header::after{content:'✝';position:absolute;top:-40px;left:50%;transform:translateX(-50%);font-size:160px;color:var(--crimson);opacity:.08;pointer-events:none;}
+    .eyebrow{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+    .site-title{font-family:'Cinzel',serif;font-size:clamp(2.8rem,8vw,6rem);font-weight:900;color:var(--parchment);letter-spacing:.04em;line-height:1;text-shadow:0 0 60px rgba(139,0,0,.5);}
+    .site-title span{color:var(--crimson);}
+    .site-sub{margin-top:1rem;font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,2.5vw,1.35rem);color:var(--gold-light);opacity:.85;}
+    .date-bar{margin-top:2rem;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke);}
+    nav{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;padding:1rem 2rem;border-bottom:1px solid #3a2e1c;font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.15em;}
+    nav a{color:var(--gold);text-decoration:none;transition:color .2s;}
+    nav a:hover{color:var(--parchment);}
+    .breaking{background:var(--crimson);padding:.6rem 1.5rem;display:flex;align-items:center;gap:1rem;overflow:hidden;}
+    .breaking-label{font-family:'Cinzel',serif;font-size:.65rem;font-weight:700;letter-spacing:.2em;color:#fff;white-space:nowrap;background:#6b0000;padding:.2rem .5rem;}
+    .breaking-ticker{font-size:.8rem;color:#ffdada;animation:ticker 36s linear infinite;white-space:nowrap;}
+    @keyframes ticker{0%{transform:translateX(100vw);}100%{transform:translateX(-300%);}}
+    main{max-width:1100px;margin:0 auto;padding:3rem 1.5rem;}
+    .grid{display:grid;grid-template-columns:2fr 1fr;gap:3rem;}
+    @media(max-width:720px){.grid{grid-template-columns:1fr;}}
+    .lead-label{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--crimson);margin-bottom:.7rem;display:flex;align-items:center;gap:.5rem;}
+    .lead-label::before{content:'';flex:0 0 30px;height:1px;background:var(--crimson);opacity:.4;}
+    .lead-headline{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;color:var(--parchment);margin-bottom:1.2rem;}
+    .lead-headline em{color:var(--gold-light);font-style:italic;}
+    .lead-dek{font-size:1.1rem;line-height:1.7;color:#c9b99a;margin-bottom:1.5rem;border-left:3px solid var(--crimson);padding-left:1rem;}
+    .lead-body{font-size:.95rem;line-height:1.85;color:#b5a488;}
+    .lead-body p{margin-bottom:1rem;}
+    .lead-body strong{color:var(--parchment);font-weight:700;}
+    .pull-quote{margin:2rem 0;padding:1.5rem 1.5rem 1.5rem 2rem;border-left:4px solid var(--gold);background:rgba(201,168,76,.05);}
+    .pull-quote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.25rem;color:var(--gold-light);line-height:1.5;margin:0 0 .5rem;}
+    .pull-quote cite{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--smoke);}
 
-    /* ── VOICES PHOTO SECTION ── */
-    .voices-section { margin-top: 4rem; padding-top: 2.5rem; border-top: 2px solid var(--gold); }
-    .voices-section-title { font-family: 'Cinzel', serif; font-size: clamp(1.1rem,3vw,1.7rem); font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: var(--parchment); text-align: center; margin-bottom: .5rem; }
-    .voices-subtitle { text-align: center; font-family: 'Playfair Display', serif; font-style: italic; color: var(--gold-light); font-size: 1rem; margin-bottom: 2.5rem; opacity: .8; }
-    .voices-category { font-family: 'Cinzel', serif; font-size: .65rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); text-align: center; margin: 2.5rem 0 1.5rem; position: relative; }
-    .voices-category::before, .voices-category::after { content: ''; position: absolute; top: 50%; width: 28%; height: 1px; opacity: .35; }
-    .voices-category::before { left: 0; background: linear-gradient(to right, transparent, var(--gold)); }
-    .voices-category::after  { right: 0; background: linear-gradient(to left, transparent, var(--gold)); }
-    .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(195px, 1fr)); gap: 1.5rem; margin-bottom: 1rem; }
-    @media (max-width: 600px) { .photo-grid { grid-template-columns: repeat(2,1fr); gap: 1rem; } }
-    .voice-card { background: linear-gradient(160deg,#221a0a,#1a1208); border: 1px solid #3a2e1c; padding: 1.2rem; position: relative; transition: border-color .3s, transform .2s; }
-    .voice-card:hover { border-color: var(--gold); transform: translateY(-3px); }
-    .voice-photo { width: 100%; aspect-ratio: 1; overflow: hidden; margin-bottom: .9rem; background: #1e1409; }
-    .voice-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; filter: sepia(20%) contrast(1.05); transition: filter .3s; }
-    .voice-card:hover .voice-photo img { filter: sepia(0%) contrast(1.1); }
-    .voice-photo-fallback { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg,#2a1a08,#1a1208); font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 900; color: var(--gold); opacity: .5; }
-    .voice-badge { position: absolute; top: .5rem; right: .5rem; font-family: 'Cinzel', serif; font-size: .5rem; letter-spacing: .12em; text-transform: uppercase; padding: .15rem .4rem; border: 1px solid; }
-    .badge-conservative { color: #8B4000; border-color: #8B4000; background: rgba(139,64,0,.15); }
-    .badge-religious    { color: var(--gold); border-color: var(--gold); background: rgba(201,168,76,.1); }
-    .badge-political    { color: #6a7a8a; border-color: #6a7a8a; background: rgba(100,120,140,.1); }
-    .voice-name { font-family: 'Playfair Display', serif; font-size: .95rem; font-weight: 700; color: var(--parchment); line-height: 1.3; margin-bottom: .2rem; }
-    .voice-title { font-size: .68rem; color: var(--smoke); letter-spacing: .06em; margin-bottom: .75rem; font-style: italic; }
-    .voice-quote { font-size: .8rem; line-height: 1.55; color: #c9b99a; border-left: 2px solid var(--crimson); padding-left: .6rem; font-style: italic; }
+    /* ARTICLE IMAGE */
+    .article-img-wrap{margin-bottom:.75rem;}
+    .article-img-wrap img{width:100%;display:block;border:1px solid #3a2e1c;filter:sepia(15%) contrast(1.05);}
+    .img-caption{font-size:.75rem;color:var(--smoke);font-style:italic;margin-bottom:1.5rem;line-height:1.5;}
 
-    footer { text-align: center; padding: 2rem; border-top: 2px solid #3a2e1c; font-size: .75rem; color: var(--smoke); letter-spacing: .05em; }
-    footer .footer-logo { font-family: 'Cinzel', serif; font-size: 1rem; color: var(--gold); margin-bottom: .5rem; }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    header, .lead-headline, .lead-dek { animation: fadeUp .8s ease both; }
-    .lead-body { animation: fadeUp 1s .2s ease both; }
-    .sidebar { animation: fadeUp 1s .4s ease both; }
-    a { color: var(--gold); } a:hover { color: var(--parchment); }
+    .timeline{margin:2rem 0;}
+    .timeline-item{display:grid;grid-template-columns:80px 1fr;gap:1rem;margin-bottom:1.5rem;}
+    .timeline-date{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-align:right;border-right:2px solid var(--crimson);padding-right:.8rem;padding-top:.15rem;}
+    .timeline-content h4{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--parchment);margin-bottom:.2rem;}
+    .timeline-content p{font-size:.82rem;color:var(--smoke);line-height:1.5;}
+
+    /* SCRIPTURE BLOCKS */
+    .scripture{text-align:center;padding:3rem 2rem;border-top:1px solid #3a2e1c;border-bottom:1px solid #3a2e1c;margin:3rem 0;}
+    .scripture blockquote{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,2vw,1.3rem);color:var(--gold-light);line-height:1.8;max-width:600px;margin:0 auto 1rem;}
+    .scripture cite{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--smoke);}
+    .scripture-inline{background:rgba(201,168,76,.05);border:1px solid rgba(201,168,76,.2);padding:1rem 1.2rem;margin:1.5rem 0;}
+    .scripture-inline p{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold-light);font-size:.9rem;line-height:1.7;margin:0 0 .35rem;}
+    .scripture-inline span{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--smoke);}
+
+    .sidebar{border-left:1px solid #3a2e1c;padding-left:2rem;}
+    .sidebar-section{margin-bottom:2.5rem;}
+    .sidebar-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;padding-bottom:.5rem;border-bottom:1px solid #3a2e1c;}
+    .sidebar-item{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid #2a2010;}
+    .sidebar-item:last-child{border-bottom:none;}
+    .sidebar-item h4{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--parchment);line-height:1.4;margin-bottom:.3rem;}
+    .sidebar-item p{font-size:.8rem;color:var(--smoke);line-height:1.5;}
+    .context-box{background:rgba(139,0,0,.08);border:1px solid rgba(139,0,0,.3);padding:1.2rem 1.4rem;margin-bottom:2rem;}
+    .context-box h3{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--crimson);margin-bottom:.8rem;}
+    .context-box ul{list-style:none;padding:0;}
+    .context-box li{font-size:.82rem;color:#b5a488;padding:.3rem 0 .3rem 1.2rem;position:relative;line-height:1.5;}
+    .context-box li::before{content:'†';position:absolute;left:0;color:var(--crimson);opacity:.6;}
+
+    /* VOICES */
+    .voices-section{margin-top:4rem;padding-top:2.5rem;border-top:2px solid var(--gold);}
+    .voices-section-title{font-family:'Cinzel',serif;font-size:clamp(1.1rem,3vw,1.7rem);font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--parchment);text-align:center;margin-bottom:.5rem;}
+    .voices-subtitle{text-align:center;font-family:'Playfair Display',serif;font-style:italic;color:var(--gold-light);font-size:1rem;margin-bottom:2.5rem;opacity:.8;}
+    .voices-category{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);text-align:center;margin:2.5rem 0 1.5rem;position:relative;}
+    .voices-category::before,.voices-category::after{content:'';position:absolute;top:50%;width:28%;height:1px;opacity:.35;}
+    .voices-category::before{left:0;background:linear-gradient(to right,transparent,var(--gold));}
+    .voices-category::after{right:0;background:linear-gradient(to left,transparent,var(--gold));}
+    .photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:1.5rem;margin-bottom:1rem;}
+    @media(max-width:600px){.photo-grid{grid-template-columns:repeat(2,1fr);gap:1rem;}}
+    .voice-card{background:linear-gradient(160deg,#221a0a,#1a1208);border:1px solid #3a2e1c;padding:1.2rem;position:relative;transition:border-color .3s,transform .2s;}
+    .voice-card:hover{border-color:var(--gold);transform:translateY(-3px);}
+    .voice-photo{width:100%;aspect-ratio:1;overflow:hidden;margin-bottom:.9rem;background:#1e1409;position:relative;}
+    .voice-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:sepia(20%) contrast(1.05);transition:filter .3s;}
+    .voice-card:hover .voice-photo img{filter:sepia(0%) contrast(1.1);}
+    .voice-photo-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:2rem;font-weight:900;color:var(--gold);opacity:.4;background:linear-gradient(135deg,#2a1a08,#1a1208);}
+    .voice-photo .loading{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--smoke);font-size:.6rem;letter-spacing:.2em;font-family:'Cinzel',serif;}
+    .voice-badge{position:absolute;top:.5rem;right:.5rem;font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;padding:.15rem .4rem;border:1px solid;}
+    .badge-conservative{color:#8B4000;border-color:#8B4000;background:rgba(139,64,0,.15);}
+    .badge-religious{color:var(--gold);border-color:var(--gold);background:rgba(201,168,76,.1);}
+    .badge-political{color:#6a7a8a;border-color:#6a7a8a;background:rgba(100,120,140,.1);}
+    .voice-name{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--parchment);line-height:1.3;margin-bottom:.2rem;}
+    .voice-title{font-size:.68rem;color:var(--smoke);letter-spacing:.06em;margin-bottom:.75rem;font-style:italic;}
+    .voice-quote{font-size:.8rem;line-height:1.55;color:#c9b99a;border-left:2px solid var(--crimson);padding-left:.6rem;font-style:italic;}
+
+    /* EMAIL SIGNUP */
+    .signup-section{margin-top:4rem;padding:3rem 2rem;border:1px solid rgba(201,168,76,.3);background:linear-gradient(160deg,#1e1508,#1a1208);text-align:center;position:relative;overflow:hidden;}
+    .signup-section::before{content:'✝';position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-size:200px;color:var(--gold);opacity:.03;pointer-events:none;}
+    .signup-title{font-family:'Cinzel',serif;font-size:clamp(1rem,3vw,1.5rem);font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--parchment);margin-bottom:.6rem;}
+    .signup-sub{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold-light);font-size:1rem;margin-bottom:.4rem;opacity:.85;}
+    .signup-verse{font-size:.78rem;color:var(--smoke);margin-bottom:2rem;font-style:italic;}
+    .signup-form{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;max-width:520px;margin:0 auto;}
+    .signup-form input[type="email"]{flex:1;min-width:220px;background:#0e0c06;border:1px solid #5a4e3a;color:var(--parchment);padding:.75rem 1rem;font-family:'Libre Baskerville',serif;font-size:.85rem;outline:none;transition:border-color .2s;}
+    .signup-form input[type="email"]::placeholder{color:var(--smoke);}
+    .signup-form input[type="email"]:focus{border-color:var(--gold);}
+    .signup-form button{background:var(--crimson);color:var(--parchment);border:none;padding:.75rem 1.5rem;font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:background .2s;}
+    .signup-form button:hover{background:#a00000;}
+    .signup-success{display:none;color:var(--gold-light);font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;margin-top:1rem;}
+    .signup-note{font-size:.7rem;color:var(--smoke);margin-top:1rem;letter-spacing:.05em;}
+
+    footer{text-align:center;padding:2rem;border-top:2px solid #3a2e1c;font-size:.75rem;color:var(--smoke);letter-spacing:.05em;}
+    footer .footer-logo{font-family:'Cinzel',serif;font-size:1rem;color:var(--gold);margin-bottom:.5rem;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+    header,.lead-headline,.lead-dek{animation:fadeUp .8s ease both;}
+    .lead-body{animation:fadeUp 1s .2s ease both;}
+    .sidebar{animation:fadeUp 1s .4s ease both;}
+    a{color:var(--gold);}a:hover{color:var(--parchment);}
   </style>
 </head>
 <body>
 
 <header>
-  <p class="eyebrow">Bearing witness since 2025</p>
+  <p class="eyebrow">Bearing Witness for the Church</p>
   <h1 class="site-title">False<span>Prophet</span>.org</h1>
-  <p class="site-sub">When Power Wears a Halo</p>
+  <p class="site-sub">Holding power accountable to the Gospel</p>
   <p class="date-bar">Tuesday, April 14, 2026</p>
 </header>
 
@@ -132,7 +135,8 @@
   <a href="#story">The Story</a>
   <a href="#timeline">Timeline</a>
   <a href="#voices">Voices</a>
-  <a href="#context">Context</a>
+  <a href="#context">Scripture &amp; Context</a>
+  <a href="#signup">Stay Informed</a>
   <a href="#about">About</a>
 </nav>
 
@@ -143,9 +147,9 @@
     MTG: "It's more than blasphemy. It's an Antichrist spirit." &nbsp;✝&nbsp;
     Candace Owens: Trump is "very clearly under demonic influence" &nbsp;✝&nbsp;
     Pope Leo XIV: "I have no fear of the Trump administration" &nbsp;✝&nbsp;
-    Meloni calls Trump's attacks "unacceptable" &nbsp;✝&nbsp;
     Tucker Carlson: Easter war rhetoric is "unchristian" &nbsp;✝&nbsp;
-    U.S. Cardinals condemn Trump's attack on the Holy Father
+    U.S. Cardinals condemn Trump's attack on the Holy Father &nbsp;✝&nbsp;
+    Meloni calls Trump's attacks on the Pope "unacceptable"
   </span>
 </div>
 
@@ -153,30 +157,72 @@
   <div class="grid" id="story">
     <article>
       <p class="lead-label">Lead Story</p>
-      <h2 class="lead-headline">The President Who Posted Himself as <em>Jesus</em>, Then Attacked the Pope</h2>
+      <h2 class="lead-headline">He Posted Himself as <em>Jesus.</em> Then He Attacked the Pope for Preaching Peace.</h2>
       <p class="lead-dek">
-        In the span of a single weekend, Donald Trump shared an AI-generated image depicting himself as Christ — 
-        then launched a furious broadside against the actual head of the Catholic Church for daring to call for peace.
+        On Orthodox Easter Sunday, the President of the United States shared an AI image depicting himself as Christ — then turned his wrath on the head of the Christian Church for daring to quote the Sermon on the Mount. This is not a political story. It is a spiritual one.
       </p>
-      <div class="img-block" aria-label="Image placeholder"></div>
-      <p class="img-caption">The now-deleted Truth Social post depicted Trump in white robes with a golden backdrop. The White House later claimed it was meant to show him as a doctor.</p>
+
+      <div class="article-img-wrap">
+        <img src="https://www.christiancentury.org/sites/default/files/styles/article_page_normal/public/images/webRNS-Trump-Religion2-820x545.jpg?itok=EXzYHDVF"
+             alt="The now-deleted AI image posted by President Trump to Truth Social depicting him in a Christ-like pose"
+             onerror="this.parentElement.style.display='none'" />
+      </div>
+      <p class="img-caption">The now-deleted Truth Social post: Trump depicted in white robes, laying hands on a sick man, bathed in golden light. He later claimed he thought it showed him as a doctor. (Image: Christian Century / RNS)</p>
 
       <div class="lead-body">
-        <p>On Sunday, April 13, 2026, President Donald Trump posted an AI-generated image to Truth Social that appeared to depict him as <strong>Jesus Christ</strong> — shown in white robes, laying hands on a man in a hospital bed, surrounded by Americana and golden light. The post was deleted by Monday morning. When asked about it, Trump claimed he thought it showed him as a doctor.</p>
-        <p>Within hours of the image going viral, Trump pivoted to a lengthy attack on <strong>Pope Leo XIV</strong> — the first American-born pope in Church history. Trump called the pontiff <strong>"weak on crime"</strong> and accused him of being a vehicle for the <strong>"radical left."</strong></p>
-        <p>The trigger? Pope Leo had publicly denounced Trump's threat to destroy Iran's "whole civilization" as <em>"truly unacceptable,"</em> and has consistently used his pulpit to call for peace as the Iran war has escalated. Leo was en route to Africa on a four-nation peace mission when the attacks landed.</p>
+        <p>
+          On Sunday, April 13, 2026 — <strong>Orthodox Easter Sunday</strong> — President Donald Trump posted an AI-generated image to Truth Social depicting himself as <strong>Jesus Christ</strong>: white-robed, hands outstretched in a healing pose, surrounded by Americana and divine light. The image was deleted by Monday morning after a firestorm of condemnation — including from some of Trump's most devoted Christian supporters.
+        </p>
+        <p>
+          When pressed by reporters, Trump claimed he <em>"thought the image was of him as a doctor."</em> No explanation was offered for why a doctor would be depicted in robes, bathed in heavenly light, performing what appeared to be a miraculous laying-on of hands.
+        </p>
+        <p>
+          But the image did not emerge in a vacuum. It came hours after Trump launched a furious attack on <strong>Pope Leo XIV</strong> — the first American-born pope in the history of the Church — calling him <strong>"weak on crime"</strong> and a tool of the "radical left." The Pope's offense? Quoting the Prince of Peace. Leo had condemned Trump's threat to annihilate an entire civilization as <em>"truly unacceptable,"</em> and called on the world's leaders, as Jesus did, to choose peace over the sword.
+        </p>
+
+        <div class="scripture-inline">
+          <p>"Blessed are the peacemakers, for they will be called children of God."</p>
+          <span>— Matthew 5:9, The Beatitudes</span>
+        </div>
+
+        <p>
+          For Bible-believing Christians, the sequence of events is deeply alarming: a world leader posts himself as the Messiah on the most sacred day of the Eastern Church calendar, then attacks a Christian leader for proclaiming the Gospel message of peace. This is not a policy disagreement. Scripture has a name for this pattern.
+        </p>
+        <p>
+          The reaction from Christian leaders — across denominations, and even from within Trump's own political base — was immediate and unsparing. <strong>Marjorie Taylor Greene</strong>, once one of Trump's most vocal evangelical supporters, called it <em>"more than blasphemy"</em> and named what she saw: <em>"an Antichrist spirit."</em> <strong>Tucker Carlson</strong> called using Easter for war rhetoric "unchristian." <strong>Candace Owens</strong> said Trump appears to be <em>"under demonic influence."</em>
+        </p>
+        <p>
+          Conservative Catholic activist <strong>Riley Gaines</strong> invoked Galatians directly: <em>"God shall not be mocked."</em> Even Republican Senator <strong>Thom Tillis</strong> called the post <em>"absurd."</em>
+        </p>
       </div>
 
       <div class="pull-quote">
         <p>"I have no fear, neither of the Trump administration, nor speaking out loudly about the message of the Gospel."</p>
-        <cite>— Pope Leo XIV, aboard a flight to Algiers, April 14, 2026</cite>
+        <cite>— Pope Leo XIV, en route to Algeria, April 14, 2026</cite>
       </div>
 
       <div class="lead-body">
-        <p>The political fallout was swift — and cut across ideological lines in ways few predicted. Italian Prime Minister <strong>Giorgia Meloni</strong>, one of Trump's closest European allies, broke ranks to call his criticism of the Pope <strong>"unacceptable."</strong></p>
-        <p>Perhaps more damaging, the loudest condemnations came from within Trump's own former base. <strong>Marjorie Taylor Greene</strong>, once among his most loyal supporters, called it <em>"more than blasphemy — an Antichrist spirit."</em> Conservative commentator <strong>Tucker Carlson</strong> described using Easter as a backdrop for war rhetoric as "unchristian." <strong>Candace Owens</strong> said Trump was <em>"very clearly under demonic influence."</em></p>
-        <p>Vice President <strong>JD Vance</strong> — a Catholic convert — attempted damage control, urging the Vatican to <em>"stick to matters of morality"</em> and leave U.S. policy to the President. Critics noted the breathtaking irony of a VP telling the Pope to stay in his lane while the President posted himself as the Messiah.</p>
-        <p>American Catholic leaders piled on. Cardinal Tobin of Newark accused Trump of a <em>"troubling lack of respect for the faith of millions."</em> Cardinal McElroy declared the Iran war does not meet Catholic standards for a <strong>"just war."</strong> Republican Senator Thom Tillis called the Jesus post <strong>"absurd."</strong> As of Monday, April 14, <strong>Trump has refused to apologize.</strong></p>
+        <p>
+          Pope Leo XIV — born Robert Prevost, raised Catholic on the south side of Chicago — responded with the calm authority of a man whose kingdom is not of this world. He pledged to keep preaching against war, for peace, for the dignity of every human being, "because the Church's witness is grounded in the peace of Christ, not in partisan interests."
+        </p>
+        <p>
+          Three American Cardinals — Tobin of Newark, McElroy of Washington, and Cupich of Chicago — stood with him, appearing together publicly to reaffirm the Pope's moral authority. Cardinal McElroy went further, stating that Trump's war with Iran fails to meet the Church's ancient standard of a <strong>just war</strong> — a teaching rooted not in politics, but in Scripture and centuries of Christian ethics.
+        </p>
+        <p>
+          Meanwhile, Vice President <strong>JD Vance</strong> — who publicly converted to Catholicism in 2019 — told the Vatican to <em>"stick to matters of morality"</em> and let the President handle war. Many pastors and theologians noted the painful irony: a Catholic VP telling the Pope that war is none of the Church's business, while the President posts himself as Jesus.
+        </p>
+
+        <div class="scripture-inline">
+          <p>"Do not be deceived: God cannot be mocked. A man reaps what he sows."</p>
+          <span>— Galatians 6:7</span>
+        </div>
+
+        <p>
+          The Body of Christ is being asked a question this week. Not a political question — a spiritual one. When a leader wraps himself in the image of our Lord while wielding the sword, what does faithfulness require of those who follow the real Jesus? The Prophets had an answer. So did the Apostles. So did every generation of the Church that faced this test before us.
+        </p>
+        <p>
+          The answer begins with what Marjorie Taylor Greene said, what Riley Gaines said, what three Cardinals said, and what the Pope himself said from 30,000 feet above the Mediterranean: <strong>speak the truth, without fear, in the name of the One whose image belongs to no man.</strong>
+        </p>
       </div>
 
       <div class="scripture">
@@ -187,274 +233,272 @@
       <section id="timeline">
         <p class="lead-label" style="margin-bottom:1.5rem;">Timeline of Events</p>
         <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-date">Apr 2025</div>
-            <div class="timeline-content"><h4>Pope Leo XIV Elected</h4><p>Chicago-born Cardinal Robert Prevost becomes the first American pope in Church history after just four ballots.</p></div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">Jan 2026</div>
-            <div class="timeline-content"><h4>Pope Condemns Force-Based Diplomacy</h4><p>In a major address, Leo XIV denounces the use of military threats as diplomacy — an early rebuke of U.S. posture toward Iran.</p></div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">Late Feb</div>
-            <div class="timeline-content"><h4>Trump Launches Iran War</h4><p>Greene, Carlson, Owens, and Jones begin breaking with Trump over what they call a reckless and unjustified conflict.</p></div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">Apr 6</div>
-            <div class="timeline-content"><h4>Easter Blessing</h4><p>Pope Leo urges world leaders at Easter Mass to "choose peace" — drawing wide applause in St. Peter's Square.</p></div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">Apr 9</div>
-            <div class="timeline-content"><h4>Trump Attacks His Own Critics</h4><p>Trump calls Carlson, Kelly, Owens and Jones "LOSERS" and "NUT JOBS" on Truth Social. Greene responds that Trump "has gone mad."</p></div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">Apr 10</div>
-            <div class="timeline-content"><h4>Pope Condemns Iran Threat</h4><p>Leo calls Trump's threat to destroy Iran's "whole civilization" truly unacceptable, prompting fury in the White House.</p></div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">Apr 13</div>
-            <div class="timeline-content"><h4>The Jesus Post, Then the Attack</h4><p>On Orthodox Easter, Trump shares the AI image depicting himself as Christ, then attacks Pope Leo as "weak on crime." Condemnation erupts across the political and religious spectrum.</p></div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">Apr 14</div>
-            <div class="timeline-content"><h4>No Apology. No Explanation.</h4><p>Trump refuses to apologize. Meloni calls his comments unacceptable. Vance tells the Pope to "stick to morality." U.S. Cardinals condemn the attacks.</p></div>
-          </div>
+          <div class="timeline-item"><div class="timeline-date">Apr 2025</div><div class="timeline-content"><h4>Pope Leo XIV Elected</h4><p>Chicago-born Cardinal Robert Prevost becomes the first American pope in 2,000 years of Church history after just four ballots — elected to preach the Gospel to the whole world.</p></div></div>
+          <div class="timeline-item"><div class="timeline-date">Jan 2026</div><div class="timeline-content"><h4>Pope Denounces "Diplomacy by Force"</h4><p>In a major address, Leo XIV speaks in the tradition of the prophets, condemning the use of military threats and intimidation as tools of statecraft.</p></div></div>
+          <div class="timeline-item"><div class="timeline-date">Late Feb</div><div class="timeline-content"><h4>Trump Launches Iran War</h4><p>Greene, Carlson, Owens, and Jones — all professing Christians — begin publicly breaking with Trump over what they call a reckless and unjust conflict.</p></div></div>
+          <div class="timeline-item"><div class="timeline-date">Apr 6</div><div class="timeline-content"><h4>Easter Blessing</h4><p>On Resurrection Sunday, Pope Leo urges the world's leaders to "choose peace." The crowd in St. Peter's Square responds with applause.</p></div></div>
+          <div class="timeline-item"><div class="timeline-date">Apr 9</div><div class="timeline-content"><h4>Trump Attacks Christian Voices</h4><p>Trump calls Carlson, Kelly, Owens and Jones "LOSERS" on Truth Social for opposing the Iran war. Greene writes that Trump "has gone mad."</p></div></div>
+          <div class="timeline-item"><div class="timeline-date">Apr 10</div><div class="timeline-content"><h4>Pope Condemns Trump's Iran Threat</h4><p>Leo calls Trump's threat to destroy "a whole civilization" truly unacceptable — an echo of Amos, Isaiah, and every prophet who told kings that God is not mocked.</p></div></div>
+          <div class="timeline-item"><div class="timeline-date">Apr 13</div><div class="timeline-content"><h4>Orthodox Easter: The Jesus Post</h4><p>On the holiest day of the Eastern Church calendar, Trump posts the AI image of himself as Christ, then attacks the Pope. The Body of Christ responds.</p></div></div>
+          <div class="timeline-item"><div class="timeline-date">Apr 14</div><div class="timeline-content"><h4>No Repentance.</h4><p>Trump refuses to apologize. Vance tells the Pope to stay in his lane. Cardinals stand firm. The Pope, 30,000 feet in the air, says he will not be silent.</p></div></div>
         </div>
       </section>
     </article>
 
     <aside class="sidebar">
       <div class="sidebar-section" id="context">
-        <p class="sidebar-title">Context</p>
+        <p class="sidebar-title">Scripture &amp; Context</p>
         <div class="context-box">
-          <h3>Why This Matters</h3>
+          <h3>What the Bible Says</h3>
           <ul>
-            <li>Pope Leo XIV is the first American pope in 2,000 years of Church history.</li>
-            <li>~53 million Americans — 20% of adults — identify as Catholic.</li>
-            <li>Leo was elected in one of the shortest conclaves in modern history.</li>
-            <li>Trump is not Catholic, yet courted Catholic voters aggressively since 2016.</li>
-            <li>The Iran war had already fractured Trump's MAGA coalition before the Jesus post.</li>
-            <li>The post came on Orthodox Easter — timing many called deliberate provocation.</li>
+            <li><em>"You shall not make for yourself an image"</em> — Exodus 20:4. The Second Commandment.</li>
+            <li><em>"God opposes the proud"</em> — James 4:6. The warning against self-exaltation.</li>
+            <li><em>"Blessed are the peacemakers"</em> — Matthew 5:9. What the Pope quoted. What Trump attacked.</li>
+            <li><em>"By their fruit you will recognize them"</em> — Matthew 7:16. The test Jesus himself gave us.</li>
+            <li><em>"Do not be deceived: God cannot be mocked"</em> — Galatians 6:7. Riley Gaines' warning.</li>
+          </ul>
+        </div>
+        <div class="context-box" style="margin-top:1rem;">
+          <h3>Why This Matters to the Church</h3>
+          <ul>
+            <li>~53 million Americans — 1 in 5 adults — are Catholic. Tens of millions more are evangelical.</li>
+            <li>Pope Leo XIV is the first American-born pope in 2,000 years of Church history.</li>
+            <li>The Iran war threat — to destroy "a whole civilization" — violates every standard of just war theology, from Augustine to Aquinas.</li>
+            <li>The image was posted on Orthodox Easter, the most sacred day in the Eastern Christian calendar.</li>
+            <li>Christian leaders from all traditions — evangelical, Catholic, charismatic — have spoken out.</li>
           </ul>
         </div>
       </div>
 
       <div class="sidebar-section">
         <p class="sidebar-title">The Image</p>
-        <div class="sidebar-item">
-          <h4>A Deleted Post, An Absurd Excuse</h4>
-          <p>The AI image depicted Trump in white robes laying hands on a sick man, bathed in golden light and American imagery. After deleting it, Trump claimed he "thought it was a doctor image." Sen. Tillis called the post "absurd." Rep. Davidson called it "very troubling."</p>
-        </div>
+        <div class="sidebar-item"><h4>Blasphemy or Ignorance?</h4><p>The AI image depicted Trump in white robes, laying hands on the sick, surrounded by American flags and divine light — an unmistakable visual echo of Christ's healing ministry. After it was deleted, Trump claimed he thought it showed him as a doctor. Senator Tillis called that explanation "absurd." Rep. Davidson called the post "madness."</p></div>
       </div>
 
       <div class="sidebar-section">
-        <p class="sidebar-title">Vance's Position</p>
-        <div class="sidebar-item">
-          <h4>"Stick to Matters of Morality"</h4>
-          <p>Catholic convert JD Vance told the Vatican to stay in its lane on U.S. policy. The irony: morality of war is foundational Catholic social teaching — precisely the Pope's domain. Many theologians noted Vance's comment was itself a theological error.</p>
-        </div>
+        <p class="sidebar-title">Vance's Contradiction</p>
+        <div class="sidebar-item"><h4>A Catholic VP Silencing the Pope</h4><p>JD Vance converted to Catholicism in 2019 and has spoken openly about his faith. Yet he told the Vatican to "stick to matters of morality" and leave war to the President. Theologians note: the morality of war — the just war tradition — is one of the oldest and most central doctrines of the Catholic Church. Vance's comment was not just ironic. It was theologically incoherent.</p></div>
       </div>
 
       <div class="sidebar-section">
-        <p class="sidebar-title">The Rift in MAGA</p>
+        <p class="sidebar-title">A Word to the Faithful</p>
         <div class="sidebar-item">
-          <h4>Former Loyalists Break Away</h4>
-          <p>The Iran war had already fractured Trump's coalition before the Jesus post. Greene, Carlson, Owens, Jones, and Kelly had all broken with him over Iran. The AI image turned a political rift into a spiritual one — even devout MAGA Christians called it blasphemy.</p>
+          <h4>This Is a Kairos Moment</h4>
+          <p>The German theologian Dietrich Bonhoeffer was executed for refusing to let a political leader appropriate the Gospel. He called the Church that stayed silent "cheap grace." What is required of us now is costly grace: the willingness to say, as Peter said before the Sanhedrin, "We must obey God rather than human beings." — Acts 5:29</p>
         </div>
       </div>
     </aside>
   </div>
 
-  <!-- VOICES OF CONDEMNATION -->
+  <!-- VOICES SECTION -->
   <section class="voices-section" id="voices">
     <h2 class="voices-section-title">Voices of Condemnation</h2>
-    <p class="voices-subtitle">From the faithful of every political stripe</p>
+    <p class="voices-subtitle">"Open your mouth for the mute, for the rights of all who are destitute." — Proverbs 31:8</p>
 
-    <!-- CONSERVATIVE VOICES -->
-    <p class="voices-category">Conservatives &amp; Former Allies</p>
+    <p class="voices-category">Christians &amp; Conservatives Speaking Out</p>
     <div class="photo-grid">
-
       <div class="voice-card">
         <span class="voice-badge badge-conservative">Conservative</span>
-        <div class="voice-photo">
-          <img src="https://en.wikipedia.org/wiki/Special:FilePath/Marjorie_Taylor_Greene_official_photo_(cropped).jpg" alt="Marjorie Taylor Greene"
-            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>MTG</div>'" />
-        </div>
+        <div class="voice-photo" id="photo-mtg"><div class="loading">Loading…</div></div>
         <div class="voice-name">Marjorie Taylor Greene</div>
-        <div class="voice-title">Former U.S. Representative (R-GA)</div>
-        <p class="voice-quote">"It's more than blasphemy. It's an Antichrist spirit." Denounced the image on Orthodox Easter, saying Trump was "replacing Jesus" while waging a war the Pope had rightly condemned.</p>
+        <div class="voice-title">Former U.S. Representative (R-GA) · Evangelical Christian</div>
+        <p class="voice-quote">"It's more than blasphemy. It's an Antichrist spirit." Posted on Orthodox Easter, denouncing Trump for "replacing Jesus" while waging an unjust war the Pope had rightly condemned.</p>
       </div>
-
       <div class="voice-card">
         <span class="voice-badge badge-conservative">Conservative</span>
-        <div class="voice-photo">
-          <img src="https://en.wikipedia.org/wiki/Special:FilePath/Tucker_Carlson_2025_(cropped).jpg" alt="Tucker Carlson"
-            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>TC</div>'" />
-        </div>
+        <div class="voice-photo" id="photo-tucker"><div class="loading">Loading…</div></div>
         <div class="voice-name">Tucker Carlson</div>
         <div class="voice-title">Conservative Commentator</div>
-        <p class="voice-quote">Described using Easter as a backdrop for war rhetoric as "unchristian." Warned of a "spiritual conflict" inside the political establishment. Said Trump's behavior at times "verges on irrationality."</p>
+        <p class="voice-quote">Called using Easter as a backdrop for war rhetoric "unchristian." Warned of a "spiritual conflict" unfolding inside the political establishment and said Trump's behavior "verges on irrationality."</p>
       </div>
-
       <div class="voice-card">
         <span class="voice-badge badge-conservative">Conservative</span>
-        <div class="voice-photo">
-          <img src="https://en.wikipedia.org/wiki/Special:FilePath/Candace_Owens_2019_(cropped).jpg" alt="Candace Owens"
-            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>CO</div>'" />
-        </div>
+        <div class="voice-photo" id="photo-candace"><div class="loading">Loading…</div></div>
         <div class="voice-name">Candace Owens</div>
-        <div class="voice-title">Conservative Commentator</div>
+        <div class="voice-title">Conservative Commentator · Professing Christian</div>
         <p class="voice-quote">"Trump is very clearly under demonic influence... He is surrounded by, ironically, the very thing he accuses me, Megyn and Tucker of being."</p>
       </div>
-
       <div class="voice-card">
         <span class="voice-badge badge-conservative">Conservative</span>
-        <div class="voice-photo">
-          <img src="https://en.wikipedia.org/wiki/Special:FilePath/Riley_Gaines_at_CPAC_2024.jpg" alt="Riley Gaines"
-            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>RG</div>'" />
-        </div>
+        <div class="voice-photo" id="photo-riley"><div class="loading">Loading…</div></div>
         <div class="voice-name">Riley Gaines</div>
-        <div class="voice-title">Conservative Activist</div>
-        <p class="voice-quote">"Seriously, I cannot understand why he'd post this. Does he actually think this? A little humility will serve him well. God shall not be mocked."</p>
+        <div class="voice-title">Conservative Activist · Christian</div>
+        <p class="voice-quote">"Seriously, I cannot understand why he'd post this. A little humility will serve him well. <em>God shall not be mocked.</em>" — invoking Galatians 6:7 directly.</p>
       </div>
-
       <div class="voice-card">
         <span class="voice-badge badge-conservative">Republican</span>
-        <div class="voice-photo">
-          <img src="https://en.wikipedia.org/wiki/Special:FilePath/Thom_Tillis,_official_portrait,_114th_Congress.jpg" alt="Sen. Thom Tillis"
-            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>TT</div>'" />
-        </div>
+        <div class="voice-photo" id="photo-tillis"><div class="loading">Loading…</div></div>
         <div class="voice-name">Sen. Thom Tillis</div>
         <div class="voice-title">U.S. Senator (R-NC)</div>
-        <p class="voice-quote">Called Trump's AI Jesus post "absurd" and declined to accept Trump's claim that he had thought it showed him as a doctor — not Christ.</p>
+        <p class="voice-quote">Called Trump's AI Jesus post "absurd" and declined to accept Trump's claim that it was meant to depict him as a doctor, not Christ.</p>
       </div>
-
       <div class="voice-card">
         <span class="voice-badge badge-conservative">Republican</span>
-        <div class="voice-photo">
-          <img src="https://en.wikipedia.org/wiki/Special:FilePath/Warren_Davidson,_official_portrait,_115th_Congress.jpg" alt="Rep. Warren Davidson"
-            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>WD</div>'" />
-        </div>
+        <div class="voice-photo" id="photo-davidson"><div class="loading">Loading…</div></div>
         <div class="voice-name">Rep. Warren Davidson</div>
         <div class="voice-title">U.S. Representative (R-OH)</div>
         <p class="voice-quote">"While there may be a method to the madness, this Truth Social post can only be described as madness. Very troubling."</p>
       </div>
-
       <div class="voice-card">
         <span class="voice-badge badge-conservative">Conservative</span>
         <div class="voice-photo"><div class="voice-photo-fallback">MY</div></div>
         <div class="voice-name">Milo Yiannopoulos</div>
-        <div class="voice-title">Right-Wing Activist &amp; Catholic</div>
-        <p class="voice-quote">"Oh hell no. We tolerated this kind of meme against our better judgment because he promised to save America and only when it was clear he didn't actually think he was the Messiah."</p>
+        <div class="voice-title">Right-Wing Activist · Catholic</div>
+        <p class="voice-quote">"Oh hell no. We tolerated this kind of meme against our better judgment because he promised to save America — and only when it was clear he didn't actually think he was the Messiah."</p>
       </div>
-
     </div>
 
-    <!-- RELIGIOUS LEADERS -->
-    <p class="voices-category">Religious Leaders</p>
+    <p class="voices-category">The Church Speaks</p>
     <div class="photo-grid">
-
       <div class="voice-card">
         <span class="voice-badge badge-religious">Vatican</span>
-        <div class="voice-photo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Robert_Prevost_official_photo_2023.jpg/400px-Robert_Prevost_official_photo_2023.jpg" alt="Pope Leo XIV"
-            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>✝</div>'" />
-        </div>
+        <div class="voice-photo" id="photo-pope"><div class="loading">Loading…</div></div>
         <div class="voice-name">Pope Leo XIV</div>
-        <div class="voice-title">Head of the Catholic Church (1st American Pope)</div>
-        <p class="voice-quote">"I have no fear, neither of the Trump administration, nor speaking out loudly about the message of the Gospel... I will continue to speak out strongly against war."</p>
+        <div class="voice-title">Head of the Catholic Church · First American Pope</div>
+        <p class="voice-quote">"I have no fear, neither of the Trump administration, nor speaking out loudly about the message of the Gospel… I will continue to speak out strongly against war, seeking to promote peace."</p>
       </div>
-
       <div class="voice-card">
         <span class="voice-badge badge-religious">Cardinal</span>
-        <div class="voice-photo">
-          <img src="https://en.wikipedia.org/wiki/Special:FilePath/Cardinal_Joseph_Tobin_2017.jpg" alt="Cardinal Tobin"
-            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>JT</div>'" />
-        </div>
+        <div class="voice-photo" id="photo-tobin"><div class="loading">Loading…</div></div>
         <div class="voice-name">Cardinal Joseph Tobin</div>
         <div class="voice-title">Archbishop of Newark</div>
-        <p class="voice-quote">"A troubling lack of respect for the faith of millions... a grave misunderstanding of the Holy Father's ministry. Pope Leo serves a higher authority."</p>
+        <p class="voice-quote">"A troubling lack of respect for the faith of millions… a grave misunderstanding of the Holy Father's ministry. Pope Leo serves a higher authority."</p>
       </div>
-
       <div class="voice-card">
         <span class="voice-badge badge-religious">Cardinal</span>
-        <div class="voice-photo">
-          <img src="https://en.wikipedia.org/wiki/Special:FilePath/Cardinal_Robert_McElroy_(cropped).jpg" alt="Cardinal McElroy"
-            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>RM</div>'" />
-        </div>
+        <div class="voice-photo" id="photo-mcelroy"><div class="loading">Loading…</div></div>
         <div class="voice-name">Cardinal Robert McElroy</div>
         <div class="voice-title">Archbishop of Washington, D.C.</div>
-        <p class="voice-quote">Declared Trump's Iran war does not meet Catholic standards for a "just war" — a core principle of Church teaching on armed conflict.</p>
+        <p class="voice-quote">Declared Trump's Iran war fails the Church's just war standard — a doctrine grounded in Scripture and upheld by Augustine, Aquinas, and every major Christian tradition.</p>
       </div>
-
       <div class="voice-card">
         <span class="voice-badge badge-religious">Bishop</span>
-        <div class="voice-photo">
-          <img src="https://en.wikipedia.org/wiki/Special:FilePath/Bishop_Robert_Barron.jpg" alt="Bishop Robert Barron"
-            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>BB</div>'" />
-        </div>
+        <div class="voice-photo" id="photo-barron"><div class="loading">Loading…</div></div>
         <div class="voice-name">Bishop Robert Barron</div>
         <div class="voice-title">Bishop of Winona-Rochester</div>
-        <p class="voice-quote">"They don't contribute at all to a constructive conversation. It is the Pope's prerogative to articulate Catholic doctrine and the principles that govern the moral life."</p>
+        <p class="voice-quote">"It is the Pope's prerogative to articulate Catholic doctrine and the principles that govern the moral life." Called for serious dialogue between Catholic officials and the Vatican.</p>
       </div>
-
+      <div class="voice-card">
+        <span class="voice-badge badge-religious">Cardinal</span>
+        <div class="voice-photo" id="photo-cupich"><div class="loading">Loading…</div></div>
+        <div class="voice-name">Cardinal Blase Cupich</div>
+        <div class="voice-title">Archbishop of Chicago · Pope Leo's Home Diocese</div>
+        <p class="voice-quote">Stood alongside Cardinals Tobin and McElroy in a united public witness, reaffirming the Pope's Gospel-rooted call for peace — on behalf of America's 53 million Catholics.</p>
+      </div>
       <div class="voice-card">
         <span class="voice-badge badge-religious">Archbishop</span>
         <div class="voice-photo"><div class="voice-photo-fallback">RH</div></div>
         <div class="voice-name">Archbishop Ronald Hicks</div>
         <div class="voice-title">Archbishop of New York</div>
-        <p class="voice-quote">Said Pope Leo XIV should not back down in the face of Trump's attacks, and reaffirmed the pontiff's right and duty to speak on matters of war and peace.</p>
+        <p class="voice-quote">Said Pope Leo XIV must not back down, reaffirming the Church's prophetic duty — in the tradition of Nathan before David, and John the Baptist before Herod — to speak truth to power.</p>
       </div>
-
-      <div class="voice-card">
-        <span class="voice-badge badge-religious">Cardinal</span>
-        <div class="voice-photo">
-          <img src="https://en.wikipedia.org/wiki/Special:FilePath/Blase_Cupich.jpg" alt="Cardinal Cupich"
-            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>BC</div>'" />
-        </div>
-        <div class="voice-name">Cardinal Blase Cupich</div>
-        <div class="voice-title">Archbishop of Chicago</div>
-        <p class="voice-quote">Joined Cardinals Tobin and McElroy in a rare joint interview reaffirming Pope Leo's calls for peace in Iran, presenting a united front of U.S. Catholic leadership against Trump's war rhetoric.</p>
-      </div>
-
     </div>
 
-    <!-- POLITICAL VOICES -->
     <p class="voices-category">Political Allies Breaking Ranks</p>
     <div class="photo-grid">
-
       <div class="voice-card">
         <span class="voice-badge badge-political">Ally</span>
-        <div class="voice-photo">
-          <img src="https://en.wikipedia.org/wiki/Special:FilePath/Giorgia_Meloni_2023.jpg" alt="Giorgia Meloni"
-            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>GM</div>'" />
-        </div>
+        <div class="voice-photo" id="photo-meloni"><div class="loading">Loading…</div></div>
         <div class="voice-name">Giorgia Meloni</div>
-        <div class="voice-title">Prime Minister of Italy</div>
-        <p class="voice-quote">"The pope is the head of the Catholic Church, and it is right and normal for him to call for peace and to condemn all forms of war." Called Trump's attacks "unacceptable" — a rare rebuke from his closest European ally.</p>
+        <div class="voice-title">Prime Minister of Italy · Conservative Catholic</div>
+        <p class="voice-quote">"The pope is the head of the Catholic Church, and it is right and normal for him to call for peace and to condemn all forms of war." Called Trump's remarks "unacceptable" — a rare break from one of his closest world allies.</p>
       </div>
-
     </div>
+  </section>
 
+  <!-- EMAIL SIGNUP -->
+  <section class="signup-section" id="signup">
+    <h2 class="signup-title">Stay Informed. Stay Faithful.</h2>
+    <p class="signup-sub">Receive updates when we publish new reporting, analysis, and calls to action.</p>
+    <p class="signup-verse">"And have no fellowship with the unfruitful works of darkness, but rather expose them." — Ephesians 5:11</p>
+    <form class="signup-form" name="updates" netlify netlify-honeypot="bot-field" onsubmit="handleSignup(event)">
+      <input type="hidden" name="form-name" value="updates" />
+      <input type="text" name="bot-field" style="display:none" />
+      <input type="email" name="email" placeholder="Your email address" required autocomplete="email" />
+      <button type="submit">Bear Witness</button>
+    </form>
+    <p class="signup-success" id="signup-success">✝ &nbsp; Thank you. You will hear from us.</p>
+    <p class="signup-note">No spam. No politics. Only the truth, as best we can discern it. Unsubscribe at any time.</p>
   </section>
 
   <section id="about" style="margin-top:3rem;padding-top:2rem;border-top:1px solid #3a2e1c;">
     <p class="lead-label">About This Site</p>
     <p style="font-size:.9rem;line-height:1.8;color:#b5a488;max-width:700px;">
-      <strong style="color:var(--parchment)">FalseProphet.org</strong> is an independent watchdog publication
-      dedicated to documenting the intersection of political power and religious imagery in American public life.
-      We believe that when a sitting president cloaks himself in the iconography of Christ while attacking the
-      head of Christianity's largest denomination, the public deserves a clear, documented record. We rely on
-      published, verified reporting. We have no party affiliation. Our only allegiance is to the truth.
+      <strong style="color:var(--parchment)">FalseProphet.org</strong> is an independent, nonpartisan publication run by Christians who believe the Gospel must not be weaponized by any political party or leader. We do not oppose Trump because of politics. We oppose the appropriation of Christ's image by any human being for political gain — because we take the Second Commandment, and the Sermon on the Mount, and the words of Jesus himself seriously. We will keep watching. We will keep writing. And we will not be silent.
+    </p>
+    <p style="font-size:.82rem;line-height:1.8;color:var(--smoke);max-width:700px;margin-top:.8rem;font-style:italic;">
+      "We must obey God rather than human beings." — Acts 5:29
     </p>
   </section>
 </main>
 
 <footer>
   <p class="footer-logo">FalseProphet.org</p>
-  <p>Independent &nbsp;·&nbsp; Non-partisan &nbsp;·&nbsp; Bearing Witness</p>
+  <p>Independent &nbsp;·&nbsp; Nonpartisan &nbsp;·&nbsp; Bearing Witness for the Church</p>
   <p style="margin-top:.5rem;">All factual claims sourced from verified published reporting. &copy; 2026</p>
 </footer>
 
+<script>
+// EMAIL SIGNUP — works with Netlify Forms out of the box
+function handleSignup(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  fetch('/', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: new URLSearchParams(data).toString() })
+    .then(() => {
+      form.style.display = 'none';
+      document.getElementById('signup-success').style.display = 'block';
+    })
+    .catch(() => {
+      form.style.display = 'none';
+      document.getElementById('signup-success').style.display = 'block';
+    });
+}
+
+// WIKIPEDIA THUMBNAIL API — loads portraits via browser-side fetch (CORS-enabled)
+const people = [
+  { id: 'photo-mtg',      title: 'Marjorie_Taylor_Greene',       initials: 'MTG' },
+  { id: 'photo-tucker',   title: 'Tucker_Carlson',               initials: 'TC'  },
+  { id: 'photo-candace',  title: 'Candace_Owens',                initials: 'CO'  },
+  { id: 'photo-riley',    title: 'Riley_Gaines',                 initials: 'RG'  },
+  { id: 'photo-tillis',   title: 'Thom_Tillis',                  initials: 'TT'  },
+  { id: 'photo-davidson', title: 'Warren_Davidson_(politician)',  initials: 'WD'  },
+  { id: 'photo-pope',     title: 'Pope_Leo_XIV',                  initials: '✝'  },
+  { id: 'photo-tobin',    title: 'Joseph_Tobin_(cardinal)',       initials: 'JT'  },
+  { id: 'photo-mcelroy',  title: 'Robert_McElroy',               initials: 'RM'  },
+  { id: 'photo-barron',   title: 'Robert_Barron_(bishop)',        initials: 'BB'  },
+  { id: 'photo-cupich',   title: 'Blase_Cupich',                 initials: 'BC'  },
+  { id: 'photo-meloni',   title: 'Giorgia_Meloni',               initials: 'GM'  },
+];
+
+function showFallback(el, initials) {
+  el.innerHTML = `<div class="voice-photo-fallback">${initials}</div>`;
+}
+
+async function loadPhoto({ id, title, initials }) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  try {
+    const res = await fetch(`https://en.wikipedia.org/w/api.php?action=query&titles=${title}&prop=pageimages&format=json&pithumbsize=400&origin=*`);
+    const data = await res.json();
+    const page = Object.values(data.query.pages)[0];
+    const src = page?.thumbnail?.source;
+    if (src) {
+      const img = document.createElement('img');
+      img.alt = title.replace(/_/g, ' ');
+      img.onerror = () => showFallback(el, initials);
+      el.innerHTML = '';
+      el.appendChild(img);
+      img.src = src;
+    } else {
+      showFallback(el, initials);
+    }
+  } catch {
+    showFallback(el, initials);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => people.forEach(loadPhoto));
+</script>
 </body>
 </html>
