@@ -83,17 +83,18 @@
     .voices-category::after{right:0;background:linear-gradient(to left,transparent,var(--gold));}
     .photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:1.5rem;margin-bottom:1rem;}
     @media(max-width:600px){.photo-grid{grid-template-columns:repeat(2,1fr);gap:1rem;}}
-    .voice-card{background:linear-gradient(160deg,#221a0a,#1a1208);border:1px solid #3a2e1c;padding:1.2rem;position:relative;transition:border-color .3s,transform .2s;}
+    .voice-card{background:linear-gradient(160deg,#221a0a,#1a1208);border:1px solid #3a2e1c;padding:0;position:relative;transition:border-color .3s,transform .2s;overflow:hidden;}
     .voice-card:hover{border-color:var(--gold);transform:translateY(-3px);}
+    .voice-card-body{padding:1.2rem;}
+    .voice-strip{display:block;width:100%;text-align:center;font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;padding:.35rem .5rem;}
+    .badge-conservative{background:#2a1200;color:#c9853a;}
+    .badge-religious{background:#1e1600;color:var(--gold);}
+    .badge-political{background:#0d151d;color:#7a9aaa;}
     .voice-photo{width:100%;aspect-ratio:1;overflow:hidden;margin-bottom:.9rem;background:#1e1409;position:relative;}
     .voice-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:sepia(20%) contrast(1.05);transition:filter .3s;}
     .voice-card:hover .voice-photo img{filter:sepia(0%) contrast(1.1);}
     .voice-photo-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:2rem;font-weight:900;color:var(--gold);opacity:.4;background:linear-gradient(135deg,#2a1a08,#1a1208);}
     .voice-photo .loading{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--smoke);font-size:.6rem;letter-spacing:.2em;font-family:'Cinzel',serif;}
-    .voice-badge{position:absolute;top:.5rem;right:.5rem;font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;padding:.15rem .4rem;border:1px solid;z-index:10;}
-    .badge-conservative{color:#8B4000;border-color:#8B4000;background:rgba(139,64,0,.15);}
-    .badge-religious{color:var(--gold);border-color:var(--gold);background:rgba(201,168,76,.1);}
-    .badge-political{color:#6a7a8a;border-color:#6a7a8a;background:rgba(100,120,140,.1);}
     .voice-name{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--parchment);line-height:1.3;margin-bottom:.2rem;}
     .voice-title{font-size:.68rem;color:var(--smoke);letter-spacing:.06em;margin-bottom:.75rem;font-style:italic;}
     .voice-quote{font-size:.8rem;line-height:1.55;color:#c9b99a;border-left:2px solid var(--crimson);padding-left:.6rem;font-style:italic;}
@@ -317,152 +318,189 @@
     <p class="voices-category">Christians &amp; Conservatives Speaking Out</p>
     <div class="photo-grid">
       <div class="voice-card">
-        <span class="voice-badge badge-conservative">Conservative</span>
+        <div class="voice-strip badge-conservative">Conservative</div>
+      <div class="voice-card-body">
         <div class="voice-photo" id="photo-mtg"><div class="loading">Loading…</div></div>
         <div class="voice-name">Marjorie Taylor Greene</div>
         <div class="voice-title">Former U.S. Representative (R-GA) · Evangelical Christian</div>
-        <p class="voice-quote">"It's more than blasphemy. It's an Antichrist spirit." Posted on Orthodox Easter, denouncing Trump for "replacing Jesus" while waging an unjust war the Pope had rightly condemned.</p>
+        <p class="voice-quote">"It's more than blasphemy. It's an Antichrist spirit." Posted on Orthodox Easter, denouncing Trump for "replacing Jesus" while waging an unjust war the Pope had rightly condemned. <a href="https://www.newsweek.com/list-of-conservatives-rebuking-donald-trumps-jesus-image-pope-feud-11821583" target="_blank" rel="noopener" class="src">Newsweek</a></p>
+      </div>
       </div>
       <div class="voice-card">
-        <span class="voice-badge badge-conservative">Conservative</span>
+        <div class="voice-strip badge-conservative">Conservative</div>
+      <div class="voice-card-body">
         <div class="voice-photo" id="photo-tucker"><div class="loading">Loading…</div></div>
         <div class="voice-name">Tucker Carlson</div>
         <div class="voice-title">Conservative Commentator</div>
-        <p class="voice-quote">Called using Easter as a backdrop for war rhetoric "unchristian." Warned of a "spiritual conflict" unfolding inside the political establishment and said Trump's behavior "verges on irrationality."</p>
+        <p class="voice-quote">Called using Easter as a backdrop for war rhetoric "unchristian." Warned of a "spiritual conflict" unfolding inside the political establishment and said Trump's behavior "verges on irrationality." <a href="https://organiser.org/2026/04/14/348634/world/us-president-donald-trumps-christ-image-triggers-outrage-cracks-emerge-in-loyal-support-base/" target="_blank" rel="noopener" class="src">Organiser</a></p>
+      </div>
       </div>
       <div class="voice-card">
-        <span class="voice-badge badge-conservative">Conservative</span>
+        <div class="voice-strip badge-conservative">Conservative</div>
+      <div class="voice-card-body">
         <div class="voice-photo" id="photo-candace"><div class="loading">Loading…</div></div>
         <div class="voice-name">Candace Owens</div>
         <div class="voice-title">Conservative Commentator · Professing Christian</div>
-        <p class="voice-quote">"Trump is very clearly under demonic influence... He is surrounded by, ironically, the very thing he accuses me, Megyn and Tucker of being."</p>
+        <p class="voice-quote">"Trump is very clearly under demonic influence... He is surrounded by, ironically, the very thing he accuses me, Megyn and Tucker of being." <a href="https://www.irishstar.com/news/politics/republicans-slam-trumps-explanation-posting-37011092" target="_blank" rel="noopener" class="src">Irish Star</a></p>
+      </div>
       </div>
       <div class="voice-card">
-        <span class="voice-badge badge-conservative">Conservative</span>
+        <div class="voice-strip badge-conservative">Conservative</div>
+      <div class="voice-card-body">
         <div class="voice-photo" id="photo-riley"><div class="loading">Loading…</div></div>
         <div class="voice-name">Riley Gaines</div>
         <div class="voice-title">Conservative Activist · Christian</div>
-        <p class="voice-quote">"Seriously, I cannot understand why he'd post this. A little humility will serve him well. <em>God shall not be mocked.</em>" — invoking Galatians 6:7 directly.</p>
+        <p class="voice-quote">"Seriously, I cannot understand why he'd post this. A little humility will serve him well. <em>God shall not be mocked.</em>" — invoking Galatians 6:7 directly. <a href="https://www.salon.com/2026/04/14/catholics-warn-of-serious-juncture-as-trump-targets-pope-leo-xiv/" target="_blank" rel="noopener" class="src">Salon</a></p>
+      </div>
       </div>
       <div class="voice-card">
-        <span class="voice-badge badge-conservative">Republican</span>
+        <div class="voice-strip badge-conservative">Republican</div>
+      <div class="voice-card-body">
         <div class="voice-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Sen._Thom_Tillis_official_photo.jpg/500px-Sen._Thom_Tillis_official_photo.jpg" alt="Thom Tillis" onerror="this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>TT</div>'" /></div>
         <div class="voice-name">Sen. Thom Tillis</div>
         <div class="voice-title">U.S. Senator (R-NC)</div>
-        <p class="voice-quote">Called Trump's AI Jesus post "absurd" and declined to accept Trump's claim that it was meant to depict him as a doctor, not Christ.</p>
+        <p class="voice-quote">Called Trump's AI Jesus post "absurd" and declined to accept Trump's claim that it was meant to depict him as a doctor, not Christ. <a href="https://www.irishstar.com/news/politics/republicans-slam-trumps-explanation-posting-37011092" target="_blank" rel="noopener" class="src">Irish Star</a></p>
+      </div>
       </div>
       <div class="voice-card">
-        <span class="voice-badge badge-conservative">Republican</span>
+        <div class="voice-strip badge-conservative">Republican</div>
+      <div class="voice-card-body">
         <div class="voice-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Warren_Davidson_118th_Congress_(cropped).jpg/400px-Warren_Davidson_118th_Congress_(cropped).jpg" alt="Warren Davidson" onerror="this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>WD</div>'" /></div>
         <div class="voice-name">Rep. Warren Davidson</div>
         <div class="voice-title">U.S. Representative (R-OH)</div>
-        <p class="voice-quote">"While there may be a method to the madness, this Truth Social post can only be described as madness. Very troubling."</p>
+        <p class="voice-quote">"While there may be a method to the madness, this Truth Social post can only be described as madness. Very troubling." <a href="https://time.com/article/2026/04/14/catholic-vance-breaks-silence-on-deleted-trump-jesus-image-amid-outcry/" target="_blank" rel="noopener" class="src">TIME</a></p>
+      </div>
       </div>
       <div class="voice-card">
-        <span class="voice-badge badge-conservative">Conservative</span>
+        <div class="voice-strip badge-conservative">Conservative</div>
+      <div class="voice-card-body">
         <div class="voice-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Milo_Yiannopoulos_2016.jpg/400px-Milo_Yiannopoulos_2016.jpg" alt="Milo Yiannopoulos" onerror="this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>MY</div>'" /></div>
         <div class="voice-name">Milo Yiannopoulos</div>
         <div class="voice-title">Right-Wing Activist · Catholic</div>
-        <p class="voice-quote">"Oh hell no. We tolerated this kind of meme against our better judgment because he promised to save America — and only when it was clear he didn't actually think he was the Messiah."</p>
+        <p class="voice-quote">"Oh hell no. We tolerated this kind of meme against our better judgment because he promised to save America — and only when it was clear he didn't actually think he was the Messiah." <a href="https://dailycaller.com/2026/04/13/conservatives-blast-trump-over-jesus-photo-post/" target="_blank" rel="noopener" class="src">Daily Caller</a></p>
+      </div>
       </div>
       <div class="voice-card">
-        <span class="voice-badge badge-conservative">Republican</span>
+        <div class="voice-strip badge-conservative">Republican</div>
+      <div class="voice-card-body">
         <div class="voice-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Brilyn_Hollyhand_2024_%28cropped%29.png" alt="Brilyn Hollyhand" onerror="this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>BH</div>'" /></div>
         <div class="voice-name">Brilyn Hollyhand</div>
         <div class="voice-title">Former Co-Chair, RNC Youth Advisory Council</div>
-        <p class="voice-quote">"This is gross blasphemy. Faith is not a prop. You don't need to portray yourself as a saviour when your record should speak for itself."</p>
+        <p class="voice-quote">"This is gross blasphemy. Faith is not a prop. You don't need to portray yourself as a saviour when your record should speak for itself." <a href="https://www.aljazeera.com/news/2026/4/13/trump-draws-backlash-over-posting-image-depicting-him-as-jesus-like-saviour" target="_blank" rel="noopener" class="src">Al Jazeera</a></p>
+      </div>
       </div>
       <div class="voice-card">
-        <span class="voice-badge badge-conservative">Conservative</span>
+        <div class="voice-strip badge-conservative">Conservative</div>
+      <div class="voice-card-body">
         <div class="voice-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Megan_Basham_%2853911298321%29.jpg/500px-Megan_Basham_%2853911298321%29.jpg" alt="Megan Basham" onerror="this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>MB</div>'" /></div>
         <div class="voice-name">Megan Basham</div>
         <div class="voice-title">Columnist, The Daily Wire</div>
-        <p class="voice-quote">"OUTRAGEOUS blasphemy." Demanded Trump "take this down immediately and ask for forgiveness from the American people and then from God."</p>
+        <p class="voice-quote">"OUTRAGEOUS blasphemy." Demanded Trump "take this down immediately and ask for forgiveness from the American people and then from God." <a href="https://www.aljazeera.com/news/2026/4/13/trump-draws-backlash-over-posting-image-depicting-him-as-jesus-like-saviour" target="_blank" rel="noopener" class="src">Al Jazeera</a></p>
+      </div>
       </div>
       <div class="voice-card">
-        <span class="voice-badge badge-conservative">Conservative</span>
+        <div class="voice-strip badge-conservative">Conservative</div>
+      <div class="voice-card-body">
         <div class="voice-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2WeF-aA2dMnphariag2cOMBFcc7FAfrDlwQ37Ax4PbAtlI5uqSD163m5vsxRkX6Ho5a6sRwwwki7S2crrcviYs_ptfg_9K0M_r3uGXDs&s=10" alt="Isabel Brown" onerror="this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>IB</div>'" /></div>
         <div class="voice-name">Isabel Brown</div>
         <div class="voice-title">Commentator, The Daily Wire</div>
-        <p class="voice-quote">"Disgusting and unacceptable. Nothing matters more than Jesus." Said the image reflected a fundamental misunderstanding of what a Christian revival in America actually means.</p>
+        <p class="voice-quote">"Disgusting and unacceptable. Nothing matters more than Jesus." Said the image reflected a fundamental misunderstanding of what a Christian revival in America actually means. <a href="https://www.aljazeera.com/news/2026/4/13/trump-draws-backlash-over-posting-image-depicting-him-as-jesus-like-saviour" target="_blank" rel="noopener" class="src">Al Jazeera</a></p>
+      </div>
       </div>
       <div class="voice-card">
-        <span class="voice-badge badge-conservative">Conservative</span>
+        <div class="voice-strip badge-conservative">Conservative</div>
+      <div class="voice-card-body">
         <div class="voice-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Michael_Steele_%2839816136303%29_%281%29.jpg/500px-Michael_Steele_%2839816136303%29_%281%29.jpg" alt="Michael Steele" onerror="this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>MS</div>'" /></div>
         <div class="voice-name">Michael Steele</div>
         <div class="voice-title">Former Chairman, Republican National Committee</div>
-        <p class="voice-quote">Called Trump "unserious and incapable" — reacting to a pattern of Trump using sacred religious imagery for political theatre, including a prior AI image of himself dressed as the Pope.</p>
+        <p class="voice-quote">Called Trump "unserious and incapable" — reacting to a pattern of Trump using sacred religious imagery for political theatre, including a prior AI image of himself dressed as the Pope. <a href="https://time.com/article/2026/04/14/catholic-vance-breaks-silence-on-deleted-trump-jesus-image-amid-outcry/" target="_blank" rel="noopener" class="src">TIME</a></p>
       </div>
     </div>
 
     <p class="voices-category">The Church Speaks</p>
     <div class="photo-grid">
       <div class="voice-card">
-        <span class="voice-badge badge-religious">Vatican</span>
+        <div class="voice-strip badge-religious">Vatican</div>
+      <div class="voice-card-body">
         <div class="voice-photo" id="photo-pope"><div class="loading">Loading…</div></div>
         <div class="voice-name">Pope Leo XIV</div>
         <div class="voice-title">Head of the Catholic Church · First American Pope</div>
-        <p class="voice-quote">"I have no fear, neither of the Trump administration, nor speaking out loudly about the message of the Gospel… I will continue to speak out strongly against war, seeking to promote peace."</p>
+        <p class="voice-quote">"I have no fear, neither of the Trump administration, nor speaking out loudly about the message of the Gospel… I will continue to speak out strongly against war, seeking to promote peace." <a href="https://www.npr.org/2026/04/13/nx-s1-5783008/trump-pope-leo" target="_blank" rel="noopener" class="src">NPR</a></p>
+      </div>
       </div>
       <div class="voice-card">
-        <span class="voice-badge badge-religious">Cardinal</span>
+        <div class="voice-strip badge-religious">Cardinal</div>
+      <div class="voice-card-body">
         <div class="voice-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk7RY68ummWMIIDOkJgDMaXO9IVs-lm1px9M_ACeIuOX8_32Slmv1On2k0QzQ-_EzsTLzY86psH9efqoIQ-yiStYm2wwUxswQIF_Kz4i4k&s=10" alt="Cardinal Joseph Tobin" onerror="this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>JT</div>'" /></div>
         <div class="voice-name">Cardinal Joseph Tobin</div>
         <div class="voice-title">Archbishop of Newark</div>
-        <p class="voice-quote">"A troubling lack of respect for the faith of millions… a grave misunderstanding of the Holy Father's ministry. Pope Leo serves a higher authority."</p>
+        <p class="voice-quote">"A troubling lack of respect for the faith of millions… a grave misunderstanding of the Holy Father's ministry. Pope Leo serves a higher authority." <a href="https://time.com/article/2026/04/13/pope-leo-trump-attack-catholics/" target="_blank" rel="noopener" class="src">TIME</a></p>
+      </div>
       </div>
       <div class="voice-card">
-        <span class="voice-badge badge-religious">Cardinal</span>
+        <div class="voice-strip badge-religious">Cardinal</div>
+      <div class="voice-card-body">
         <div class="voice-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Archdiocese_of_Washington_DC_%2854973570633%29_%28cropped%29.jpg/500px-Archdiocese_of_Washington_DC_%2854973570633%29_%28cropped%29.jpg" alt="Cardinal Robert McElroy" onerror="this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>RM</div>'" /></div>
         <div class="voice-name">Cardinal Robert McElroy</div>
         <div class="voice-title">Archbishop of Washington, D.C.</div>
-        <p class="voice-quote">Declared Trump's Iran war fails the Church's just war standard — a doctrine grounded in Scripture and upheld by Augustine, Aquinas, and every major Christian tradition.</p>
+        <p class="voice-quote">Declared Trump's Iran war fails the Church's just war standard — a doctrine grounded in Scripture and upheld by Augustine, Aquinas, and every major Christian tradition. <a href="https://time.com/article/2026/04/13/pope-leo-trump-attack-catholics/" target="_blank" rel="noopener" class="src">TIME</a></p>
+      </div>
       </div>
       <div class="voice-card">
-        <span class="voice-badge badge-religious">Bishop</span>
+        <div class="voice-strip badge-religious">Bishop</div>
+      <div class="voice-card-body">
         <div class="voice-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Bishop_Robert_Barron.jpg/500px-Bishop_Robert_Barron.jpg" alt="Bishop Robert Barron" onerror="this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>BB</div>'" /></div>
         <div class="voice-name">Bishop Robert Barron</div>
         <div class="voice-title">Bishop of Winona-Rochester</div>
-        <p class="voice-quote">"It is the Pope's prerogative to articulate Catholic doctrine and the principles that govern the moral life." Called for serious dialogue between Catholic officials and the Vatican.</p>
+        <p class="voice-quote">"It is the Pope's prerogative to articulate Catholic doctrine and the principles that govern the moral life." Called for serious dialogue between Catholic officials and the Vatican. <a href="https://dailycaller.com/2026/04/13/conservatives-blast-trump-over-jesus-photo-post/" target="_blank" rel="noopener" class="src">Daily Caller</a></p>
+      </div>
       </div>
       <div class="voice-card">
-        <span class="voice-badge badge-religious">Cardinal</span>
+        <div class="voice-strip badge-religious">Cardinal</div>
+      <div class="voice-card-body">
         <div class="voice-photo" id="photo-cupich"><div class="loading">Loading…</div></div>
         <div class="voice-name">Cardinal Blase Cupich</div>
         <div class="voice-title">Archbishop of Chicago · Pope Leo's Home Diocese</div>
-        <p class="voice-quote">Stood alongside Cardinals Tobin and McElroy in a united public witness, reaffirming the Pope's Gospel-rooted call for peace — on behalf of America's 53 million Catholics.</p>
+        <p class="voice-quote">Stood alongside Cardinals Tobin and McElroy in a united public witness, reaffirming the Pope's Gospel-rooted call for peace — on behalf of America's 53 million Catholics. <a href="https://time.com/article/2026/04/13/pope-leo-trump-attack-catholics/" target="_blank" rel="noopener" class="src">TIME</a></p>
+      </div>
       </div>
       <div class="voice-card">
-        <span class="voice-badge badge-religious">Archbishop</span>
+        <div class="voice-strip badge-religious">Archbishop</div>
+      <div class="voice-card-body">
         <div class="voice-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Bishop_Ronald_Aldon_Hicks_Preaching_at_the_Seventy-Fifth_Anniversary_Regional_Mass_at_Lewis_University.jpg" alt="Archbishop Ronald Hicks" onerror="this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>RH</div>'" /></div>
         <div class="voice-name">Archbishop Ronald Hicks</div>
         <div class="voice-title">Archbishop of New York</div>
-        <p class="voice-quote">Said Pope Leo XIV must not back down, reaffirming the Church's prophetic duty — in the tradition of Nathan before David, and John the Baptist before Herod — to speak truth to power.</p>
+        <p class="voice-quote">Said Pope Leo XIV must not back down, reaffirming the Church's prophetic duty — in the tradition of Nathan before David, and John the Baptist before Herod — to speak truth to power. <a href="https://www.cbsnews.com/newyork/news/president-trump-pope-leo-xiv-attacks-new-york-archbishop-ronald-hicks/" target="_blank" rel="noopener" class="src">CBS News</a></p>
       </div>
     </div>
 
     <p class="voices-category">Political Allies Breaking Ranks</p>
     <div class="photo-grid">
       <div class="voice-card">
-        <span class="voice-badge badge-political">Ally</span>
+        <div class="voice-strip badge-political">Ally</div>
+      <div class="voice-card-body">
         <div class="voice-photo" id="photo-meloni"><div class="loading">Loading…</div></div>
         <div class="voice-name">Giorgia Meloni</div>
         <div class="voice-title">Prime Minister of Italy · Conservative Catholic</div>
         <p class="voice-quote">"It is right and normal for the Pope to call for peace and to condemn all forms of war." Called Trump's attacks "unacceptable"<a href="https://www.euronews.com/2026/04/14/trump-refuses-to-apologise-after-clash-with-pope-leo-xiv-over-iran-war" target="_blank" rel="noopener" class="src">Euronews</a> — then Trump retaliated, saying he was "shocked" by her and that he "was wrong" about her courage.<a href="https://eu.detroitnews.com/story/news/politics/2026/04/14/trump-turns-on-georgia-meloni-says-he-is-shocked-by-italys-leader/89608228007/" target="_blank" rel="noopener" class="src">Detroit News</a></p>
       </div>
+      </div>
       <div class="voice-card">
-        <span class="voice-badge badge-political">Ally</span>
+        <div class="voice-strip badge-political">Ally</div>
+      <div class="voice-card-body">
         <div class="voice-photo" id="photo-starmer"><div class="loading">Loading…</div></div>
         <div class="voice-name">Keir Starmer</div>
         <div class="voice-title">Prime Minister of the United Kingdom</div>
         <p class="voice-quote">"They are not words I would use — ever use — because I come at this with our British values and principles." Rejected Trump's rhetoric threatening to destroy Iran as contrary to British values.<a href="https://www.bloomberg.com/news/articles/2026-04-09/starmer-says-trump-s-iran-rhetoric-is-contrary-to-british-values" target="_blank" rel="noopener" class="src">Bloomberg</a></p>
       </div>
+      </div>
       <div class="voice-card">
-        <span class="voice-badge badge-conservative">Conservative</span>
+        <div class="voice-strip badge-conservative">Conservative</div>
+      <div class="voice-card-body">
         <div class="voice-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgwPWRoFsHNcruKfGXUZ46y2A0haPPBcKO-izeaGsZXM9MLQtsTPjZJfpAo7s8YNYz7tcGOQ&s" alt="Bill Donohue" onerror="this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>BD</div>'" /></div>
         <div class="voice-name">Bill Donohue</div>
         <div class="voice-title">President, Catholic League for Religious &amp; Civil Rights</div>
-        <p class="voice-quote">Called Trump's war rhetoric "reckless" and his depiction of himself as Jesus "offensive and immature" — a rebuke from the head of one of America's most prominent conservative Catholic organizations.</p>
+        <p class="voice-quote">Called Trump's war rhetoric "reckless" and his depiction of himself as Jesus "offensive and immature" — a rebuke from the head of one of America's most prominent conservative Catholic organizations. <a href="https://www.salon.com/2026/04/14/catholics-warn-of-serious-juncture-as-trump-targets-pope-leo-xiv/" target="_blank" rel="noopener" class="src">Salon</a></p>
       </div>
     </div>
   </section>
