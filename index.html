@@ -98,20 +98,20 @@
     .voice-title{font-size:.68rem;color:var(--smoke);letter-spacing:.06em;margin-bottom:.75rem;font-style:italic;}
     .voice-quote{font-size:.8rem;line-height:1.55;color:#c9b99a;border-left:2px solid var(--crimson);padding-left:.6rem;font-style:italic;}
 
-    /* EMAIL SIGNUP */
-    .signup-section{margin-top:4rem;padding:3rem 2rem;border:1px solid rgba(201,168,76,.3);background:linear-gradient(160deg,#1e1508,#1a1208);text-align:center;position:relative;overflow:hidden;}
+    /* EMAIL SIGNUP — top banner */
+    .signup-section{padding:1.8rem 2rem;border-top:1px solid rgba(201,168,76,.2);border-bottom:2px solid rgba(201,168,76,.3);background:linear-gradient(160deg,#1e1508,#1a1208);text-align:center;position:relative;overflow:hidden;}
     .signup-section::before{content:'✝';position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-size:200px;color:var(--gold);opacity:.03;pointer-events:none;}
-    .signup-title{font-family:'Cinzel',serif;font-size:clamp(1rem,3vw,1.5rem);font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--parchment);margin-bottom:.6rem;}
-    .signup-sub{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold-light);font-size:1rem;margin-bottom:.4rem;opacity:.85;}
-    .signup-verse{font-size:.78rem;color:var(--smoke);margin-bottom:2rem;font-style:italic;}
+    .signup-title{font-family:'Cinzel',serif;font-size:clamp(.85rem,2vw,1.1rem);font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--parchment);margin-bottom:.3rem;}
+    .signup-sub{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold-light);font-size:.9rem;margin-bottom:.3rem;opacity:.85;}
+    .signup-verse{font-size:.72rem;color:var(--smoke);margin-bottom:1.2rem;font-style:italic;}
     .signup-form{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;max-width:520px;margin:0 auto;}
-    .signup-form input[type="email"]{flex:1;min-width:220px;background:#0e0c06;border:1px solid #5a4e3a;color:var(--parchment);padding:.75rem 1rem;font-family:'Libre Baskerville',serif;font-size:.85rem;outline:none;transition:border-color .2s;}
+    .signup-form input[type="email"]{flex:1;min-width:200px;background:#0e0c06;border:1px solid #5a4e3a;color:var(--parchment);padding:.65rem 1rem;font-family:'Libre Baskerville',serif;font-size:.85rem;outline:none;transition:border-color .2s;}
     .signup-form input[type="email"]::placeholder{color:var(--smoke);}
     .signup-form input[type="email"]:focus{border-color:var(--gold);}
-    .signup-form button{background:var(--crimson);color:var(--parchment);border:none;padding:.75rem 1.5rem;font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:background .2s;}
+    .signup-form button{background:var(--crimson);color:var(--parchment);border:none;padding:.65rem 1.4rem;font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:background .2s;}
     .signup-form button:hover{background:#a00000;}
-    .signup-success{display:none;color:var(--gold-light);font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;margin-top:1rem;}
-    .signup-note{font-size:.7rem;color:var(--smoke);margin-top:1rem;letter-spacing:.05em;}
+    .signup-success{display:none;color:var(--gold-light);font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;margin-top:.8rem;}
+    .signup-note{font-size:.68rem;color:var(--smoke);margin-top:.7rem;letter-spacing:.05em;}
 
     footer{text-align:center;padding:2rem;border-top:2px solid #3a2e1c;font-size:.75rem;color:var(--smoke);letter-spacing:.05em;}
     footer .footer-logo{font-family:'Cinzel',serif;font-size:1rem;color:var(--gold);margin-bottom:.5rem;}
@@ -152,6 +152,21 @@
     Meloni calls Trump's attacks on the Pope "unacceptable"
   </span>
 </div>
+
+<!-- EMAIL SIGNUP BANNER -->
+<section class="signup-section" id="signup">
+  <h2 class="signup-title">Stay Informed. Stay Faithful.</h2>
+  <p class="signup-sub">Receive updates when we publish new reporting, analysis, and calls to action.</p>
+  <p class="signup-verse">"Have no fellowship with the unfruitful works of darkness, but rather expose them." — Ephesians 5:11</p>
+  <form class="signup-form" name="updates" netlify netlify-honeypot="bot-field" onsubmit="handleSignup(event)">
+    <input type="hidden" name="form-name" value="updates" />
+    <input type="text" name="bot-field" style="display:none" />
+    <input type="email" name="email" placeholder="Your email address" required autocomplete="email" />
+    <button type="submit">Bear Witness</button>
+  </form>
+  <p class="signup-success" id="signup-success">✝ &nbsp; Thank you. You will hear from us.</p>
+  <p class="signup-note">No spam. No politics. Only the truth, as best we can discern it. Unsubscribe at any time.</p>
+</section>
 
 <main>
   <div class="grid" id="story">
@@ -404,21 +419,6 @@
         <p class="voice-quote">"The pope is the head of the Catholic Church, and it is right and normal for him to call for peace and to condemn all forms of war." Called Trump's remarks "unacceptable" — a rare break from one of his closest world allies.</p>
       </div>
     </div>
-  </section>
-
-  <!-- EMAIL SIGNUP -->
-  <section class="signup-section" id="signup">
-    <h2 class="signup-title">Stay Informed. Stay Faithful.</h2>
-    <p class="signup-sub">Receive updates when we publish new reporting, analysis, and calls to action.</p>
-    <p class="signup-verse">"And have no fellowship with the unfruitful works of darkness, but rather expose them." — Ephesians 5:11</p>
-    <form class="signup-form" name="updates" netlify netlify-honeypot="bot-field" onsubmit="handleSignup(event)">
-      <input type="hidden" name="form-name" value="updates" />
-      <input type="text" name="bot-field" style="display:none" />
-      <input type="email" name="email" placeholder="Your email address" required autocomplete="email" />
-      <button type="submit">Bear Witness</button>
-    </form>
-    <p class="signup-success" id="signup-success">✝ &nbsp; Thank you. You will hear from us.</p>
-    <p class="signup-note">No spam. No politics. Only the truth, as best we can discern it. Unsubscribe at any time.</p>
   </section>
 
   <section id="about" style="margin-top:3rem;padding-top:2rem;border-top:1px solid #3a2e1c;">
