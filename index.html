@@ -90,7 +90,7 @@
     .voice-card:hover .voice-photo img{filter:sepia(0%) contrast(1.1);}
     .voice-photo-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:2rem;font-weight:900;color:var(--gold);opacity:.4;background:linear-gradient(135deg,#2a1a08,#1a1208);}
     .voice-photo .loading{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--smoke);font-size:.6rem;letter-spacing:.2em;font-family:'Cinzel',serif;}
-    .voice-badge{position:absolute;top:.5rem;right:.5rem;font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;padding:.15rem .4rem;border:1px solid;}
+    .voice-badge{position:absolute;top:.5rem;right:.5rem;font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;padding:.15rem .4rem;border:1px solid;z-index:10;}
     .badge-conservative{color:#8B4000;border-color:#8B4000;background:rgba(139,64,0,.15);}
     .badge-religious{color:var(--gold);border-color:var(--gold);background:rgba(201,168,76,.1);}
     .badge-political{color:#6a7a8a;border-color:#6a7a8a;background:rgba(100,120,140,.1);}
@@ -105,9 +105,10 @@
     .signup-sub{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold-light);font-size:.9rem;margin-bottom:.3rem;opacity:.85;}
     .signup-verse{font-size:.72rem;color:var(--smoke);margin-bottom:1.2rem;font-style:italic;}
     .signup-form{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;max-width:520px;margin:0 auto;}
-    .signup-form input[type="email"]{flex:1;min-width:200px;background:#0e0c06;border:1px solid #5a4e3a;color:var(--parchment);padding:.65rem 1rem;font-family:'Libre Baskerville',serif;font-size:.85rem;outline:none;transition:border-color .2s;}
-    .signup-form input[type="email"]::placeholder{color:var(--smoke);}
-    .signup-form input[type="email"]:focus{border-color:var(--gold);}
+    .signup-form input[type="email"]{flex:2;min-width:180px;background:#0e0c06;border:1px solid #5a4e3a;color:var(--parchment);padding:.65rem 1rem;font-family:'Libre Baskerville',serif;font-size:.85rem;outline:none;transition:border-color .2s;}
+    .signup-form .zip-input{flex:0 0 110px;width:110px;background:#0e0c06;border:1px solid #5a4e3a;color:var(--parchment);padding:.65rem .75rem;font-family:'Libre Baskerville',serif;font-size:.85rem;outline:none;transition:border-color .2s;}
+    .signup-form input[type="email"]::placeholder,.signup-form .zip-input::placeholder{color:var(--smoke);}
+    .signup-form input[type="email"]:focus,.signup-form .zip-input:focus{border-color:var(--gold);}
     .signup-form button{background:var(--crimson);color:var(--parchment);border:none;padding:.65rem 1.4rem;font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:background .2s;}
     .signup-form button:hover{background:#a00000;}
     .signup-success{display:none;color:var(--gold-light);font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;margin-top:.8rem;}
@@ -120,6 +121,8 @@
     .lead-body{animation:fadeUp 1s .2s ease both;}
     .sidebar{animation:fadeUp 1s .4s ease both;}
     a{color:var(--gold);}a:hover{color:var(--parchment);}
+    a.src{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.1em;color:var(--smoke);border-bottom:1px solid #3a2e1c;text-decoration:none;vertical-align:super;margin-left:.2rem;white-space:nowrap;}
+    a.src:hover{color:var(--gold);border-color:var(--gold);}
   </style>
 </head>
 <body>
@@ -128,7 +131,7 @@
   <p class="eyebrow">Bearing Witness for the Church</p>
   <h1 class="site-title">False<span>Prophet</span>.org</h1>
   <p class="site-sub">Holding power accountable to the Gospel</p>
-  <p class="date-bar">Tuesday, April 14, 2026</p>
+  <p class="date-bar" id="site-date"></p>
 </header>
 
 <nav>
@@ -161,7 +164,8 @@
   <form class="signup-form" name="updates" netlify netlify-honeypot="bot-field" onsubmit="handleSignup(event)">
     <input type="hidden" name="form-name" value="updates" />
     <input type="text" name="bot-field" style="display:none" />
-    <input type="email" name="email" placeholder="Your email address" required autocomplete="email" />
+    <input type="email" name="email" placeholder="Email address" required autocomplete="email" />
+    <input type="text" name="zip" placeholder="Zip code" pattern="[0-9\-]{3,10}" maxlength="10" autocomplete="postal-code" class="zip-input" />
     <button type="submit">Bear Witness</button>
   </form>
   <p class="signup-success" id="signup-success">✝ &nbsp; Thank you. You will hear from us.</p>
@@ -186,13 +190,13 @@
 
       <div class="lead-body">
         <p>
-          On Sunday, April 13, 2026 — <strong>Orthodox Easter Sunday</strong> — President Donald Trump posted an AI-generated image to Truth Social depicting himself as <strong>Jesus Christ</strong>: white-robed, hands outstretched in a healing pose, surrounded by Americana and divine light. The image was deleted by Monday morning after a firestorm of condemnation — including from some of Trump's most devoted Christian supporters.
+          On Sunday, April 13, 2026 — <strong>Orthodox Easter Sunday</strong> — President Donald Trump posted an AI-generated image to Truth Social depicting himself as <strong>Jesus Christ</strong>: white-robed, hands outstretched in a healing pose, surrounded by Americana and divine light. The image was deleted by Monday morning after a firestorm of condemnation — including from some of Trump's most devoted Christian supporters.<a href="https://www.france24.com/en/americas/20260414-trump-deletes-image-of-himself-as-jesus-as-feud-with-pope-dismays-us-catholics" target="_blank" rel="noopener" class="src">France 24</a>
         </p>
         <p>
-          When pressed by reporters, Trump claimed he <em>"thought the image was of him as a doctor."</em> No explanation was offered for why a doctor would be depicted in robes, bathed in heavenly light, performing what appeared to be a miraculous laying-on of hands.
+          When pressed by reporters, Trump claimed he <em>"thought the image was of him as a doctor."</em> No explanation was offered for why a doctor would be depicted in robes, bathed in heavenly light, performing what appeared to be a miraculous laying-on of hands.<a href="https://www.aljazeera.com/news/2026/4/13/trump-draws-backlash-over-posting-image-depicting-him-as-jesus-like-saviour" target="_blank" rel="noopener" class="src">Al Jazeera</a>
         </p>
         <p>
-          But the image did not emerge in a vacuum. It came hours after Trump launched a furious attack on <strong>Pope Leo XIV</strong> — the first American-born pope in the history of the Church — calling him <strong>"weak on crime"</strong> and a tool of the "radical left." The Pope's offense? Quoting the Prince of Peace. Leo had condemned Trump's threat to annihilate an entire civilization as <em>"truly unacceptable,"</em> and called on the world's leaders, as Jesus did, to choose peace over the sword.
+          But the image did not emerge in a vacuum. It came hours after Trump launched a furious attack on <strong>Pope Leo XIV</strong> — the first American-born pope in the history of the Church — calling him <strong>"weak on crime"</strong> and a tool of the "radical left." The Pope's offense? Quoting the Prince of Peace. Leo had condemned Trump's threat to annihilate an entire civilization as <em>"truly unacceptable,"</em> and called on the world's leaders, as Jesus did, to choose peace over the sword.<a href="https://www.euronews.com/2026/04/14/trump-refuses-to-apologise-after-clash-with-pope-leo-xiv-over-iran-war" target="_blank" rel="noopener" class="src">Euronews</a>
         </p>
 
         <div class="scripture-inline">
@@ -204,10 +208,10 @@
           For Bible-believing Christians, the sequence of events is deeply alarming: a world leader posts himself as the Messiah on the most sacred day of the Eastern Church calendar, then attacks a Christian leader for proclaiming the Gospel message of peace. This is not a policy disagreement. Scripture has a name for this pattern.
         </p>
         <p>
-          The reaction from Christian leaders — across denominations, and even from within Trump's own political base — was immediate and unsparing. <strong>Marjorie Taylor Greene</strong>, once one of Trump's most vocal evangelical supporters, called it <em>"more than blasphemy"</em> and named what she saw: <em>"an Antichrist spirit."</em> <strong>Tucker Carlson</strong> called using Easter for war rhetoric "unchristian." <strong>Candace Owens</strong> said Trump appears to be <em>"under demonic influence."</em>
+          The reaction from Christian leaders — across denominations, and even from within Trump's own political base — was immediate and unsparing. <strong>Marjorie Taylor Greene</strong>, once one of Trump's most vocal evangelical supporters, called it <em>"more than blasphemy"</em> and named what she saw: <em>"an Antichrist spirit."</em><a href="https://www.newsweek.com/list-of-conservatives-rebuking-donald-trumps-jesus-image-pope-feud-11821583" target="_blank" rel="noopener" class="src">Newsweek</a> <strong>Tucker Carlson</strong> called using Easter for war rhetoric "unchristian."<a href="https://organiser.org/2026/04/14/348634/world/us-president-donald-trumps-christ-image-triggers-outrage-cracks-emerge-in-loyal-support-base/" target="_blank" rel="noopener" class="src">Organiser</a> <strong>Candace Owens</strong> said Trump appears to be <em>"under demonic influence."</em><a href="https://www.irishstar.com/news/politics/republicans-slam-trumps-explanation-posting-37011092" target="_blank" rel="noopener" class="src">Irish Star</a>
         </p>
         <p>
-          Conservative Catholic activist <strong>Riley Gaines</strong> invoked Galatians directly: <em>"God shall not be mocked."</em> Even Republican Senator <strong>Thom Tillis</strong> called the post <em>"absurd."</em>
+          Conservative Catholic activist <strong>Riley Gaines</strong> invoked Galatians directly: <em>"God shall not be mocked."</em><a href="https://www.salon.com/2026/04/14/catholics-warn-of-serious-juncture-as-trump-targets-pope-leo-xiv/" target="_blank" rel="noopener" class="src">Salon</a> Even Republican Senator <strong>Thom Tillis</strong> called the post <em>"absurd."</em><a href="https://www.irishstar.com/news/politics/republicans-slam-trumps-explanation-posting-37011092" target="_blank" rel="noopener" class="src">Irish Star</a>
         </p>
       </div>
 
@@ -218,13 +222,13 @@
 
       <div class="lead-body">
         <p>
-          Pope Leo XIV — born Robert Prevost, raised Catholic on the south side of Chicago — responded with the calm authority of a man whose kingdom is not of this world. He pledged to keep preaching against war, for peace, for the dignity of every human being, "because the Church's witness is grounded in the peace of Christ, not in partisan interests."
+          Pope Leo XIV — born Robert Prevost, raised Catholic on the south side of Chicago — responded with the calm authority of a man whose kingdom is not of this world. He pledged to keep preaching against war, for peace, for the dignity of every human being, "because the Church's witness is grounded in the peace of Christ, not in partisan interests."<a href="https://www.npr.org/2026/04/13/nx-s1-5783008/trump-pope-leo" target="_blank" rel="noopener" class="src">NPR</a>
         </p>
         <p>
-          Three American Cardinals — Tobin of Newark, McElroy of Washington, and Cupich of Chicago — stood with him, appearing together publicly to reaffirm the Pope's moral authority. Cardinal McElroy went further, stating that Trump's war with Iran fails to meet the Church's ancient standard of a <strong>just war</strong> — a teaching rooted not in politics, but in Scripture and centuries of Christian ethics.
+          Three American Cardinals — Tobin of Newark, McElroy of Washington, and Cupich of Chicago — stood with him, appearing together publicly to reaffirm the Pope's moral authority. Cardinal McElroy went further, stating that Trump's war with Iran fails to meet the Church's ancient standard of a <strong>just war</strong> — a teaching rooted not in politics, but in Scripture and centuries of Christian ethics.<a href="https://time.com/article/2026/04/13/pope-leo-trump-attack-catholics/" target="_blank" rel="noopener" class="src">TIME</a>
         </p>
         <p>
-          Meanwhile, Vice President <strong>JD Vance</strong> — who publicly converted to Catholicism in 2019 — told the Vatican to <em>"stick to matters of morality"</em> and let the President handle war. Many pastors and theologians noted the painful irony: a Catholic VP telling the Pope that war is none of the Church's business, while the President posts himself as Jesus.
+          Meanwhile, Vice President <strong>JD Vance</strong> — who publicly converted to Catholicism in 2019 — told the Vatican to <em>"stick to matters of morality"</em> and let the President handle war. Many pastors and theologians noted the painful irony: a Catholic VP telling the Pope that war is none of the Church's business, while the President posts himself as Jesus.<a href="https://time.com/article/2026/04/14/catholic-vance-breaks-silence-on-deleted-trump-jesus-image-amid-outcry/" target="_blank" rel="noopener" class="src">TIME</a>
         </p>
 
         <div class="scripture-inline">
@@ -254,8 +258,8 @@
           <div class="timeline-item"><div class="timeline-date">Apr 6</div><div class="timeline-content"><h4>Easter Blessing</h4><p>On Resurrection Sunday, Pope Leo urges the world's leaders to "choose peace." The crowd in St. Peter's Square responds with applause.</p></div></div>
           <div class="timeline-item"><div class="timeline-date">Apr 9</div><div class="timeline-content"><h4>Trump Attacks Christian Voices</h4><p>Trump calls Carlson, Kelly, Owens and Jones "LOSERS" on Truth Social for opposing the Iran war. Greene writes that Trump "has gone mad."</p></div></div>
           <div class="timeline-item"><div class="timeline-date">Apr 10</div><div class="timeline-content"><h4>Pope Condemns Trump's Iran Threat</h4><p>Leo calls Trump's threat to destroy "a whole civilization" truly unacceptable — an echo of Amos, Isaiah, and every prophet who told kings that God is not mocked.</p></div></div>
-          <div class="timeline-item"><div class="timeline-date">Apr 13</div><div class="timeline-content"><h4>Orthodox Easter: The Jesus Post</h4><p>On the holiest day of the Eastern Church calendar, Trump posts the AI image of himself as Christ, then attacks the Pope. The Body of Christ responds.</p></div></div>
-          <div class="timeline-item"><div class="timeline-date">Apr 14</div><div class="timeline-content"><h4>No Repentance.</h4><p>Trump refuses to apologize. Vance tells the Pope to stay in his lane. Cardinals stand firm. The Pope, 30,000 feet in the air, says he will not be silent.</p></div></div>
+          <div class="timeline-item"><div class="timeline-date">Apr 13</div><div class="timeline-content"><h4>Orthodox Easter: The Jesus Post</h4><p>On the holiest day of the Eastern Church calendar, Trump posts the AI image of himself as Christ, then attacks the Pope. The Body of Christ responds.<a href="https://www.aljazeera.com/news/2026/4/13/trump-draws-backlash-over-posting-image-depicting-him-as-jesus-like-saviour" target="_blank" rel="noopener" class="src">Al Jazeera</a></p></div></div>
+          <div class="timeline-item"><div class="timeline-date">Apr 14</div><div class="timeline-content"><h4>No Repentance.</h4><p>Trump refuses to apologize. Vance tells the Pope to stay in his lane. Cardinals stand firm. The Pope, 30,000 feet in the air, says he will not be silent.<a href="https://www.euronews.com/2026/04/14/trump-refuses-to-apologise-after-clash-with-pope-leo-xiv-over-iran-war" target="_blank" rel="noopener" class="src">Euronews</a></p></div></div>
         </div>
       </section>
     </article>
@@ -444,14 +448,14 @@
         <div class="voice-photo" id="photo-meloni"><div class="loading">Loading…</div></div>
         <div class="voice-name">Giorgia Meloni</div>
         <div class="voice-title">Prime Minister of Italy · Conservative Catholic</div>
-        <p class="voice-quote">"It is right and normal for the Pope to call for peace and to condemn all forms of war." Called Trump's attacks "unacceptable" — then Trump retaliated, saying he was "shocked" by her and that he "was wrong" about her courage.</p>
+        <p class="voice-quote">"It is right and normal for the Pope to call for peace and to condemn all forms of war." Called Trump's attacks "unacceptable"<a href="https://www.euronews.com/2026/04/14/trump-refuses-to-apologise-after-clash-with-pope-leo-xiv-over-iran-war" target="_blank" rel="noopener" class="src">Euronews</a> — then Trump retaliated, saying he was "shocked" by her and that he "was wrong" about her courage.<a href="https://eu.detroitnews.com/story/news/politics/2026/04/14/trump-turns-on-georgia-meloni-says-he-is-shocked-by-italys-leader/89608228007/" target="_blank" rel="noopener" class="src">Detroit News</a></p>
       </div>
       <div class="voice-card">
         <span class="voice-badge badge-political">Ally</span>
         <div class="voice-photo" id="photo-starmer"><div class="loading">Loading…</div></div>
         <div class="voice-name">Keir Starmer</div>
         <div class="voice-title">Prime Minister of the United Kingdom</div>
-        <p class="voice-quote">"They are not words I would use — ever use — because I come at this with our British values and principles." Rejected Trump's rhetoric threatening to destroy Iran as contrary to British values.</p>
+        <p class="voice-quote">"They are not words I would use — ever use — because I come at this with our British values and principles." Rejected Trump's rhetoric threatening to destroy Iran as contrary to British values.<a href="https://www.bloomberg.com/news/articles/2026-04-09/starmer-says-trump-s-iran-rhetoric-is-contrary-to-british-values" target="_blank" rel="noopener" class="src">Bloomberg</a></p>
       </div>
       <div class="voice-card">
         <span class="voice-badge badge-conservative">Conservative</span>
@@ -481,6 +485,16 @@
 </footer>
 
 <script>
+// DYNAMIC DATE — displays today's date in the user's local timezone
+(function() {
+  const el = document.getElementById('site-date');
+  if (!el) return;
+  const now = new Date();
+  el.textContent = now.toLocaleDateString(undefined, {
+    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+  });
+})();
+
 // EMAIL SIGNUP — works with Netlify Forms out of the box
 function handleSignup(e) {
   e.preventDefault();
