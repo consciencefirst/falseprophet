@@ -406,7 +406,7 @@
       <div class="voice-card">
         <div class="voice-strip badge-conservative">Republican</div>
       <div class="voice-card-body">
-        <div class="voice-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Warren_Davidson_118th_Congress_(cropped).jpg/400px-Warren_Davidson_118th_Congress_(cropped).jpg" alt="Warren Davidson" onerror="this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>WD</div>'" /></div>
+        <div class="voice-photo" id="photo-davidson"><div class="loading">Loading…</div></div>
         <div class="voice-name">Rep. Warren Davidson</div>
         <div class="voice-title">U.S. Representative (R-OH)</div>
         <p class="voice-quote">"While there may be a method to the madness, this Truth Social post can only be described as madness. Very troubling." <a href="https://time.com/article/2026/04/14/catholic-vance-breaks-silence-on-deleted-trump-jesus-image-amid-outcry/" target="_blank" rel="noopener" class="src">TIME</a></p>
@@ -415,7 +415,7 @@
       <div class="voice-card">
         <div class="voice-strip badge-conservative">Conservative</div>
       <div class="voice-card-body">
-        <div class="voice-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Milo_Yiannopoulos_2016.jpg/400px-Milo_Yiannopoulos_2016.jpg" alt="Milo Yiannopoulos" onerror="this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>MY</div>'" /></div>
+        <div class="voice-photo" id="photo-milo"><div class="loading">Loading…</div></div>
         <div class="voice-name">Milo Yiannopoulos</div>
         <div class="voice-title">Right-Wing Activist · Catholic</div>
         <p class="voice-quote">"Oh hell no. We tolerated this kind of meme against our better judgment because he promised to save America — and only when it was clear he didn't actually think he was the Messiah." <a href="https://dailycaller.com/2026/04/13/conservatives-blast-trump-over-jesus-photo-post/" target="_blank" rel="noopener" class="src">Daily Caller</a></p>
@@ -456,6 +456,7 @@
         <div class="voice-title">Former Chairman, Republican National Committee</div>
         <p class="voice-quote">Called Trump "unserious and incapable" — reacting to a pattern of Trump using sacred religious imagery for political theatre, including a prior AI image of himself dressed as the Pope. <a href="https://time.com/article/2026/04/14/catholic-vance-breaks-silence-on-deleted-trump-jesus-image-amid-outcry/" target="_blank" rel="noopener" class="src">TIME</a></p>
       </div>
+      </div>
       <div class="voice-card">
         <div class="voice-strip badge-conservative">Christian Influencer</div>
       <div class="voice-card-body">
@@ -465,7 +466,6 @@
         <p class="voice-quote">"Trump portraying himself as Jesus Christ, descending from the clouds, healing the sick, with people praying to him, is reprehensible." Added: "If only there was a qualified leader of the White House Faith Office, and not a heretic, so this wouldn't happen." <a href="https://churchleaders.com/news/2216190-blasphemy-president-trump-jesus-image-christians-respond.html" target="_blank" rel="noopener" class="src">Church Leaders</a></p>
       </div>
       </div>
-    </div>
     </div><!-- end grid-conservatives -->
 
     <p class="voices-category">The Church Speaks — All Traditions</p>
@@ -614,7 +614,6 @@
         <p class="voice-quote">"I am grateful to God for sending us Pope Leo XIV, who is willing to speak truth to power just when we need him the most. Pope Leo is calling for dialogue over diatribe, prayer over politics, and diplomacy above destruction." <a href="https://www.aljazeera.com/news/2026/4/13/trump-draws-backlash-over-posting-image-depicting-him-as-jesus-like-saviour" target="_blank" rel="noopener" class="src">Al Jazeera</a></p>
       </div>
       </div>
-    </div>
     </div><!-- end grid-church -->
 
     <p class="voices-category">Interfaith Voices</p>
@@ -646,7 +645,6 @@
         <p class="voice-quote">We have not yet found named Jewish religious leaders commenting specifically on the Jesus image. We will not publish unverified attributions. Hundreds of rabbis have signed broader letters condemning the Trump administration's religious nationalism — we will link specific responses here as they are published. <em>This is what accountability looks like.</em></p>
       </div>
       </div>
-    </div>
     </div><!-- end grid-interfaith -->
 
     <p class="voices-category">Political Allies Breaking Ranks</p>
@@ -731,6 +729,8 @@ const people = [
   { id: 'photo-tucker',   title: 'Tucker_Carlson',               initials: 'TC'  },
   { id: 'photo-candace',  title: 'Candace_Owens',                initials: 'CO'  },
   { id: 'photo-riley',    title: 'Riley_Gaines',                 initials: 'RG'  },
+  { id: 'photo-davidson', title: 'Warren_Davidson_(politician)',  initials: 'WD'  },
+  { id: 'photo-milo',     title: 'Milo_Yiannopoulos',            initials: 'MY'  },
   { id: 'photo-pope',     title: 'Pope_Leo_XIV',                 initials: '✝'   },
   { id: 'photo-cupich',   title: 'Blase_Cupich',                 initials: 'BC'  },
   { id: 'photo-meloni',   title: 'Giorgia_Meloni',               initials: 'GM'  },
