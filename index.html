@@ -5,21 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FalseProphet.org — Bearing Witness for the Church</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
   <style>
-    :root { --crimson:#8B0000;--gold:#C9A84C;--gold-light:#e8c96f;--parchment:#f4ede0;--ink:#1a1208;--smoke:#5a4e3a; }
+    :root { --crimson:#8B0000;--gold:#C9A84C;--gold-light:#e8c96f;--parchment:#f4ede0;--ink:#1a1208;--smoke:#5a4e3a;--patriot-red:#c1272d;--patriot-blue:#2d68b8; }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
     body{background-color:var(--ink);color:var(--parchment);font-family:'Libre Baskerville',Georgia,serif;overflow-x:hidden;}
     body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.4;}
-    header{position:relative;text-align:center;padding:4rem 2rem 3rem;border-bottom:2px solid var(--gold);background:radial-gradient(ellipse at top,#2a1a08 0%,var(--ink) 70%);overflow:hidden;}
-    header::after{content:'✝';position:absolute;top:-40px;left:50%;transform:translateX(-50%);font-size:160px;color:var(--crimson);opacity:.08;pointer-events:none;}
-    .eyebrow{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
-    .site-title{font-family:'Cinzel',serif;font-size:clamp(2.8rem,8vw,6rem);font-weight:900;color:var(--parchment);letter-spacing:.04em;line-height:1;text-shadow:0 0 60px rgba(139,0,0,.5);}
-    .site-title span{color:var(--crimson);}
-    .site-sub{margin-top:1rem;font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,2.5vw,1.35rem);color:var(--gold-light);opacity:.85;}
-    .date-bar{margin-top:2rem;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke);}
-    nav{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;padding:1rem 2rem;border-bottom:1px solid #3a2e1c;font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.15em;}
+    /* ── HERO ──────────────────────────────────────────────────── */
+    .hero{position:relative;min-height:520px;overflow:hidden;border-bottom:2px solid var(--gold);background:#0a0604;}
+    .hero-sky{position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 70% 30%,rgba(255,107,26,.35) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 30% 60%,rgba(193,39,45,.5) 0%,transparent 55%),radial-gradient(ellipse 90% 60% at 50% 100%,rgba(255,80,30,.25) 0%,transparent 70%),radial-gradient(ellipse 70% 50% at 20% 20%,rgba(120,30,10,.6) 0%,transparent 60%),linear-gradient(180deg,#0a0604 0%,#2a0f08 30%,#4a1a0c 60%,#1a0d05 100%);}
+    .hero-sky::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='clouds'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.025' numOctaves='4' seed='3' /%3E%3CfeColorMatrix values='0 0 0 0 0.95 0 0 0 0 0.45 0 0 0 0 0.15 0 0 0 1.6 -0.6'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23clouds)' /%3E%3C/svg%3E");opacity:.55;mix-blend-mode:screen;}
+    .hero-sky::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");pointer-events:none;opacity:.5;mix-blend-mode:overlay;}
+    .hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 30%,rgba(0,0,0,.6) 100%);pointer-events:none;}
+    .hero-inner{position:relative;max-width:1200px;margin:0 auto;padding:3.5rem 2rem 3rem;display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:center;min-height:520px;}
+    @media(max-width:820px){.hero-inner{grid-template-columns:1fr;gap:2rem;padding:2.5rem 1.5rem;}}
+    .hero-mark{position:relative;z-index:2;}
+    .hero-eyebrow{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold-light);margin-bottom:1.4rem;opacity:.9;text-shadow:0 2px 8px rgba(0,0,0,.6);}
+    .hero-eyebrow::before,.hero-eyebrow::after{content:'✠';color:var(--gold);margin:0 .8rem;opacity:.7;}
+    .wordmark{font-family:'Big Shoulders Display','Impact',sans-serif;font-weight:900;font-size:clamp(3rem,9vw,6.5rem);line-height:.92;letter-spacing:-.015em;text-transform:uppercase;text-shadow:0 2px 0 rgba(0,0,0,.4),0 4px 30px rgba(0,0,0,.7),0 0 60px rgba(255,107,26,.3);}
+    .wordmark .false{color:var(--parchment);}
+    .wordmark .prophet{color:var(--gold-light);}
+    .wordmark .org{color:var(--parchment);font-size:.58em;letter-spacing:.01em;}
+    .wordmark-rule{width:100%;max-width:420px;height:3px;background:linear-gradient(90deg,var(--patriot-red) 0%,var(--patriot-red) 33%,var(--parchment) 33%,var(--parchment) 66%,var(--patriot-blue) 66%,var(--patriot-blue) 100%);margin:1.2rem 0 1.4rem;box-shadow:0 2px 12px rgba(0,0,0,.4);}
+    .hero-tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,2vw,1.25rem);color:var(--gold-light);max-width:28rem;line-height:1.5;text-shadow:0 2px 8px rgba(0,0,0,.7);}
+    .hero-meta{display:flex;align-items:center;gap:1.2rem;margin-top:1.8rem;font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);opacity:.85;}
+    .hero-meta span{color:var(--smoke);}
+    .hero-image{position:relative;z-index:1;aspect-ratio:4/3;overflow:hidden;border:2px solid rgba(201,168,76,.4);box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 80px rgba(255,107,26,.2),inset 0 0 40px rgba(0,0,0,.4);filter:contrast(1.05) saturate(1.05);}
+    .hero-image img{width:100%;height:100%;object-fit:cover;display:block;}
+    .hero-image-tag{position:absolute;top:-12px;left:-12px;background:var(--patriot-red);color:var(--parchment);font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;padding:.4rem .8rem;font-weight:900;box-shadow:0 4px 12px rgba(0,0,0,.5);transform:rotate(-2deg);z-index:3;}
+    .hero-image-caption{position:absolute;bottom:0;left:0;right:0;padding:1rem .9rem .8rem;background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.85) 60%);font-family:'Playfair Display',serif;font-style:italic;font-size:.72rem;color:var(--parchment);line-height:1.5;}
+    .hero-attribution{position:relative;z-index:2;text-align:center;padding:.9rem 2rem;background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.5) 100%);font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);border-top:1px solid rgba(201,168,76,.2);}
+    .hero-attribution span{color:var(--parchment);font-weight:700;}
+    nav{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;padding:1.3rem 2rem;border-bottom:1px solid #3a2e1c;font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.15em;}
     nav a{color:var(--gold);text-decoration:none;transition:color .2s;}
     nav a:hover{color:var(--parchment);}
     .breaking{background:var(--crimson);padding:.6rem 1.5rem;display:flex;align-items:center;gap:1rem;}
@@ -27,62 +45,62 @@
     .breaking-clip{flex:1;overflow:hidden;}
     .breaking-ticker{font-size:.8rem;color:#ffdada;animation:ticker 60s linear infinite;white-space:nowrap;display:block;}
     @keyframes ticker{0%{transform:translateX(100%);}100%{transform:translateX(-100%);}}
-    main{max-width:1100px;margin:0 auto;padding:3rem 1.5rem;}
-    .grid{display:grid;grid-template-columns:2fr 1fr;gap:3rem;}
+    main{max-width:1100px;margin:0 auto;padding:4rem 1.5rem;}
+    .grid{display:grid;grid-template-columns:2fr 1fr;gap:4rem;}
     @media(max-width:720px){.grid{grid-template-columns:1fr;}}
-    .lead-label{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--crimson);margin-bottom:.7rem;display:flex;align-items:center;gap:.5rem;}
+    .lead-label{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--crimson);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;}
     .lead-label::before{content:'';flex:0 0 30px;height:1px;background:var(--crimson);opacity:.4;}
-    .lead-headline{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;color:var(--parchment);margin-bottom:1.2rem;}
+    .lead-headline{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.18;color:var(--parchment);margin-bottom:1.6rem;}
     .lead-headline em{color:var(--gold-light);font-style:italic;}
-    .lead-dek{font-size:1.1rem;line-height:1.7;color:#c9b99a;margin-bottom:1.5rem;border-left:3px solid var(--crimson);padding-left:1rem;}
-    .lead-body{font-size:.95rem;line-height:1.85;color:#b5a488;}
-    .lead-body p{margin-bottom:1rem;}
+    .lead-dek{font-size:1.1rem;line-height:1.75;color:#c9b99a;margin-bottom:2rem;border-left:3px solid var(--crimson);padding-left:1rem;}
+    .lead-body{font-size:.95rem;line-height:1.9;color:#b5a488;}
+    .lead-body p{margin-bottom:1.5rem;}
     .lead-body strong{color:var(--parchment);font-weight:700;}
-    .pull-quote{margin:2rem 0;padding:1.5rem 1.5rem 1.5rem 2rem;border-left:4px solid var(--gold);background:rgba(201,168,76,.05);}
+    .pull-quote{margin:2.5rem 0;padding:1.8rem 1.8rem 1.8rem 2.2rem;border-left:4px solid var(--gold);background:rgba(201,168,76,.05);}
     .pull-quote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.25rem;color:var(--gold-light);line-height:1.5;margin:0 0 .5rem;}
     .pull-quote cite{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--smoke);}
 
     /* ARTICLE IMAGE */
     .article-img-wrap{margin-bottom:.75rem;}
     .article-img-wrap img{width:100%;display:block;border:1px solid #3a2e1c;filter:sepia(15%) contrast(1.05);}
-    .img-caption{font-size:.75rem;color:var(--smoke);font-style:italic;margin-bottom:1.5rem;line-height:1.5;}
+    .img-caption{font-size:.75rem;color:var(--smoke);font-style:italic;margin-bottom:2rem;margin-top:.5rem;line-height:1.6;}
 
-    .timeline{margin:2rem 0;}
-    .timeline-item{display:grid;grid-template-columns:80px 1fr;gap:1rem;margin-bottom:1.5rem;}
+    .timeline{margin:2.8rem 0;}
+    .timeline-item{display:grid;grid-template-columns:80px 1fr;gap:1.2rem;margin-bottom:1.8rem;}
     .timeline-date{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-align:right;border-right:2px solid var(--crimson);padding-right:.8rem;padding-top:.15rem;}
     .timeline-content h4{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--parchment);margin-bottom:.2rem;}
     .timeline-content p{font-size:.82rem;color:var(--smoke);line-height:1.5;}
 
     /* SCRIPTURE BLOCKS */
-    .scripture{text-align:center;padding:3rem 2rem;border-top:1px solid #3a2e1c;border-bottom:1px solid #3a2e1c;margin:3rem 0;}
+    .scripture{text-align:center;padding:3.5rem 2rem;border-top:1px solid #3a2e1c;border-bottom:1px solid #3a2e1c;margin:3.5rem 0;}
     .scripture blockquote{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,2vw,1.3rem);color:var(--gold-light);line-height:1.8;max-width:600px;margin:0 auto 1rem;}
     .scripture cite{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--smoke);}
-    .scripture-inline{background:rgba(201,168,76,.05);border:1px solid rgba(201,168,76,.2);padding:1rem 1.2rem;margin:1.5rem 0;}
+    .scripture-inline{background:rgba(201,168,76,.05);border:1px solid rgba(201,168,76,.2);padding:1.3rem 1.5rem;margin:2rem 0;}
     .scripture-inline p{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold-light);font-size:.9rem;line-height:1.7;margin:0 0 .35rem;}
     .scripture-inline span{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--smoke);}
 
-    .sidebar{border-left:1px solid #3a2e1c;padding-left:2rem;}
-    .sidebar-section{margin-bottom:2.5rem;}
+    .sidebar{border-left:1px solid #3a2e1c;padding-left:2.5rem;}
+    .sidebar-section{margin-bottom:3rem;}
     .sidebar-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;padding-bottom:.5rem;border-bottom:1px solid #3a2e1c;}
-    .sidebar-item{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid #2a2010;}
+    .sidebar-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid #2a2010;}
     .sidebar-item:last-child{border-bottom:none;}
     .sidebar-item h4{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--parchment);line-height:1.4;margin-bottom:.3rem;}
     .sidebar-item p{font-size:.8rem;color:var(--smoke);line-height:1.5;}
-    .context-box{background:rgba(139,0,0,.08);border:1px solid rgba(139,0,0,.3);padding:1.2rem 1.4rem;margin-bottom:2rem;}
+    .context-box{background:rgba(139,0,0,.08);border:1px solid rgba(139,0,0,.3);padding:1.5rem 1.6rem;margin-bottom:2.5rem;}
     .context-box h3{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--crimson);margin-bottom:.8rem;}
     .context-box ul{list-style:none;padding:0;}
     .context-box li{font-size:.82rem;color:#b5a488;padding:.3rem 0 .3rem 1.2rem;position:relative;line-height:1.5;}
     .context-box li::before{content:'†';position:absolute;left:0;color:var(--crimson);opacity:.6;}
 
     /* VOICES */
-    .voices-section{margin-top:4rem;padding-top:2.5rem;border-top:2px solid var(--gold);}
+    .voices-section{margin-top:5rem;padding-top:3rem;border-top:2px solid var(--gold);}
     .voices-section-title{font-family:'Cinzel',serif;font-size:clamp(1.1rem,3vw,1.7rem);font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--parchment);text-align:center;margin-bottom:.5rem;}
-    .voices-subtitle{text-align:center;font-family:'Playfair Display',serif;font-style:italic;color:var(--gold-light);font-size:1rem;margin-bottom:2.5rem;opacity:.8;}
-    .voices-category{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);text-align:center;margin:2.5rem 0 1.5rem;position:relative;}
+    .voices-subtitle{text-align:center;font-family:'Playfair Display',serif;font-style:italic;color:var(--gold-light);font-size:1rem;margin-bottom:3rem;opacity:.8;}
+    .voices-category{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);text-align:center;margin:3.5rem 0 2rem;position:relative;}
     .voices-category::before,.voices-category::after{content:'';position:absolute;top:50%;width:28%;height:1px;opacity:.35;}
     .voices-category::before{left:0;background:linear-gradient(to right,transparent,var(--gold));}
     .voices-category::after{right:0;background:linear-gradient(to left,transparent,var(--gold));}
-    .photo-grid{display:flex;flex-wrap:wrap;gap:1.5rem;margin:0 auto 1rem;justify-content:center;}
+    .photo-grid{display:flex;flex-wrap:wrap;gap:1.8rem;margin:0 auto 1.5rem;justify-content:center;}
     @media(max-width:600px){.photo-grid{gap:1rem;}}
     .grid-conservatives{max-width:912px;}
     .grid-church{max-width:1140px;}
@@ -91,20 +109,20 @@
     .voice-card{background:linear-gradient(160deg,#221a0a,#1a1208);border:1px solid #3a2e1c;padding:0;position:relative;transition:border-color .3s,transform .2s;overflow:hidden;flex:0 0 210px;width:210px;}
     @media(max-width:600px){.voice-card{flex:0 0 calc(50% - .5rem);width:calc(50% - .5rem);}}
     .voice-card:hover{border-color:var(--gold);transform:translateY(-3px);}
-    .voice-card-body{padding:1.2rem;}
+    .voice-card-body{padding:1.4rem 1.3rem 1.5rem;}
     .voice-strip{display:block;width:100%;text-align:center;font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;padding:.35rem .5rem;}
     .badge-conservative{background:#2a1200;color:#c9853a;}
     .badge-religious{background:#1e1600;color:var(--gold);}
     .badge-political{background:#0d151d;color:#7a9aaa;}
     .badge-interfaith{background:#001a1a;color:#6fcfcf;}
-    .voice-photo{width:100%;aspect-ratio:1;overflow:hidden;margin-bottom:.9rem;background:#1e1409;position:relative;}
+    .voice-photo{width:100%;aspect-ratio:1;overflow:hidden;margin-bottom:1.1rem;background:#1e1409;position:relative;}
     .voice-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:sepia(20%) contrast(1.05);transition:filter .3s;}
     .voice-card:hover .voice-photo img{filter:sepia(0%) contrast(1.1);}
     .voice-photo-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:2rem;font-weight:900;color:var(--gold);opacity:.4;background:linear-gradient(135deg,#2a1a08,#1a1208);}
     .voice-photo .loading{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--smoke);font-size:.6rem;letter-spacing:.2em;font-family:'Cinzel',serif;}
     .voice-name{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--parchment);line-height:1.3;margin-bottom:.2rem;}
-    .voice-title{font-size:.68rem;color:var(--smoke);letter-spacing:.06em;margin-bottom:.75rem;font-style:italic;}
-    .voice-quote{font-size:.8rem;line-height:1.55;color:#c9b99a;border-left:2px solid var(--crimson);padding-left:.6rem;font-style:italic;}
+    .voice-title{font-size:.68rem;color:var(--smoke);letter-spacing:.06em;margin-bottom:1rem;font-style:italic;line-height:1.5;}
+    .voice-quote{font-size:.8rem;line-height:1.65;color:#c9b99a;border-left:2px solid var(--crimson);padding-left:.85rem;font-style:italic;}
 
     /* EMAIL SIGNUP — top banner */
     .signup-section{padding:1.8rem 2rem;border-top:1px solid rgba(201,168,76,.2);border-bottom:2px solid rgba(201,168,76,.3);background:linear-gradient(160deg,#1e1508,#1a1208);text-align:center;position:relative;overflow:hidden;}
@@ -144,15 +162,15 @@
     .update-body em{color:#c9b99a;}
 
     /* ── SIDEBAR UPDATES ── */
-    .sidebar-updates-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--crimson);margin-bottom:.4rem;padding-bottom:.4rem;border-bottom:1px solid #3a2e1c;display:flex;align-items:center;gap:.5rem;}
+    .sidebar-updates-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--crimson);margin-bottom:.6rem;padding-bottom:.5rem;border-bottom:1px solid #3a2e1c;display:flex;align-items:center;gap:.5rem;}
     .sidebar-updates-title::before{content:'';flex:0 0 20px;height:1px;background:var(--crimson);opacity:.4;}
-    .sidebar-updates-sub{font-size:.7rem;color:var(--smoke);font-style:italic;margin-bottom:1rem;}
+    .sidebar-updates-sub{font-size:.7rem;color:var(--smoke);font-style:italic;margin-bottom:1.3rem;}
     .sidebar-feed{border-left:2px solid var(--crimson);margin-bottom:2rem;}
-    .sidebar-entry{padding:.7rem 0 .7rem 1rem;border-bottom:1px solid #2a2010;position:relative;}
+    .sidebar-entry{padding:1.1rem 0 1.1rem 1.1rem;border-bottom:1px solid #2a2010;position:relative;}
     .sidebar-entry:last-child{border-bottom:none;}
     .sidebar-entry::before{content:'';position:absolute;left:-5px;top:1rem;width:7px;height:7px;background:var(--crimson);border-radius:50%;}
-    .sidebar-entry .update-date{font-size:.58rem;letter-spacing:.18em;margin-bottom:.2rem;}
-    .sidebar-entry .update-hed{font-size:.82rem;margin-bottom:.3rem;line-height:1.25;}
+    .sidebar-entry .update-date{font-size:.58rem;letter-spacing:.18em;margin-bottom:.35rem;}
+    .sidebar-entry .update-hed{font-size:.82rem;margin-bottom:.5rem;line-height:1.3;}
     .sidebar-entry .update-body{font-size:.75rem;line-height:1.6;}
     a{color:var(--gold);}a:hover{color:var(--parchment);}
     a.src{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.1em;color:var(--smoke);border-bottom:1px solid #3a2e1c;text-decoration:none;vertical-align:super;margin-left:.2rem;white-space:nowrap;}
@@ -161,11 +179,37 @@
 </head>
 <body>
 
-<header>
-  <p class="eyebrow">Bearing Witness for the Church</p>
-  <h1 class="site-title">False<span>Prophet</span>.org</h1>
-  <p class="site-sub">Holding power accountable to the Gospel</p>
-  <p class="date-bar" id="site-date"></p>
+<header class="hero">
+  <div class="hero-sky"></div>
+  <div class="hero-vignette"></div>
+
+  <div class="hero-inner">
+
+    <div class="hero-mark">
+      <p class="hero-eyebrow">Bearing Witness for the Church</p>
+
+      <h1 class="wordmark">
+        <span class="false">False</span><span class="prophet">Prophet</span><span class="org">.org</span>
+      </h1>
+
+      <div class="wordmark-rule"></div>
+
+      <p class="hero-tagline">A Christian publication on the use and misuse of the name of Christ in our public life. Written with grief, not glee.</p>
+
+      <p class="hero-meta" id="site-date"></p>
+    </div>
+
+    <div class="hero-image">
+      <span class="hero-image-tag">The Image In Question</span>
+      <img src="https://www.christiancentury.org/sites/default/files/styles/article_page_normal/public/images/webRNS-Trump-Religion2-820x545.jpg?itok=EXzYHDVF" alt="The deleted Trump-as-Christ AI image" onerror="this.parentElement.style.display='none'" />
+      <p class="hero-image-caption">President Trump's deleted Truth Social post, April 13, 2026 — Orthodox Easter Sunday.</p>
+    </div>
+
+  </div>
+
+  <div class="hero-attribution">
+    Paid for by <span>Conscience First</span>
+  </div>
 </header>
 
 <nav>
@@ -309,7 +353,7 @@
           <div class="timeline-item"><div class="timeline-date">Apr 15</div><div class="timeline-content"><h4>A Second Jesus Image — This Time on Purpose</h4><p>Hours later, with full knowledge of the backlash, Trump posts a second image: Christ embracing him, captioned "God might be playing his Trump card!" He adds: "The Radical Left Lunatics might not like this, but I think it is quite nice!!!!" No accident. No excuse. A deliberate choice.<a href="https://www.thedailybeast.com/president-donald-trump-79-posts-deranged-new-jesus-picture-after-furious-backlash/" target="_blank" rel="noopener" class="src">Daily Beast</a></p></div></div>
           <div class="timeline-item"><div class="timeline-date">Apr 16</div><div class="timeline-content"><h4>Trump Cancels $11M Catholic Charities Contract for Migrant Children</h4><p>The administration ends a 60-year partnership with Catholic Charities Miami to shelter unaccompanied migrant children — ending the legacy of Operation Pedro Pan. Archbishop Wenski calls it "abrupt." The Pope has made care for migrants central to his ministry. <a href="https://www.spokesman.com/stories/2026/apr/15/amid-quarrel-with-pope-trump-strips-miami-charity-/" target="_blank" rel="noopener" class="src">Miami Herald / Spokesman-Review</a></p></div></div>
           <div class="timeline-item"><div class="timeline-date">Apr 16</div><div class="timeline-content"><h4>Hegseth Quotes Pulp Fiction as Pentagon Scripture</h4><p>At a Pentagon worship service, Hegseth recites almost word for word from the fake Bible quote in <em>Pulp Fiction</em> — Tarantino's violent rewrite of Ezekiel 25:17 — to bless the Iran war. He says worship should inform military decisions. The day also included discussions about the naval blockade of Iran. <a href="https://publicwitness.wordandway.org/p/hegseth-borrows-violent-prayer-from" target="_blank" rel="noopener" class="src">Public Witness</a></p></div></div>
-          <div class="timeline-item"><div class="timeline-date">Apr 17</div><div class="timeline-content"><h4>Cameroon Separatists Lay Down Arms for Leo</h4><p>Armed separatist forces in Cameroon announce a 3-day pause in hostilities to allow Pope Leo XIV safe passage to a peace meeting. Leo tells the government the "whims of the rich and powerful" threaten peace. <a href="https://www.pbs.org/newshour/world/pope-leo-promotes-peace-chastises-tyrants-ravaging-the-world-during-cameroon-visit" target="_blank" rel="noopener" class="src">PBS</a></p></div></div>
+          <div class="timeline-item"><div class="timeline-date">Apr 17</div><div class="timeline-content"><h4>Cameroon Separatists Lay Down Arms for Leo — Then He Preaches Against "Those Who Manipulate Religion"</h4><p>Armed separatists pause fighting; Leo travels to Bamenda and delivers his most pointed rebuke of religiously-justified war: <em>"Woe to those who manipulate religion and the very name of God for their own military, economic and political gain."</em> <a href="https://www.pbs.org/newshour/world/pope-leo-promotes-peace-chastises-tyrants-ravaging-the-world-during-cameroon-visit" target="_blank" rel="noopener" class="src">PBS</a></p></div></div>
           <div class="timeline-item"><div class="timeline-date">Apr 16</div><div class="timeline-content"><h4>Iran's First VP Thanks Pope Leo</h4><p>Mohammad Reza Aref, Iran's First Vice President, publicly thanks Pope Leo for "condemning this brutality" — a Muslim leader from the bombed nation expressing gratitude to the Pope that a Christian president has attacked. <a href="https://www.cbsnews.com/live-updates/trump-iran-war-strait-hormuz-ceasefire-pakistan-peace-talks-israel-lebanon/" target="_blank" rel="noopener" class="src">CBS News</a></p></div></div>
         </div>
       </section>
@@ -321,6 +365,12 @@
         <p class="sidebar-updates-sub">Most recent first — updated daily</p>
         <div class="sidebar-feed">
 <div class="update-entry sidebar-entry">
+      <p class="update-date">April 17, 2026</p>
+      <h3 class="update-hed">Pope Leo in Bamenda: "Woe to Those Who Manipulate Religion for Military Gain"</h3>
+      <p class="update-body">At an interfaith peace meeting in Bamenda, Cameroon — in a city that has drunk, in the local archbishop's words, "the blood of many of our children" — Pope Leo XIV delivered his most direct rebuke yet of those who weaponize faith: <em>"Blessed are the peacemakers! But woe to those who manipulate religion and the very name of God for their own military, economic and political gain, dragging that which is sacred into darkness and filth."</em> He did not name Trump or Hegseth. He did not need to. <a href="https://www.vaticannews.va/en/pope/news/2026-04/pope-bamenda-woe-to-those-who-manipulate-religion-military.html" target="_blank" rel="noopener" class="src">Vatican News</a> <a href="https://abc7ny.com/post/pope-blasts-tyrants-ravaging-planet-during-visit-cameroon/18899452/" target="_blank" rel="noopener" class="src">ABC7 / AP</a></p>
+    </div>
+
+    <div class="update-entry sidebar-entry">
       <p class="update-date">April 17, 2026</p>
       <h3 class="update-hed">Armed Cameroon Separatists Lay Down Weapons for Pope Leo's Peace Visit</h3>
       <p class="update-body">As Pope Leo arrived in Cameroon, armed separatist forces announced a three-day pause in hostilities to allow him safe passage to a peace meeting in Bamenda — the epicenter of a conflict that has killed more than 6,000 people. Leo preached against <em>"a handful of tyrants ravaging the Earth with war and exploitation"</em> and presided over an interfaith peace meeting with a traditional chief, a Presbyterian moderator, an imam, and a Catholic nun. Armed combatants stood down for a pope a U.S. president called "weak." <a href="https://www.pbs.org/newshour/world/pope-leo-promotes-peace-chastises-tyrants-ravaging-the-world-during-cameroon-visit" target="_blank" rel="noopener" class="src">PBS</a></p>
@@ -799,14 +849,16 @@
 </footer>
 
 <script>
-// DYNAMIC DATE — displays today's date in the user's local timezone
+// DYNAMIC DATE — displays today's date in the hero with styled separators
 (function() {
   const el = document.getElementById('site-date');
   if (!el) return;
   const now = new Date();
-  el.textContent = now.toLocaleDateString(undefined, {
-    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
-  });
+  const weekday = now.toLocaleDateString(undefined, { weekday: 'long' });
+  const day = now.getDate();
+  const month = now.toLocaleDateString(undefined, { month: 'long' });
+  const year = now.getFullYear();
+  el.innerHTML = `${weekday}<span>·</span>${day} ${month}<span>·</span>${year}`;
 })();
 
 // EMAIL SIGNUP — works with Netlify Forms out of the box
