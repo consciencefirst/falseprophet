@@ -15,7 +15,7 @@
     /* ── HERO ──────────────────────────────────────────────────── */
     .hero{position:relative;min-height:420px;overflow:hidden;border-bottom:2px solid var(--gold);background:#0a0604;}
     .hero-sky{position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 70% 30%,rgba(255,107,26,.35) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 30% 60%,rgba(193,39,45,.5) 0%,transparent 55%),radial-gradient(ellipse 90% 60% at 50% 100%,rgba(255,80,30,.25) 0%,transparent 70%),radial-gradient(ellipse 70% 50% at 20% 20%,rgba(120,30,10,.6) 0%,transparent 60%),linear-gradient(180deg,#0a0604 0%,#2a0f08 30%,#4a1a0c 60%,#1a0d05 100%);}
-    .hero-sky::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='clouds'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.025' numOctaves='4' seed='3' /%3E%3CfeColorMatrix values='0 0 0 0 0.95 0 0 0 0 0.45 0 0 0 0 0.15 0 0 0 1.6 -0.6'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23clouds)' /%3E%3C/svg%3E");opacity:.55;mix-blend-mode:screen;}
+    .hero-sky::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 2400 1200' preserveAspectRatio='xMidYMid slice' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='clouds' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.008 0.018' numOctaves='4' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.95 0 0 0 0 0.45 0 0 0 0 0.15 0 0 0 1.6 -0.6'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23clouds)' /%3E%3C/svg%3E");background-size:cover;background-position:center;background-repeat:no-repeat;opacity:.55;mix-blend-mode:screen;}
     .hero-sky::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");pointer-events:none;opacity:.5;mix-blend-mode:overlay;}
     .hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 30%,rgba(0,0,0,.6) 100%);pointer-events:none;}
     .hero-inner{position:relative;max-width:900px;margin:0 auto;padding:4rem 2rem 3.5rem;display:flex;flex-direction:column;align-items:center;text-align:center;min-height:420px;justify-content:center;}
@@ -237,7 +237,7 @@
 <!-- EMAIL SIGNUP BANNER -->
 <section class="signup-section" id="signup">
   <h2 class="signup-title">Stay Informed. Stay Faithful.</h2>
-  <p class="signup-sub">Receive updates when we publish new reporting, analysis, and calls to action.</p>
+  <p class="signup-sub">Receive updates when we publish new reporting and analysis.</p>
   <p class="signup-verse">"Have no fellowship with the unfruitful works of darkness, but rather expose them." — Ephesians 5:11</p>
   <form class="signup-form" name="updates" netlify netlify-honeypot="bot-field" onsubmit="handleSignup(event)">
     <input type="hidden" name="form-name" value="updates" />
@@ -247,7 +247,7 @@
     <button type="submit">Bear Witness</button>
   </form>
   <p class="signup-success" id="signup-success">✝ &nbsp; Thank you. You will hear from us.</p>
-  <p class="signup-note">No spam. No politics. Only the truth, as best we can discern it. Unsubscribe at any time.</p>
+  <p class="signup-note">No spam. Faith-based commentary only. Unsubscribe at any time.</p>
 </section>
 
 
@@ -358,6 +358,12 @@
         <p class="sidebar-updates-sub">Most recent first — updated daily</p>
         <div class="sidebar-feed">
 <div class="update-entry sidebar-entry">
+      <p class="update-date">April 17, 2026</p>
+      <h3 class="update-hed">Trump Turns on Meloni for Backing the Pope: "She's Unacceptable"</h3>
+      <p class="update-body">Italian Prime Minister Giorgia Meloni — long one of Trump's closest international allies — called his attacks on Pope Leo "unacceptable" earlier in the week. Trump's response, given to Italian newspaper Corriere della Sera: <em>"I'm shocked at her. I thought she had courage, but I was wrong."</em> Asked specifically about her calling his remarks unacceptable, he added: <em>"She's unacceptable."</em> Trump is now attacking the head of the Catholic Church, the U.S. bishops by extension, and the Italian Prime Minister — all in one week, for the same offense: refusing to bless his war. <a href="https://www.nbcnews.com/world/africa/pope-leo-trump-feud-iran-war-algeria-africa-trip-st-augustine-rcna331680" target="_blank" rel="noopener" class="src">NBC News</a></p>
+    </div>
+
+    <div class="update-entry sidebar-entry">
       <p class="update-date">April 17, 2026</p>
       <h3 class="update-hed">Pope Leo in Bamenda: "Woe to Those Who Manipulate Religion for Military Gain"</h3>
       <p class="update-body">At an interfaith peace meeting in Bamenda, Cameroon — in a city that has drunk, in the local archbishop's words, "the blood of many of our children" — Pope Leo XIV delivered his most direct rebuke yet of those who weaponize faith: <em>"Blessed are the peacemakers! But woe to those who manipulate religion and the very name of God for their own military, economic and political gain, dragging that which is sacred into darkness and filth."</em> He did not name Trump or Hegseth. He did not need to. <a href="https://www.vaticannews.va/en/pope/news/2026-04/pope-bamenda-woe-to-those-who-manipulate-religion-military.html" target="_blank" rel="noopener" class="src">Vatican News</a> <a href="https://abc7ny.com/post/pope-blasts-tyrants-ravaging-planet-during-visit-cameroon/18899452/" target="_blank" rel="noopener" class="src">ABC7 / AP</a></p>
@@ -837,7 +843,7 @@
 
 <footer>
   <p class="footer-logo">FalseProphet.org</p>
-  <p>Independent &nbsp;·&nbsp; Nonpartisan &nbsp;·&nbsp; Bearing Witness for the Church</p>
+  <p>Independent Christian Witness &nbsp;·&nbsp; Bearing Witness for the Church</p>
   <p style="margin-top:.5rem;">All factual claims sourced from verified published reporting. &copy; 2026</p>
   <p class="footer-paidfor">Paid for by <span>Conscience First</span></p>
 </footer>
