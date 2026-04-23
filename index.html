@@ -217,10 +217,10 @@
   <span class="breaking-label">Breaking</span>
   <div class="breaking-clip">
   <span class="breaking-ticker">
-    April 23: Pope Leo closes his Africa tour in Malabo — "one of the newsiest papal trips in history" &nbsp;✝&nbsp;
-    April 23: Leo's press conference on the flight to Rome — his first since the feud with Trump escalated &nbsp;✝&nbsp;
     April 22: CBS — Bucks County Catholics who flipped for Trump are having second thoughts &nbsp;✝&nbsp;
     April 22: Philadelphia Archbishop Perez: Leo's call for peace "powerfully reflects the truth of the gospel" &nbsp;✝&nbsp;
+    April 23: Pope Leo closes his Africa tour in Malabo — "one of the newsiest papal trips in history" &nbsp;✝&nbsp;
+    April 23: Leo's press conference on the flight to Rome — his first since the feud with Trump escalated &nbsp;✝&nbsp;
     April 22: Trump extends Iran ceasefire at the 11th hour — after saying hours earlier he "expected to be bombing" &nbsp;✝&nbsp;
     April 22: Pope Leo in Equatorial Guinea — "serve the common good rather than private interests" &nbsp;✝&nbsp;
     April 22: Pope Leo at Bata prison: "You are not alone. The Church will stand by your side." &nbsp;✝&nbsp;
@@ -388,15 +388,15 @@
         <p class="sidebar-updates-sub">Most recent first — updated daily</p>
         <div class="sidebar-feed">
 <div class="update-entry sidebar-entry">
-      <p class="update-date">April 23, 2026</p>
-      <h3 class="update-hed">Pope Leo Closes His Africa Tour in Malabo — "One of the Newsiest Papal Trips in History"</h3>
-      <p class="update-body">A pre-dawn rainstorm drenched the Malabo stadium and 30,000 faithful gathered for Pope Leo's farewell Mass, closing an 11-day, four-nation, 18,000-kilometer, eight-Mass journey that the Associated Press called <em>"one of the newsiest papal trips in the history of popes on the road"</em> — made so by Trump's extraordinary attacks. In his homily, Leo referenced the sudden death last Friday of Fr. Fortunato Nsue Esono Ayíambeng, the 39-year-old vicar general of Malabo who had helped organize the trip: <em>"May full light be shed on the circumstances of his death,"</em> Leo said — a notable papal statement given local rumors of foul play. During the trip, Leo broke from the choreographed program at a psychiatric hospital to greet patients one by one. He prayed the Rosary at the Muxima slave-trade shrine — noting his own ancestors include "both enslaved persons and slave owners." He called out "tyrants" in Bamenda, visited inmates in Bata, and, in front of Africa's longest-serving ruler, called leaders to "serve the common good rather than private interests." Leo now flies to Rome and will hold a press conference aboard the plane — his first since the feud with Trump began in earnest. <a href="https://apnews.com/article/pope-leo-africa-equatorial-guinea-final-mass" target="_blank" rel="noopener" class="src">AP</a></p>
-    </div>
-
-    <div class="update-entry sidebar-entry">
       <p class="update-date">April 22, 2026</p>
       <h3 class="update-hed">Bucks County: Catholic Voters Who Flipped for Trump Are Having Second Thoughts</h3>
       <p class="update-body">CBS News went to Bucks County, Pennsylvania — a suburban Philadelphia county where Catholic voters helped deliver Trump's 2024 victory, the first time a Republican carried the county in <strong>36 years</strong>. More than a third of Bucks residents are Catholic. What reporters found: Philadelphia Archbishop Nelson Perez had publicly defended the Pope, saying his call for peace <em>"powerfully reflects the truth of the gospel."</em> At Mass at St. Mark's in Bristol borough, William Watkins — a Democrat who has voted for moderate Republican Rep. Brian Fitzpatrick in past elections — told CBS he would vote against Fitzpatrick this fall if the U.S. is still at war with Iran on Election Day: <em>"I would do it as a protest."</em> An earlier CBS poll found 46% of Catholics approve of Trump's job performance and 44% approve of military action against Iran — numbers that predate the feud and the Reuters/Ipsos 36%/60% split. What was anecdote a week ago is becoming a pattern: the Pope's moral witness is reshaping the Catholic vote in places Republicans can't afford to lose. <a href="https://www.cbsnews.com/news/pope-trump-pennsylvania-catholics-bucks-county/" target="_blank" rel="noopener" class="src">CBS News</a></p>
+    </div>
+
+    <div class="update-entry sidebar-entry">
+      <p class="update-date">April 23, 2026</p>
+      <h3 class="update-hed">Pope Leo Closes His Africa Tour in Malabo — "One of the Newsiest Papal Trips in History"</h3>
+      <p class="update-body">A pre-dawn rainstorm drenched the Malabo stadium and 30,000 faithful gathered for Pope Leo's farewell Mass, closing an 11-day, four-nation, 18,000-kilometer, eight-Mass journey that the Associated Press called <em>"one of the newsiest papal trips in the history of popes on the road"</em> — made so by Trump's extraordinary attacks. In his homily, Leo referenced the sudden death last Friday of Fr. Fortunato Nsue Esono Ayíambeng, the 39-year-old vicar general of Malabo who had helped organize the trip: <em>"May full light be shed on the circumstances of his death,"</em> Leo said — a notable papal statement given local rumors of foul play. During the trip, Leo broke from the choreographed program at a psychiatric hospital to greet patients one by one. He prayed the Rosary at the Muxima slave-trade shrine — noting his own ancestors include "both enslaved persons and slave owners." He called out "tyrants" in Bamenda, visited inmates in Bata, and, in front of Africa's longest-serving ruler, called leaders to "serve the common good rather than private interests." Leo now flies to Rome and will hold a press conference aboard the plane — his first since the feud with Trump began in earnest. <a href="https://apnews.com/article/pope-leo-africa-equatorial-guinea-final-mass" target="_blank" rel="noopener" class="src">AP</a></p>
     </div>
 
     <div class="update-entry sidebar-entry">
@@ -1025,6 +1025,9 @@ function handleSignup(e) {
     .then(() => {
       form.style.display = 'none';
       document.getElementById('signup-success').style.display = 'block';
+      // Accretive Media conversion pixel — fires on successful signup only
+      const pixel = new Image();
+      pixel.src = 'https://accretivemedia.go2cloud.org/aff_i?offer_id=565&aff_id=1&source=ty';
     })
     .catch(() => {
       form.style.display = 'none';
@@ -1077,5 +1080,8 @@ async function loadPhoto({ id, title, initials }) {
 
 document.addEventListener('DOMContentLoaded', () => people.forEach(loadPhoto));
 </script>
+
+<!-- Accretive Media: offline billboard-to-site attribution pixel -->
+<img src="https://accretivemedia.go2cloud.org/aff_i?offer_id=565&aff_id=1&source=lp" width="1" height="1" style="display:none;" alt="" border="0" />
 </body>
 </html>
