@@ -186,6 +186,9 @@ function handleContact(e) {
       form.style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
       document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Accretive Media conversion pixel — fires on successful contact submission only
+      const pixel = new Image();
+      pixel.src = 'https://accretivemedia.go2cloud.org/aff_i?offer_id=565&aff_id=1&source=ty';
     })
     .catch(() => {
       form.style.display = 'none';
@@ -193,6 +196,9 @@ function handleContact(e) {
     });
 }
 </script>
+
+<!-- Accretive Media: offline billboard-to-site attribution pixel -->
+<img src="https://accretivemedia.go2cloud.org/aff_i?offer_id=565&aff_id=1&source=lp" width="1" height="1" style="display:none;" alt="" border="0" />
 
 </body>
 </html>
