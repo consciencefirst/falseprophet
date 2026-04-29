@@ -171,6 +171,42 @@
     .sidebar-updates-sub{font-size:.7rem;color:var(--smoke);font-style:italic;margin-bottom:1.3rem;}
     .sidebar-feed{border-left:2px solid var(--crimson);margin-bottom:2rem;}
     .sidebar-entry{padding:1.1rem 0 1.1rem 1.1rem;border-bottom:1px solid #2a2010;position:relative;}
+
+    /* ── COLLAPSIBLE SIDEBAR FEED ── */
+    .sidebar-feed-wrapper{position:relative;}
+    .sidebar-feed.is-collapsed{max-height:1900px;overflow:hidden;position:relative;}
+    .sidebar-feed.is-collapsed::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to bottom,transparent,var(--ink) 90%);pointer-events:none;}
+    .sidebar-feed-toggle{display:block;width:100%;margin:0 0 2rem;padding:.85rem 1rem;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:background .25s,color .25s;}
+    .sidebar-feed-toggle:hover{background:var(--gold);color:var(--ink);}
+    .sidebar-feed-toggle .toggle-count{font-style:italic;text-transform:none;letter-spacing:.05em;color:var(--smoke);font-family:'Libre Baskerville',serif;font-size:.7rem;margin-left:.4rem;}
+    .sidebar-feed-toggle:hover .toggle-count{color:var(--ink);}
+
+    /* ── VOICES STRIP (top of page preview) ── */
+    .voices-strip-section{background:linear-gradient(180deg,#0e0a05,#1a1208);padding:2.4rem 0 2.6rem;border-top:1px solid #3a2e1c;border-bottom:1px solid #3a2e1c;}
+    .voices-strip-header{max-width:1200px;margin:0 auto 1.5rem;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;}
+    .voices-strip-title{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);}
+    .voices-strip-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--parchment);opacity:.85;}
+    .voices-strip-link{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-light);text-decoration:none;border-bottom:1px solid rgba(232,201,111,.3);padding-bottom:2px;transition:border-color .25s;}
+    .voices-strip-link:hover{border-bottom-color:var(--gold-light);}
+    .voices-strip-scroller{display:flex;gap:1rem;overflow-x:auto;padding:.5rem 1.5rem 1rem;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--gold) transparent;}
+    .voices-strip-scroller::-webkit-scrollbar{height:6px;}
+    .voices-strip-scroller::-webkit-scrollbar-track{background:transparent;}
+    .voices-strip-scroller::-webkit-scrollbar-thumb{background:rgba(201,168,76,.4);border-radius:3px;}
+    .voices-strip-scroller::-webkit-scrollbar-thumb:hover{background:var(--gold);}
+    .voice-strip-card{flex:0 0 200px;scroll-snap-align:start;background:linear-gradient(160deg,#221a0a,#1a1208);border:1px solid #3a2e1c;padding:.9rem .95rem 1rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.5rem;text-decoration:none;color:inherit;transition:border-color .25s,transform .2s;}
+    .voice-strip-card:hover{border-color:var(--gold);transform:translateY(-2px);}
+    .voice-strip-photo{width:62px;height:62px;border-radius:50%;overflow:hidden;background:#0e0a05;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .voice-strip-photo img{width:100%;height:100%;object-fit:cover;}
+    .voice-strip-photo-fallback{font-family:'Cinzel',serif;font-size:1rem;letter-spacing:.05em;color:var(--gold);font-weight:700;}
+    .voice-strip-name{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.05em;color:var(--parchment);font-weight:700;line-height:1.25;}
+    .voice-strip-quote{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.72rem;line-height:1.45;color:var(--smoke);}
+    @media(max-width:600px){
+      .voices-strip-section{padding:1.8rem 0 2rem;}
+      .voice-strip-card{flex:0 0 165px;padding:.75rem .8rem .85rem;}
+      .voice-strip-photo{width:54px;height:54px;}
+      .voice-strip-name{font-size:.65rem;}
+      .voice-strip-quote{font-size:.68rem;}
+    }
     .sidebar-entry:last-child{border-bottom:none;}
     .sidebar-entry::before{content:'';position:absolute;left:-5px;top:1rem;width:7px;height:7px;background:var(--crimson);border-radius:50%;}
     .sidebar-entry .update-date{font-size:.58rem;letter-spacing:.18em;margin-bottom:.35rem;}
@@ -250,6 +286,59 @@
   </form>
   <p class="signup-success" id="signup-success">✝ &nbsp; Thank you. You will hear from us.</p>
   <p class="signup-note">No spam. Faith-based commentary only. Unsubscribe at any time.</p>
+</section>
+
+
+<section class="voices-strip-section" aria-label="Voices preview">
+  <div class="voices-strip-header">
+    <div>
+      <p class="voices-strip-title">Voices Speaking Out</p>
+      <p class="voices-strip-sub">A growing chorus across faith and political lines</p>
+    </div>
+    <a class="voices-strip-link" href="#voices">See all voices →</a>
+  </div>
+  <div class="voices-strip-scroller">
+    <a class="voice-strip-card" href="#voices">
+      <div class="voice-strip-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnUwePPy9NM5h7emvyKV-qrSq3qHPxLT_kJdVBZxpZPYpklLPQRDOlA_7K6eZEKnw59YS95Q&s" alt="Russell Moore" onerror="this.parentElement.innerHTML='<span class=\'voice-strip-photo-fallback\'>RM</span>'" /></div>
+      <div class="voice-strip-name">Russell Moore</div>
+      <p class="voice-strip-quote">"Too many of us can't tell the difference between Trump and Jesus."</p>
+    </a>
+    <a class="voice-strip-card" href="#voices">
+      <div class="voice-strip-photo"><span class="voice-strip-photo-fallback">TC</span></div>
+      <div class="voice-strip-name">Tucker Carlson</div>
+      <p class="voice-strip-quote">"What he's saying is, 'I'm more powerful than the pope.'"</p>
+    </a>
+    <a class="voice-strip-card" href="#voices">
+      <div class="voice-strip-photo"><span class="voice-strip-photo-fallback">PL</span></div>
+      <div class="voice-strip-name">Pope Leo XIV</div>
+      <p class="voice-strip-quote">"As a pastor, I cannot be in favor of war."</p>
+    </a>
+    <a class="voice-strip-card" href="#voices">
+      <div class="voice-strip-photo"><img src="https://catholicsmobilizing.org/wp-content/uploads/2022/05/Rev._Dr._Gabriel_Salguero-e1729275060102.jpg" alt="Rev. Dr. Gabriel Salguero" onerror="this.parentElement.innerHTML='<span class=\'voice-strip-photo-fallback\'>GS</span>'" /></div>
+      <div class="voice-strip-name">Rev. Gabriel Salguero</div>
+      <p class="voice-strip-quote">"There will be a reckoning come midterms."</p>
+    </a>
+    <a class="voice-strip-card" href="#voices">
+      <div class="voice-strip-photo"><img src="https://static01.nyt.com/images/2023/01/10/opinion/david-french/david-french-thumbLarge-v2.png" alt="David French" onerror="this.parentElement.innerHTML='<span class=\'voice-strip-photo-fallback\'>DF</span>'" /></div>
+      <div class="voice-strip-name">David French</div>
+      <p class="voice-strip-quote">"Behavior so self-evidently deranged that merely seeing it should lead to fury and disgust."</p>
+    </a>
+    <a class="voice-strip-card" href="#voices">
+      <div class="voice-strip-photo"><span class="voice-strip-photo-fallback">MTG</span></div>
+      <div class="voice-strip-name">Marjorie Taylor Greene</div>
+      <p class="voice-strip-quote">"It's more than blasphemy. It's an Antichrist spirit."</p>
+    </a>
+    <a class="voice-strip-card" href="#voices">
+      <div class="voice-strip-photo"><img src="https://truah.org/wp-content/uploads/2016/10/Jill-Headshot_Smaller-Size_Updated-8-16-e1548342822318.png" alt="Rabbi Jill Jacobs" onerror="this.parentElement.innerHTML='<span class=\'voice-strip-photo-fallback\'>JJ</span>'" /></div>
+      <div class="voice-strip-name">Rabbi Jill Jacobs</div>
+      <p class="voice-strip-quote">"Trump and Netanyahu's reckless and deadly decision to strike Iran."</p>
+    </a>
+    <a class="voice-strip-card" href="#voices">
+      <div class="voice-strip-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Honore_300.jpg" alt="Lt. Gen. Russel Honoré" onerror="this.parentElement.innerHTML='<span class=\'voice-strip-photo-fallback\'>RH</span>'" /></div>
+      <div class="voice-strip-name">Lt. Gen. Russel Honoré</div>
+      <p class="voice-strip-quote">"You really wanna see the president destroy a civilization?"</p>
+    </a>
+  </div>
 </section>
 
 
@@ -389,7 +478,8 @@
       <div id="updates">
         <p class="sidebar-updates-title">Latest Updates</p>
         <p class="sidebar-updates-sub">Most recent first — updated daily</p>
-        <div class="sidebar-feed">
+        <div class="sidebar-feed-wrapper">
+        <div class="sidebar-feed is-collapsed" id="sidebar-feed">
 <div class="update-entry sidebar-entry">
       <p class="update-date">April 28, 2026</p>
       <h3 class="update-hed">Tucker Carlson to the New York Times: "What He's Saying Is, 'I'm More Powerful Than the Pope'"</h3>
@@ -626,7 +716,11 @@
       <h3 class="update-hed">Trump Escalates — Again</h3>
       <p class="update-body">Trump posted a new Truth Social message urging someone to <em>"please tell Pope Leo"</em> about Iran's death toll — doubling down on his attacks even as evangelical, Lutheran, Baptist, and Reformed leaders continued to condemn the original image. <a href="https://www.newsweek.com/donald-trump-renews-feud-pope-leo-iran-war-update-11830367" target="_blank" rel="noopener" class="src">Newsweek</a></p>
     </div>
-        </div>
+        </div><!-- end sidebar-feed -->
+        <button type="button" class="sidebar-feed-toggle" id="sidebar-feed-toggle" aria-expanded="false" aria-controls="sidebar-feed">
+          Show all updates <span class="toggle-count" id="sidebar-feed-count"></span>
+        </button>
+        </div><!-- end sidebar-feed-wrapper -->
       </div>
 
 
@@ -987,7 +1081,7 @@
       <div class="voice-card">
         <div class="voice-strip badge-religious">Latino Evangelical</div>
       <div class="voice-card-body">
-        <div class="voice-photo"><div class="voice-photo-fallback">GS</div></div>
+        <div class="voice-photo"><img src="https://catholicsmobilizing.org/wp-content/uploads/2022/05/Rev._Dr._Gabriel_Salguero-e1729275060102.jpg" alt="Rev. Dr. Gabriel Salguero" onerror="this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>GS</div>'" /></div>
         <div class="voice-name">Rev. Dr. Gabriel Salguero</div>
         <div class="voice-title">President, National Latino Evangelical Coalition · Several Thousand Churches</div>
         <p class="voice-quote">"There is a strong feeling of disillusionment and frustration around indiscriminate immigration enforcement actions. <strong>I feel very strongly that there will be a reckoning come midterms.</strong>" Reported to the New York Times that church attendance is down as much as <strong>30% in some Latino evangelical congregations</strong> because parishioners are afraid to leave home. Has called Latino evangelicals "the quintessential swing voters." <a href="https://www.nytimes.com/2026/04/28/us/politics/trump-christian-evangelical-faith.html" target="_blank" rel="noopener" class="src">New York Times</a></p>
@@ -996,7 +1090,7 @@
       <div class="voice-card">
         <div class="voice-strip badge-religious">Catholic Layman</div>
       <div class="voice-card-body">
-        <div class="voice-photo"><div class="voice-photo-fallback">RH</div></div>
+        <div class="voice-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Honore_300.jpg" alt="Lt. Gen. Russel Honoré" onerror="this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>RH</div>'" /></div>
         <div class="voice-name">Lt. Gen. Russel Honoré</div>
         <div class="voice-title">U.S. Army (Ret.) · 37 Years Service · Louisiana Catholic</div>
         <p class="voice-quote">"There are people inside our community [saying] 'Yeah, yeah, yeah. I'm glad the president said that.' <strong>You mean you wanna see the president destroy a civilization? Do you really wanna see that?</strong>" Honoré led the Hurricane Katrina recovery effort and grew up not far from Pope Leo's Louisiana family roots. <a href="https://www.wwno.org/politics/2026-04-28/louisiana-catholics-balance-faith-and-politics-amid-trump-pope-dispute" target="_blank" rel="noopener" class="src">WWNO</a></p>
@@ -1148,6 +1242,33 @@ async function loadPhoto({ id, title, initials }) {
 }
 
 document.addEventListener('DOMContentLoaded', () => people.forEach(loadPhoto));
+
+// ── Collapsible sidebar feed ──
+(function() {
+  const feed = document.getElementById('sidebar-feed');
+  const toggle = document.getElementById('sidebar-feed-toggle');
+  const countEl = document.getElementById('sidebar-feed-count');
+  if (!feed || !toggle) return;
+
+  // Show count of hidden entries
+  const totalEntries = feed.querySelectorAll('.sidebar-entry').length;
+  if (countEl) countEl.textContent = `(${totalEntries} total)`;
+
+  // If collapsed content fits within the cap, no need for the toggle
+  // Use a small delay so layout settles
+  requestAnimationFrame(() => {
+    if (feed.scrollHeight <= feed.clientHeight + 5) {
+      toggle.style.display = 'none';
+      feed.classList.remove('is-collapsed');
+    }
+  });
+
+  toggle.addEventListener('click', () => {
+    const isCollapsed = feed.classList.toggle('is-collapsed');
+    toggle.setAttribute('aria-expanded', String(!isCollapsed));
+    toggle.firstChild.textContent = isCollapsed ? 'Show all updates ' : 'Show fewer updates ';
+  });
+})();
 </script>
 
 <!-- Accretive Media: offline billboard-to-site attribution pixel -->
