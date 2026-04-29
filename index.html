@@ -297,44 +297,44 @@
     </div>
     <a class="voices-strip-link" href="#voices">See all voices →</a>
   </div>
-  <div class="voices-strip-scroller">
-    <a class="voice-strip-card" href="#voices">
-      <div class="voice-strip-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnUwePPy9NM5h7emvyKV-qrSq3qHPxLT_kJdVBZxpZPYpklLPQRDOlA_7K6eZEKnw59YS95Q&s" alt="Russell Moore" onerror="this.parentElement.innerHTML='<span class=\'voice-strip-photo-fallback\'>RM</span>'" /></div>
+  <div class="voices-strip-scroller" id="voices-strip">
+    <a class="voice-strip-card" href="#voices" data-initials="RM" data-photo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnUwePPy9NM5h7emvyKV-qrSq3qHPxLT_kJdVBZxpZPYpklLPQRDOlA_7K6eZEKnw59YS95Q&s">
+      <div class="voice-strip-photo"></div>
       <div class="voice-strip-name">Russell Moore</div>
       <p class="voice-strip-quote">"Too many of us can't tell the difference between Trump and Jesus."</p>
     </a>
-    <a class="voice-strip-card" href="#voices">
-      <div class="voice-strip-photo"><span class="voice-strip-photo-fallback">TC</span></div>
+    <a class="voice-strip-card" href="#voices" data-initials="TC" data-wiki="Tucker_Carlson">
+      <div class="voice-strip-photo"></div>
       <div class="voice-strip-name">Tucker Carlson</div>
       <p class="voice-strip-quote">"What he's saying is, 'I'm more powerful than the pope.'"</p>
     </a>
-    <a class="voice-strip-card" href="#voices">
-      <div class="voice-strip-photo"><span class="voice-strip-photo-fallback">PL</span></div>
+    <a class="voice-strip-card" href="#voices" data-initials="✝" data-wiki="Pope_Leo_XIV">
+      <div class="voice-strip-photo"></div>
       <div class="voice-strip-name">Pope Leo XIV</div>
       <p class="voice-strip-quote">"As a pastor, I cannot be in favor of war."</p>
     </a>
-    <a class="voice-strip-card" href="#voices">
-      <div class="voice-strip-photo"><img src="https://catholicsmobilizing.org/wp-content/uploads/2022/05/Rev._Dr._Gabriel_Salguero-e1729275060102.jpg" alt="Rev. Dr. Gabriel Salguero" onerror="this.parentElement.innerHTML='<span class=\'voice-strip-photo-fallback\'>GS</span>'" /></div>
+    <a class="voice-strip-card" href="#voices" data-initials="GS" data-photo="https://catholicsmobilizing.org/wp-content/uploads/2022/05/Rev._Dr._Gabriel_Salguero-e1729275060102.jpg">
+      <div class="voice-strip-photo"></div>
       <div class="voice-strip-name">Rev. Gabriel Salguero</div>
       <p class="voice-strip-quote">"There will be a reckoning come midterms."</p>
     </a>
-    <a class="voice-strip-card" href="#voices">
-      <div class="voice-strip-photo"><img src="https://static01.nyt.com/images/2023/01/10/opinion/david-french/david-french-thumbLarge-v2.png" alt="David French" onerror="this.parentElement.innerHTML='<span class=\'voice-strip-photo-fallback\'>DF</span>'" /></div>
+    <a class="voice-strip-card" href="#voices" data-initials="DF" data-photo="https://static01.nyt.com/images/2023/01/10/opinion/david-french/david-french-thumbLarge-v2.png">
+      <div class="voice-strip-photo"></div>
       <div class="voice-strip-name">David French</div>
       <p class="voice-strip-quote">"Behavior so self-evidently deranged that merely seeing it should lead to fury and disgust."</p>
     </a>
-    <a class="voice-strip-card" href="#voices">
-      <div class="voice-strip-photo"><span class="voice-strip-photo-fallback">MTG</span></div>
+    <a class="voice-strip-card" href="#voices" data-initials="MTG" data-wiki="Marjorie_Taylor_Greene">
+      <div class="voice-strip-photo"></div>
       <div class="voice-strip-name">Marjorie Taylor Greene</div>
       <p class="voice-strip-quote">"It's more than blasphemy. It's an Antichrist spirit."</p>
     </a>
-    <a class="voice-strip-card" href="#voices">
-      <div class="voice-strip-photo"><img src="https://truah.org/wp-content/uploads/2016/10/Jill-Headshot_Smaller-Size_Updated-8-16-e1548342822318.png" alt="Rabbi Jill Jacobs" onerror="this.parentElement.innerHTML='<span class=\'voice-strip-photo-fallback\'>JJ</span>'" /></div>
+    <a class="voice-strip-card" href="#voices" data-initials="JJ" data-photo="https://truah.org/wp-content/uploads/2016/10/Jill-Headshot_Smaller-Size_Updated-8-16-e1548342822318.png">
+      <div class="voice-strip-photo"></div>
       <div class="voice-strip-name">Rabbi Jill Jacobs</div>
       <p class="voice-strip-quote">"Trump and Netanyahu's reckless and deadly decision to strike Iran."</p>
     </a>
-    <a class="voice-strip-card" href="#voices">
-      <div class="voice-strip-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Honore_300.jpg" alt="Lt. Gen. Russel Honoré" onerror="this.parentElement.innerHTML='<span class=\'voice-strip-photo-fallback\'>RH</span>'" /></div>
+    <a class="voice-strip-card" href="#voices" data-initials="RH" data-photo="https://upload.wikimedia.org/wikipedia/commons/e/ec/Honore_300.jpg">
+      <div class="voice-strip-photo"></div>
       <div class="voice-strip-name">Lt. Gen. Russel Honoré</div>
       <p class="voice-strip-quote">"You really wanna see the president destroy a civilization?"</p>
     </a>
@@ -1242,6 +1242,52 @@ async function loadPhoto({ id, title, initials }) {
 }
 
 document.addEventListener('DOMContentLoaded', () => people.forEach(loadPhoto));
+
+// ── Voices preview strip — robust photo loader ──
+(function() {
+  const strip = document.getElementById('voices-strip');
+  if (!strip) return;
+
+  const cards = strip.querySelectorAll('.voice-strip-card');
+
+  function fallback(slot, initials) {
+    slot.innerHTML = `<span class="voice-strip-photo-fallback">${initials || '✝'}</span>`;
+  }
+
+  cards.forEach(card => {
+    const slot = card.querySelector('.voice-strip-photo');
+    const initials = card.dataset.initials || '';
+    const directUrl = card.dataset.photo;
+    const wikiTitle = card.dataset.wiki;
+
+    if (directUrl) {
+      const img = new Image();
+      img.onload = () => {
+        slot.innerHTML = '';
+        slot.appendChild(img);
+      };
+      img.onerror = () => fallback(slot, initials);
+      img.alt = card.querySelector('.voice-strip-name')?.textContent || '';
+      img.src = directUrl;
+    } else if (wikiTitle) {
+      fetch(`https://en.wikipedia.org/w/api.php?action=query&titles=${wikiTitle}&prop=pageimages&format=json&pithumbsize=200&origin=*`)
+        .then(r => r.json())
+        .then(data => {
+          const page = Object.values(data.query.pages)[0];
+          const src = page?.thumbnail?.source;
+          if (!src) { fallback(slot, initials); return; }
+          const img = new Image();
+          img.onload = () => { slot.innerHTML = ''; slot.appendChild(img); };
+          img.onerror = () => fallback(slot, initials);
+          img.alt = wikiTitle.replace(/_/g, ' ');
+          img.src = src;
+        })
+        .catch(() => fallback(slot, initials));
+    } else {
+      fallback(slot, initials);
+    }
+  });
+})();
 
 // ── Collapsible sidebar feed ──
 (function() {
