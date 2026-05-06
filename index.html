@@ -50,11 +50,11 @@
     .breaking-ticker{font-size:.8rem;color:#ffdada;animation:ticker 60s linear infinite;white-space:nowrap;display:block;}
     @keyframes ticker{0%{transform:translateX(100%);}100%{transform:translateX(-100%);}}
     main{max-width:1100px;margin:0 auto;padding:4rem 1.5rem;}
-    .grid{display:grid;grid-template-columns:2fr 1fr;gap:4rem;}
+    .grid{display:grid;grid-template-columns:1fr 1.6fr;gap:4rem;}
     @media(max-width:720px){.grid{grid-template-columns:1fr;}}
     .lead-label{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:#e85a5e;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;}
     .lead-label::before{content:'';flex:0 0 30px;height:1px;background:var(--crimson);opacity:.4;}
-    .lead-headline{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.18;color:var(--parchment);margin-bottom:1.6rem;}
+    .lead-headline{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.2vw,2.2rem);font-weight:900;line-height:1.18;color:var(--parchment);margin-bottom:1.6rem;}
     .lead-headline em{color:var(--gold-light);font-style:italic;}
     .lead-dek{font-size:1.1rem;line-height:1.75;color:#c9b99a;margin-bottom:2rem;border-left:3px solid var(--crimson);padding-left:1rem;}
     .lead-body{font-size:.95rem;line-height:1.9;color:#b5a488;}
@@ -178,7 +178,7 @@
 
     /* ── COLLAPSIBLE SIDEBAR FEED ── */
     .sidebar-feed-wrapper{position:relative;}
-    .sidebar-feed.is-collapsed{max-height:1900px;overflow:hidden;position:relative;}
+    .sidebar-feed.is-collapsed{max-height:2400px;overflow:hidden;position:relative;}
     .sidebar-feed.is-collapsed::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to bottom,transparent,var(--ink) 90%);pointer-events:none;}
     .sidebar-feed-toggle{display:block;width:100%;margin:0 0 2rem;padding:.85rem 1rem;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:background .25s,color .25s;}
     .sidebar-feed-toggle:hover{background:var(--gold);color:var(--ink);}
@@ -213,9 +213,9 @@
     }
     .sidebar-entry:last-child{border-bottom:none;}
     .sidebar-entry::before{content:'';position:absolute;left:-5px;top:1rem;width:7px;height:7px;background:var(--crimson);border-radius:50%;}
-    .sidebar-entry .update-date{font-size:.58rem;letter-spacing:.18em;margin-bottom:.35rem;}
-    .sidebar-entry .update-hed{font-size:.82rem;margin-bottom:.5rem;line-height:1.3;}
-    .sidebar-entry .update-body{font-size:.75rem;line-height:1.6;}
+    .sidebar-entry .update-date{font-size:.62rem;letter-spacing:.2em;margin-bottom:.4rem;}
+    .sidebar-entry .update-hed{font-size:1.05rem;margin-bottom:.6rem;line-height:1.3;}
+    .sidebar-entry .update-body{font-size:.88rem;line-height:1.7;}
     a{color:var(--gold);}a:hover{color:var(--parchment);}
     a.src{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.1em;color:var(--smoke);border-bottom:1px solid #3a2e1c;text-decoration:none;vertical-align:super;margin-left:.2rem;white-space:nowrap;}
     a.src:hover{color:var(--gold);border-color:var(--gold);}
@@ -261,14 +261,14 @@
   <div class="breaking-clip">
   <span class="breaking-ticker">
     May 6: Pope Leo, directly: "If someone wants to criticize me for announcing the Gospel, let him do it with the truth" &nbsp;✝&nbsp;
+    May 6: David French, NYT: "In this contest between a pope and a president, the president looks weak and erratic" &nbsp;✝&nbsp;
+    May 6: WaPo-ABC-Ipsos: nearly 6 in 10 Americans had a negative reaction to Trump's comments on the Pope &nbsp;✝&nbsp;
     May 6: Italian FM Tajani publicly aligns against Trump and with Pope Leo: comments "neither acceptable nor helpful" &nbsp;✝&nbsp;
     May 5: Trump escalates again on Truth Social: "Will someone please tell Pope Leo..." — invents new figure of 42,000 deaths &nbsp;✝&nbsp;
-    May 5: U.S. Ambassador to Vatican: Thursday's Rubio meeting will be "frank" — diplomatic-speak for tense &nbsp;✝&nbsp;
     May 5: America Magazine: Trump has not spoken by phone with Pope Leo at all in the year since Leo's election &nbsp;✝&nbsp;
     May 4: Rubio to meet Pope Leo at the Vatican Thursday — first Trump cabinet official since the feud erupted &nbsp;✝&nbsp;
     May 1: Pope Leo appoints three Trump-critic bishops — including a former undocumented immigrant from El Salvador to lead West Virginia &nbsp;✝&nbsp;
     May 1: Trump rejects Iran's revised peace proposal — and declares the War Powers Resolution "unconstitutional" &nbsp;✝&nbsp;
-    April 29: Trump posts an AI image of himself holding an assault rifle: "NO MORE MR. NICE GUY!" &nbsp;✝&nbsp;
     April 23: Pope Leo — "As a pastor, I cannot be in favor of war" &nbsp;✝&nbsp;
     Reuters/Ipsos: Pope Leo 60% approval, Trump 36% — tied for the lowest of his second term &nbsp;✝&nbsp;
     Russell Moore, Christianity Today: "It's that too many of us can't tell the difference between Trump and Jesus"
@@ -350,7 +350,7 @@
 <main>
   <div class="grid" id="story">
     <article>
-      <p class="lead-label">Lead Story &nbsp;·&nbsp; <span style="color:var(--smoke);font-style:italic;">Published April 13, 2026 · Updated April 21, 2026</span></p>
+      <p class="lead-label">The First Word</p>
       <h2 class="lead-headline">He Posted Himself as <em>Jesus.</em> Then He Attacked the Pope for Preaching Peace.</h2>
       <p class="lead-dek">
         We write this with grief, not glee. What happened this past Sunday is not a political story to be scored. It is a spiritual wound — one that the Body of Christ did not ask for and cannot ignore.
@@ -368,7 +368,7 @@
           On Sunday, April 13, 2026 — <strong>Orthodox Easter Sunday</strong> — President Donald Trump posted an AI-generated image to Truth Social depicting himself as <strong>Jesus Christ</strong>: white-robed, hands outstretched in a healing pose, surrounded by Americana and divine light. The image was deleted by Monday morning after a firestorm of condemnation that united Catholics, Lutherans, Southern Baptists, charismatics, and evangelicals — including some of Trump's most ardent Christian supporters.<a href="https://www.france24.com/en/americas/20260414-trump-deletes-image-of-himself-as-jesus-as-feud-with-pope-dismays-us-catholics" target="_blank" rel="noopener" class="src">France 24</a>
         </p>
         <p>
-          When pressed by reporters, Trump claimed he <em>"thought the image was of him as a doctor."</em> Whether that is true, only he knows. What is true is that the image had existed, was selected by him, and was posted from his account — on the day Christians around the world celebrate the Resurrection of Jesus Christ. And many of the people who love this president, who prayed for him, who campaigned for him, found they could not look away from what that means.<a href="https://www.france24.com/en/americas/20260414-trump-deletes-image-of-himself-as-jesus-as-feud-with-pope-dismays-us-catholics" target="_blank" rel="noopener" class="src">France 24</a>
+          When pressed by reporters, Trump claimed he <em>"thought the image was of him as a doctor."</em> Whether that is true, only he knows. What is true is that the image had existed, was selected by him, and was posted from his account — on the day Christians around the world celebrate the Resurrection of Jesus Christ.
         </p>
         <p>
           But the image did not emerge in a vacuum. It came hours after Trump launched a furious attack on <strong>Pope Leo XIV</strong> — the first American-born pope in the history of the Church — calling him <strong>"weak on crime"</strong> and a tool of the "radical left." The Pope's offense? Quoting the Prince of Peace. Leo had condemned Trump's threat to annihilate an entire civilization as <em>"truly unacceptable,"</em> and called on the world's leaders, as Jesus did, to choose peace over the sword.<a href="https://www.euronews.com/2026/04/14/trump-refuses-to-apologise-after-clash-with-pope-leo-xiv-over-iran-war" target="_blank" rel="noopener" class="src">Euronews</a>
@@ -382,12 +382,6 @@
         <p>
           For Bible-believing Christians, the sequence of events is deeply alarming: a world leader cloaks himself in the image of the Messiah, then attacks a Christian leader for proclaiming the Gospel message of peace. Scripture calls this idolatry — the exaltation of a human image in the place where only Christ belongs. And it calls those who use the language of faith as a tool of power false prophets: men who come in sheep's clothing. Jesus said we would know them by their fruit.
         </p>
-        <p>
-          The reaction from the Christian community — across every tradition — was swift and clear. <strong>Rev. Tony Suarez</strong>, Trump's own longtime evangelical adviser, said the image "needs to be taken down immediately" and that it is <em>"an offense to allude or depict that a human can compare to our Lord and Savior Jesus Christ."</em><a href="https://roysreport.com/evangelical-leaders-blast-trumps-blasphemous-post-seemingly-depicting-himself-as-jesus/" target="_blank" rel="noopener" class="src">Roys Report</a> <strong>Pastor Doug Wilson</strong> — Pete Hegseth's personal pastor and founder of the Reformed church network Secretary Hegseth attends — called it <em>"blasphemous"</em> and said Trump should <em>"take it down and apologize."</em><a href="https://roysreport.com/evangelical-leaders-blast-trumps-blasphemous-post-seemingly-depicting-himself-as-jesus/" target="_blank" rel="noopener" class="src">Roys Report</a> <strong>Marjorie Taylor Greene</strong>, once Trump's most vocal evangelical ally in Congress, called it <em>"more than blasphemy — an Antichrist spirit."</em><a href="https://www.newsweek.com/list-of-conservatives-rebuking-donald-trumps-jesus-image-pope-feud-11821583" target="_blank" rel="noopener" class="src">Newsweek</a>
-        </p>
-        <p>
-          Conservative Catholic activist <strong>Riley Gaines</strong> invoked Galatians directly: <em>"God shall not be mocked."</em><a href="https://www.salon.com/2026/04/14/catholics-warn-of-serious-juncture-as-trump-targets-pope-leo-xiv/" target="_blank" rel="noopener" class="src">Salon</a> Even Republican Senator <strong>Thom Tillis</strong> called the post <em>"absurd."</em><a href="https://www.irishstar.com/news/politics/republicans-slam-trumps-explanation-posting-37011092" target="_blank" rel="noopener" class="src">Irish Star</a>
-        </p>
       </div>
 
       <div class="pull-quote">
@@ -397,18 +391,12 @@
 
       <div class="lead-body">
         <p>
-          Pope Leo XIV responded with the calm authority of a man whose kingdom is not of this world. He pledged to keep preaching against war, for peace, for the dignity of every human being, "because the Church's witness is grounded in the peace of Christ, not in partisan interests."<a href="https://www.npr.org/2026/04/13/nx-s1-5783008/trump-pope-leo" target="_blank" rel="noopener" class="src">NPR</a>
-        </p>
-        <p>
-          Three American Cardinals — Tobin of Newark, McElroy of Washington, and Cupich of Chicago — stood with him, appearing together publicly to reaffirm the Pope's moral authority. Cardinal McElroy went further, stating that Trump's war with Iran fails to meet the Church's ancient standard of a <strong>just war</strong> — a teaching rooted not in politics, but in Scripture and centuries of Christian ethics.<a href="https://time.com/article/2026/04/13/pope-leo-trump-attack-catholics/" target="_blank" rel="noopener" class="src">TIME</a>
-        </p>
-        <p>
-          Meanwhile, Vice President <strong>JD Vance</strong> — who publicly converted to Catholicism in 2019 — told the Vatican to <em>"stick to matters of morality"</em> and let the President handle war. Many pastors and theologians noted the painful irony: a Catholic VP telling the Pope that war is none of the Church's business, while the President posts himself as Jesus.<a href="https://time.com/article/2026/04/14/catholic-vance-breaks-silence-on-deleted-trump-jesus-image-amid-outcry/" target="_blank" rel="noopener" class="src">TIME</a>
+          Pope Leo XIV responded with the calm authority of a man whose kingdom is not of this world. He pledged to keep preaching against war, for peace, for the dignity of every human being. Three American Cardinals — Tobin of Newark, McElroy of Washington, and Cupich of Chicago — stood with him publicly. Cardinal McElroy went further, stating that Trump's war with Iran fails to meet the Church's ancient standard of a <strong>just war</strong> — a teaching rooted not in politics, but in Scripture and centuries of Christian ethics.<a href="https://time.com/article/2026/04/13/pope-leo-trump-attack-catholics/" target="_blank" rel="noopener" class="src">TIME</a>
         </p>
 
         <div class="scripture-inline">
-          <p>"Do not be deceived: God cannot be mocked. A man reaps what he sows."</p>
-          <span>— Galatians 6:7</span>
+          <p>"He hath shewed thee, O man, what is good; and what doth the Lord require of thee, but to do justly, and to love mercy, and to walk humbly with thy God?"</p>
+          <span>— Micah 6:8</span>
         </div>
 
         <p>
@@ -422,31 +410,8 @@
       </div>
 
       <div class="lead-body">
-        <p class="lead-label" style="margin-top:.5rem;margin-bottom:1.2rem;color:var(--gold);">In the days that followed</p>
-
         <p>
-          The week did not narrow. It widened. On <strong>April 15</strong>, the President posted a second image of Christ — this one embracing him. On <strong>April 16</strong>, at the Pentagon, Defense Secretary Pete Hegseth called the press <em>"Pharisees"</em> and opened an official briefing with a monologue adapted from the film <em>Pulp Fiction</em>, substituting himself for the character who recites a fabricated Bible verse before killing a man. On <strong>April 17</strong>, asked by CNN anchor Kaitlan Collins why he was fighting with the Pope, the President said the Pope had told him Iran could have a nuclear weapon. Collins corrected him on air: the Pope has said no such thing. That same day, the White House announced the President would read scripture from the Oval Office the following Tuesday. On <strong>April 18</strong>, Secretary Hegseth called the press <em>"Pharisees"</em> a second time — this time to dismiss reports that sailors deployed in the Iran war were running short of food.<a href="https://edition.cnn.com/2026/04/16/politics/fact-check-trump-pope-iran" target="_blank" rel="noopener" class="src">CNN</a> <a href="https://www.thedailybeast.com/pentagon-petes-bid-to-ease-navy-food-panic-backfires/" target="_blank" rel="noopener" class="src">Daily Beast</a>
-        </p>
-
-        <p>
-          On <strong>April 21</strong>, the President sat down at the Resolute Desk, opened a Bible, and read <strong>2 Chronicles 7:11–22</strong> into a camera for two and a half minutes. The passage is beloved of the Christian right for one line: <em>"If my people, which are called by my name, shall humble themselves, and pray, and seek my face, and turn from their wicked ways; then will I hear from heaven, and will forgive their sin, and will heal their land."</em> The passage that follows — which the President also read — is a warning from God to kings who turn away: <em>"I will uproot them out of my land... and this house, which is high, shall be an astonishment to every one that passeth by it."</em> Neither he nor the organizers remarked on the second half. Scripture, when read aloud, is not a prop. It reads the reader.<a href="https://cbn.com/news/us/trump-reads-bible-aloud-oval-office-then-will-i-hear-heaven-and-heal-their-land" target="_blank" rel="noopener" class="src">CBN News</a> <a href="https://www.youtube.com/watch?v=7oqyMMBAapY" target="_blank" rel="noopener" class="src">Video</a>
-        </p>
-
-        <p>
-          And still, in the days that followed, the voices grew. At the University of Notre Dame — the most prominent Catholic university in the country, which gave Trump 59% of its local Catholic vote in 2024 — students, including self-described conservatives, called the image <em>"textbook blasphemy."</em> Notre Dame's own College Republicans issued a statement supporting the Pope and calling the war in Iran <em>"not in American interests."</em><a href="https://edition.cnn.com/2026/04/15/politics/notre-dame-trump-pope-leo" target="_blank" rel="noopener" class="src">CNN</a> <strong>Russell Moore</strong>, the former Southern Baptist ethics chief and one of the most credentialed evangelical voices in America, wrote in <em>Christianity Today</em> that the image was <em>"blasphemy"</em> and that <em>"the problem is not that Trump can't tell the difference between himself and Jesus. It's that too many of us can't."</em><a href="https://www.christianitytoday.com/2026/04/trump-ai-jesus-messiah-weve-been-looking-for/" target="_blank" rel="noopener" class="src">Christianity Today</a> <strong>David French</strong>, writing in the <em>New York Times</em>, warned that some evangelicals, influenced by Trump, <em>"won't unite with their Catholic brothers and sisters in response to Trump's blasphemy... but will instead turn against them."</em><a href="https://www.ms.now/rachel-maddow-show/maddowblog/after-picking-an-ugly-fight-with-pope-trump-promotes-image-panned-as-blasphemous" target="_blank" rel="noopener" class="src">MSNBC</a>
-        </p>
-
-        <p>
-          And the Pope? On <strong>April 18</strong>, aboard the papal plane from Cameroon to Angola, Leo was asked about the feud and declined to engage. <em>"It was looked at as if I was trying to debate the president, which is not in my interest at all,"</em> he said. The next day, he prayed the Rosary at the Sanctuary of Mama Muxima — a Portuguese-built church that was a hub of the Atlantic slave trade — and said: <em>"It is love that must triumph, not war."</em><a href="https://www.nbcnews.com/world/pope-leo-xiv/war-words-iran-pope-leo-says-not-interested-debate-trump-rcna340780" target="_blank" rel="noopener" class="src">NBC News</a> <a href="https://www.washingtontimes.com/news/2026/apr/20/pope-leo-prays-catholic-shrine-angola-center-african-slave-trade/" target="_blank" rel="noopener" class="src">AP</a>
-        </p>
-
-        <div class="scripture-inline">
-          <p>"He hath shewed thee, O man, what is good; and what doth the Lord require of thee, but to do justly, and to love mercy, and to walk humbly with thy God?"</p>
-          <span>— Micah 6:8</span>
-        </div>
-
-        <p>
-          The question the Body of Christ is being asked has not gone away with the week. It has sharpened. The voices on this page — Trump's own evangelical adviser, the pastor of his Defense Secretary, a candidate for SBC president, a Lutheran bishop, three Cardinals, the editors of <em>Christianity Today</em>, the Notre Dame College Republicans, and the Pope himself refusing the role of antagonist — answer it in one direction: <strong>the image of Christ belongs to no man, and the Gospel of peace cannot be repealed.</strong>
+          The voices on this site — Trump's own evangelical adviser, the pastor of his Defense Secretary, members of his own party in Congress, three Cardinals, the editors of <em>Christianity Today</em>, the Notre Dame College Republicans, and the Pope himself refusing the role of antagonist — all answer in one direction: <strong>the image of Christ belongs to no man, and the Gospel of peace cannot be repealed.</strong> What follows in the daily updates is the unfolding of that answer.
         </p>
       </div>
 
@@ -492,7 +457,8 @@
       <p class="update-body">Trump's response, posted to Truth Social on Tuesday evening: <em>"Will someone please tell Pope Leo that Iran has killed at least 42,000 innocent, completely unarmed, protesters in the last two months."</em> The figure is unsourced and dramatically exceeds reported civilian casualties from any verified accounting. The framing — <em>"will someone please tell Pope Leo"</em> — treats the Pope as someone who needs to be informed by the President of the United States.</p>
       <p class="update-body"><strong>Then Italy intervened.</strong> Italian Foreign Minister Antonio Tajani — a member of Prime Minister Meloni's Trump-allied government — posted publicly that Trump's comments were <em>"neither acceptable nor helpful to the cause of peace."</em> Tajani continued: <em>"I reaffirm my support for every action and word of Pope Leo; his words are a testament to dialogue, the value of human life, and freedom. This is a vision shared by our government, which is committed through diplomacy to ensuring stability and peace in all areas where conflicts exist."</em> A sitting Italian government minister, in a Trump-allied government, publicly aligning against the President of the United States and with the Pope.</p>
       <p class="update-body">Cardinal Pietro Parolin — the Vatican Secretary of State and second-highest-ranking official in the Church — added his own framing for the press: <em>"The pope will go ahead on his path, in the sense of preaching the Gospel and peace."</em> Leo, Parolin said, will speak about peace at every opportunity, <em>"convenient and inconvenient."</em></p>
-      <p class="update-body">U.S. Ambassador to the Holy See Brian Burch told reporters Tuesday that Thursday's meeting between Rubio and Pope Leo would now be <em>"frank"</em> — diplomatic-speak for "tense." America Magazine notes the quite extraordinary fact that <strong>President Trump has not spoken by phone with Pope Leo at all in the year since Leo's election on May 8, 2025</strong>. Rubio's visit will be the first high-level Trump-administration encounter with the Pope since Vance and Rubio met him on May 19, 2025 — the day after his inauguration. <a href="https://www.washingtonpost.com/world/2026/05/05/trump-rubio-pope-leo-rift/" target="_blank" rel="noopener" class="src">Washington Post</a> <a href="https://www.americamagazine.org/vatican-dispatch/2026/05/05/trump-pope-leo-marco-rubio/" target="_blank" rel="noopener" class="src">America Magazine</a> <a href="https://thehill.com/homenews/administration/5864350-trump-hewitt-pope-leo-xiv-catholics-iran-war/" target="_blank" rel="noopener" class="src">The Hill</a></p>
+      <p class="update-body">U.S. Ambassador to the Holy See Brian Burch told reporters Tuesday that Thursday's meeting between Rubio and Pope Leo would now be <em>"frank"</em> — diplomatic-speak for "tense." America Magazine notes the quite extraordinary fact that <strong>President Trump has not spoken by phone with Pope Leo at all in the year since Leo's election on May 8, 2025</strong>. Rubio's visit will be the first high-level Trump-administration encounter with the Pope since Vance and Rubio met him on May 19, 2025 — the day after his inauguration. The meeting falls on the eve of <strong>the first anniversary of Leo's papacy</strong>.</p>
+      <p class="update-body">Two new data points underline the cost of the President's posture. A Washington Post-ABC News-Ipsos poll released this week found <strong>nearly 6 in 10 Americans had a negative reaction to Trump's comments about the Pope</strong>. And David French, writing in the New York Times, gave the cleanest analytical frame yet: <em>"By putting his disagreement with the pope at the center of the national conversation, Trump's elevating the pope's words and demonstrating the profound contrast between the two men. <strong>In this contest between a pope and a president, the president looks weak and erratic.</strong>"</em> <a href="https://www.washingtonpost.com/world/2026/05/05/trump-rubio-pope-leo-rift/" target="_blank" rel="noopener" class="src">Washington Post</a> <a href="https://www.americamagazine.org/vatican-dispatch/2026/05/05/trump-pope-leo-marco-rubio/" target="_blank" rel="noopener" class="src">America Magazine</a> <a href="https://www.cnn.com/2026/05/06/politics/pope-leo-rubio-meeting" target="_blank" rel="noopener" class="src">CNN</a> <a href="https://www.ms.now/rachel-maddow-show/maddowblog/trump-renews-pope-leo-offensive-rubio" target="_blank" rel="noopener" class="src">MS NOW</a></p>
     </div>
 
     <div class="update-entry sidebar-entry">
@@ -788,6 +754,16 @@
       <p class="update-date">April 15, 2026</p>
       <h3 class="update-hed">Trump Escalates — Again</h3>
       <p class="update-body">Trump posted a new Truth Social message urging someone to <em>"please tell Pope Leo"</em> about Iran's death toll — doubling down on his attacks even as evangelical, Lutheran, Baptist, and Reformed leaders continued to condemn the original image. <a href="https://www.newsweek.com/donald-trump-renews-feud-pope-leo-iran-war-update-11830367" target="_blank" rel="noopener" class="src">Newsweek</a></p>
+    </div>
+
+    <div class="update-entry sidebar-entry">
+      <p class="update-date">April 13–21, 2026</p>
+      <h3 class="update-hed">The First Eight Days: How the Christian Coalition Answered</h3>
+      <p class="update-body">In the hours after Trump's Easter Sunday Jesus image, the reaction from the Christian community — across every tradition — was swift and clear. <strong>Rev. Tony Suarez</strong>, Trump's own longtime evangelical adviser, said the image <em>"needs to be taken down immediately"</em> and that it is <em>"an offense to allude or depict that a human can compare to our Lord and Savior Jesus Christ."</em> <strong>Pastor Doug Wilson</strong> — Pete Hegseth's personal pastor and founder of the Reformed church network Secretary Hegseth attends — called it <em>"blasphemous"</em> and said Trump should <em>"take it down and apologize."</em> <strong>Marjorie Taylor Greene</strong>, once Trump's most vocal evangelical ally in Congress, called it <em>"more than blasphemy — an Antichrist spirit."</em> Conservative Catholic activist <strong>Riley Gaines</strong> invoked Galatians directly: <em>"God shall not be mocked."</em> Even Republican Senator <strong>Thom Tillis</strong> called the post <em>"absurd."</em></p>
+      <p class="update-body">The week did not narrow. It widened. On <strong>April 15</strong>, the President posted a second image of Christ — this one embracing him. On <strong>April 16</strong>, at the Pentagon, Defense Secretary Pete Hegseth called the press <em>"Pharisees"</em> and opened an official briefing with a monologue adapted from the film <em>Pulp Fiction</em>, substituting himself for the character who recites a fabricated Bible verse before killing a man. On <strong>April 17</strong>, asked by CNN's Kaitlan Collins why he was fighting with the Pope, Trump claimed the Pope had told him Iran could have a nuclear weapon. Collins corrected him on air. The same day, the White House announced Trump would read scripture from the Oval Office. On <strong>April 18</strong>, Hegseth called the press <em>"Pharisees"</em> a second time — to dismiss reports that sailors deployed in the Iran war were running short of food.</p>
+      <p class="update-body">On <strong>April 21</strong>, the President sat at the Resolute Desk and read <strong>2 Chronicles 7:11–22</strong> aloud for two and a half minutes. The passage is beloved of the Christian right for one verse: <em>"If my people, which are called by my name, shall humble themselves... will forgive their sin, and will heal their land."</em> What followed — also read aloud — is a warning from God to kings who turn away: <em>"I will uproot them out of my land... and this house, which is high, shall be an astonishment to every one that passeth by it."</em> Neither he nor the organizers remarked on the second half.</p>
+      <p class="update-body">In the same days, the chorus grew. At Notre Dame — which gave Trump 59% of its local Catholic vote in 2024 — students, including conservatives, called the image <em>"textbook blasphemy."</em> Notre Dame's College Republicans issued a statement supporting the Pope. <strong>Russell Moore</strong>, in <em>Christianity Today</em>: <em>"the problem is not that Trump can't tell the difference between himself and Jesus. It's that too many of us can't."</em> <strong>David French</strong>, in the <em>New York Times</em>, warned that some evangelicals influenced by Trump <em>"won't unite with their Catholic brothers and sisters in response to Trump's blasphemy... but will instead turn against them."</em></p>
+      <p class="update-body">And the Pope refused to engage. On the papal plane from Cameroon to Angola: <em>"It was looked at as if I was trying to debate the president, which is not in my interest at all."</em> The next day, at the Sanctuary of Mama Muxima — a former hub of the Atlantic slave trade — Leo prayed the Rosary and said: <em>"It is love that must triumph, not war."</em> <a href="https://roysreport.com/evangelical-leaders-blast-trumps-blasphemous-post-seemingly-depicting-himself-as-jesus/" target="_blank" rel="noopener" class="src">Roys Report</a> <a href="https://edition.cnn.com/2026/04/16/politics/fact-check-trump-pope-iran" target="_blank" rel="noopener" class="src">CNN</a> <a href="https://cbn.com/news/us/trump-reads-bible-aloud-oval-office-then-will-i-hear-heaven-and-heal-their-land" target="_blank" rel="noopener" class="src">CBN</a> <a href="https://www.christianitytoday.com/2026/04/trump-ai-jesus-messiah-weve-been-looking-for/" target="_blank" rel="noopener" class="src">Christianity Today</a> <a href="https://www.nbcnews.com/world/pope-leo-xiv/war-words-iran-pope-leo-says-not-interested-debate-trump-rcna340780" target="_blank" rel="noopener" class="src">NBC News</a></p>
     </div>
         </div><!-- end sidebar-feed -->
         <button type="button" class="sidebar-feed-toggle" id="sidebar-feed-toggle" aria-expanded="false" aria-controls="sidebar-feed">
@@ -1202,7 +1178,7 @@
         <div class="voice-photo"><img src="https://static01.nyt.com/images/2023/01/10/opinion/david-french/david-french-thumbLarge-v2.png" alt="David French" onerror="this.parentElement.innerHTML='<div class=\'voice-photo-fallback\'>DF</div>'" /></div>
         <div class="voice-name">David French</div>
         <div class="voice-title">New York Times Columnist · Evangelical Author</div>
-        <p class="voice-quote">"There is behavior that's so self-evidently deranged that merely seeing it should lead to fury and disgust. I'm concerned, however, that some evangelicals are so influenced by Trump that they won't unite with their Catholic brothers and sisters in response to Trump's blasphemy and intolerable attacks on the pope, but will instead turn against them." <a href="https://www.ms.now/rachel-maddow-show/maddowblog/after-picking-an-ugly-fight-with-pope-trump-promotes-image-panned-as-blasphemous" target="_blank" rel="noopener" class="src">MSNBC</a></p>
+        <p class="voice-quote">"By putting his disagreement with the pope at the center of the national conversation, Trump's elevating the pope's words and demonstrating the profound contrast between the two men. <strong>In this contest between a pope and a president, the president looks weak and erratic.</strong>" Earlier called Trump's behavior "self-evidently deranged" and warned that some evangelicals "won't unite with their Catholic brothers and sisters... but will instead turn against them." <a href="https://www.ms.now/rachel-maddow-show/maddowblog/trump-renews-pope-leo-offensive-rubio" target="_blank" rel="noopener" class="src">MS NOW (citing NYT column)</a></p>
       </div>
       </div>
       <div class="voice-card">
