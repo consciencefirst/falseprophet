@@ -81,6 +81,16 @@
 
     .timeline{margin:2.8rem 0;}
     .timeline-item{display:grid;grid-template-columns:80px 1fr;gap:1.2rem;margin-bottom:1.8rem;}
+
+    /* ── COLLAPSIBLE TIMELINE ── */
+    .timeline-wrapper{position:relative;}
+    .timeline.is-collapsed{max-height:780px;overflow:hidden;position:relative;}
+    .timeline.is-collapsed::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to bottom,transparent,var(--ink) 90%);pointer-events:none;}
+    .timeline-toggle{display:block;width:100%;margin:1rem 0 0;padding:.85rem 1rem;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:background .25s,color .25s;}
+    .timeline-toggle:hover{background:var(--gold);color:var(--ink);}
+    .timeline-toggle .toggle-count{font-style:italic;text-transform:none;letter-spacing:.05em;color:var(--smoke);font-family:'Libre Baskerville',serif;font-size:.7rem;margin-left:.4rem;}
+    .timeline-toggle:hover .toggle-count{color:var(--ink);}
+    @media(max-width:600px){.timeline-toggle{min-height:48px;padding:.95rem 1rem;}}
     .timeline-date{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-align:right;border-right:2px solid var(--crimson);padding-right:.8rem;padding-top:.15rem;}
     .timeline-content h4{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--parchment);margin-bottom:.2rem;}
     .timeline-content p{font-size:.82rem;color:var(--smoke);line-height:1.5;}
@@ -125,6 +135,16 @@
     .voice-card-body{padding:1.4rem 1.3rem 1.5rem;}
     .voice-strip{display:block;width:100%;text-align:center;font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;padding:.35rem .5rem;}
     .badge-conservative{background:#2a1200;color:#c9853a;}
+    /* ── SANCTIFYING SECTION (defending the rhetoric) ── */
+    .sanctifying-section{margin-top:5rem;padding-top:3rem;border-top:2px solid #6b1d1d;}
+    .sanctifying-section-title{font-family:'Cinzel',serif;font-size:clamp(1.1rem,3vw,1.7rem);font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#d4a3a3;text-align:center;margin-bottom:.5rem;}
+    .sanctifying-subtitle{text-align:center;font-family:'Playfair Display',serif;font-style:italic;color:#a88080;font-size:1rem;margin-bottom:2rem;opacity:.85;max-width:680px;margin-left:auto;margin-right:auto;line-height:1.55;padding:0 1.2rem;}
+    .grid-sanctifying{max-width:1140px;margin:0 auto;display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;padding:0 1.2rem;}
+    .voice-card-sanctifying{flex:0 0 calc(25% - 1.2rem);width:calc(25% - 1.2rem);background:linear-gradient(160deg,#1e1410,#171010);border:1px solid #3a1f1f;display:flex;flex-direction:column;}
+    .voice-card-sanctifying:hover{border-color:#6b1d1d;}
+    .voice-card-sanctifying .voice-strip{background:#3a0d0d;color:#d4a3a3;}
+    @media(max-width:900px){.voice-card-sanctifying{flex:0 0 calc(50% - .75rem);width:calc(50% - .75rem);}}
+    @media(max-width:600px){.voice-card-sanctifying{flex:0 0 calc(50% - .5rem);width:calc(50% - .5rem);}}
     .badge-religious{background:#1e1600;color:var(--gold);}
     .badge-political{background:#0d151d;color:#7a9aaa;}
     .badge-interfaith{background:#001a1a;color:#6fcfcf;}
@@ -471,8 +491,9 @@
       </div>
 
       <section id="timeline">
-        <p class="lead-label" style="margin-bottom:1.5rem;">Timeline of Events</p>
-        <div class="timeline">
+        <p class="lead-label" style="margin-bottom:1.5rem;">How We Got Here</p>
+        <div class="timeline-wrapper">
+        <div class="timeline is-collapsed" id="timeline-feed">
           <div class="timeline-item"><div class="timeline-date">Apr 2025</div><div class="timeline-content"><h4>Pope Leo XIV Elected</h4><p>Chicago-born Cardinal Robert Prevost becomes the first American pope in 2,000 years of Church history after just four ballots — elected to preach the Gospel to the whole world.</p></div></div>
           <div class="timeline-item"><div class="timeline-date">Jan 2026</div><div class="timeline-content"><h4>Pope Denounces "Diplomacy by Force"</h4><p>In a major address, Leo XIV speaks in the tradition of the prophets, condemning the use of military threats and intimidation as tools of statecraft.</p></div></div>
           <div class="timeline-item"><div class="timeline-date">Late Feb</div><div class="timeline-content"><h4>Trump Launches Iran War</h4><p>Greene, Carlson, Owens, and Jones — all professing Christians — begin publicly breaking with Trump over what they call a reckless and unjust conflict.</p></div></div>
@@ -490,7 +511,9 @@
           <div class="timeline-item"><div class="timeline-date">Apr 16</div><div class="timeline-content"><h4>Hegseth Quotes Pulp Fiction as Pentagon Scripture</h4><p>At a Pentagon worship service, Hegseth recites almost word for word from the fake Bible quote in <em>Pulp Fiction</em> — Tarantino's violent rewrite of Ezekiel 25:17 — to bless the Iran war. He says worship should inform military decisions. The day also included discussions about the naval blockade of Iran. <a href="https://publicwitness.wordandway.org/p/hegseth-borrows-violent-prayer-from" target="_blank" rel="noopener" class="src">Public Witness</a></p></div></div>
           <div class="timeline-item"><div class="timeline-date">Apr 17</div><div class="timeline-content"><h4>Cameroon Separatists Lay Down Arms for Leo — Then He Preaches Against "Those Who Manipulate Religion"</h4><p>Armed separatists pause fighting; Leo travels to Bamenda and delivers his most pointed rebuke of religiously-justified war: <em>"Woe to those who manipulate religion and the very name of God for their own military, economic and political gain."</em> <a href="https://www.pbs.org/newshour/world/pope-leo-promotes-peace-chastises-tyrants-ravaging-the-world-during-cameroon-visit" target="_blank" rel="noopener" class="src">PBS</a></p></div></div>
           <div class="timeline-item"><div class="timeline-date">Apr 16</div><div class="timeline-content"><h4>Iran's First VP Thanks Pope Leo</h4><p>Mohammad Reza Aref, Iran's First Vice President, publicly thanks Pope Leo for "condemning this brutality" — a Muslim leader from the bombed nation expressing gratitude to the Pope that a Christian president has attacked. <a href="https://www.cbsnews.com/live-updates/trump-iran-war-strait-hormuz-ceasefire-pakistan-peace-talks-israel-lebanon/" target="_blank" rel="noopener" class="src">CBS News</a></p></div></div>
-        </div>
+        </div><!-- end timeline-feed -->
+        <button class="timeline-toggle" id="timeline-toggle" type="button" aria-expanded="false">Show all 17 events <span class="toggle-count">(currently showing 6)</span></button>
+        </div><!-- end timeline-wrapper -->
       </section>
     </article>
 
@@ -872,6 +895,15 @@
       <p class="update-date">April 15, 2026</p>
       <h3 class="update-hed">Trump Escalates — Again</h3>
       <p class="update-body">Trump posted a new Truth Social message urging someone to <em>"please tell Pope Leo"</em> about Iran's death toll — doubling down on his attacks even as evangelical, Lutheran, Baptist, and Reformed leaders continued to condemn the original image. <a href="https://www.newsweek.com/donald-trump-renews-feud-pope-leo-iran-war-update-11830367" target="_blank" rel="noopener" class="src">Newsweek</a></p>
+    </div>
+
+    <div class="update-entry sidebar-entry">
+      <p class="update-date">February 28, 2026</p>
+      <h3 class="update-hed">Minab. The First Day of the War. A Girls' Elementary School.</h3>
+      <p class="update-body">At approximately 10:45 a.m. local time on Saturday, February 28, 2026 — the first day of the U.S.–Israeli war on Iran, and the start of the Iranian school week — a missile struck the <strong>Shajareh Tayyebeh Elementary School</strong> in Minab, in Iran's southern Hormozgan province. The school sat less than 100 yards from an Iranian Revolutionary Guard naval base; it had been separated from the base by a wall between 2013 and 2016, a fact U.S. military planners' targeting data appears not to have reflected. The two-story building was full of children. The roof collapsed onto them.</p>
+      <p class="update-body"><strong>UNICEF placed the toll at 168 girls killed at this single school</strong>, plus 12 children at other schools across five locations that same week. Iran's health ministry reported a total of approximately 180 deaths at the school. Most of the dead were schoolgirls aged seven to twelve. The remains were so numerous that refrigerated trucks were used to store them when the hospital morgue ran out of space. On March 3, thousands gathered in Minab for the mass funeral — parents holding photographs of children they had lost.</p>
+      <p class="update-body">Independent investigations by Bellingcat, BBC Verify, NPR, and U.S. munitions experts from the James Martin Center for Nonproliferation Studies, Amnesty, and former U.S. Air Force Special Operations targeting officers concluded the school was hit by an <strong>American UGM-109 Tomahawk land-attack cruise missile</strong>. The United States was the only participant in the conflict using that missile. The U.S. Central Command appointed a senior officer from outside CENTCOM to lead the investigation. As of mid-March, the preliminary internal U.S. military review concluded the strike was likely American. President Trump publicly denied it was a U.S. missile. Defense Secretary Pete Hegseth told reporters: <em>"We, of course, never target civilian targets."</em></p>
+      <p class="update-body">This is the war Pope Leo has been preaching against since the day the strikes began. This is the war he called <em>"truly unacceptable"</em> on April 7. This is the war he prayed against at the Sanctuary of Mama Muxima in Angola. This is the war he meant on April 23 when he said, <em>"As a pastor, I cannot be in favor of war."</em> When the Pope speaks of <em>"innocent people, so many children, so many elderly, completely innocent,"</em> the names he is not free to say are these names: 168 girls in classrooms in Minab. The watchdog work this site exists to do begins here. Every blasphemy and every gold statue and every Truth Social post is downstream of this single fact: <strong>on day one of this war, an American missile struck a girls' school and 168 children died.</strong> The site bears witness to all of it, but it begins here. <a href="https://www.unicef.org/press-releases/brutality-war-measured-childrens-lives-hostilities-escalate-iran" target="_blank" rel="noopener" class="src">UNICEF</a> <a href="https://time.com/7381982/iran-girls-school-killed/" target="_blank" rel="noopener" class="src">TIME</a> <a href="https://www.npr.org/2026/03/04/nx-s1-5735801/satellite-imagery-shows-strike-that-destroyed-iranian-school-was-more-extensive-than-first-reported" target="_blank" rel="noopener" class="src">NPR</a> <a href="https://www.livenowfox.com/news/iran-girls-school-bombed-us-pentagon-military-investigating" target="_blank" rel="noopener" class="src">FOX</a> <a href="https://en.wikipedia.org/wiki/2026_Minab_school_attack" target="_blank" rel="noopener" class="src">Wikipedia summary</a></p>
     </div>
 
     <div class="update-entry sidebar-entry">
@@ -1378,6 +1410,114 @@
     </div><!-- end grid-interfaith -->
 </section>
 
+<section class="sanctifying-section" id="sanctifying">
+  <h2 class="sanctifying-section-title">Sanctifying the Blasphemy</h2>
+  <p class="sanctifying-subtitle">These voices have publicly defended the President's rhetoric, blessed his image, or sanctified the war. The site documents them so readers can see who is speaking on whose behalf.</p>
+  <div class="grid-sanctifying">
+
+    <div class="voice-card voice-card-sanctifying">
+      <div class="voice-strip">Trump Spiritual Adviser</div>
+      <div class="voice-card-body">
+        <div class="voice-photo"><div class="voice-photo-fallback">MB</div></div>
+        <div class="voice-name">Pastor Mark Burns</div>
+        <div class="voice-title">Pastors for Trump · Dedicated the Doral gold statue</div>
+        <p class="voice-quote">Led the dedication ceremony for the 22-foot gold statue: <em>"Let me be very clear: this is not a golden calf. We worship the Lord Jesus Christ and Him alone."</em> Later told Vanity Fair: <em>"If I wasn't right in the center of it, I would've been, probably, most likely, saying similar things."</em> <a href="https://www.vanityfair.com/news/story/trump-gold-statue-golf-course" target="_blank" rel="noopener" class="src">Vanity Fair</a></p>
+      </div>
+    </div>
+
+    <div class="voice-card voice-card-sanctifying">
+      <div class="voice-strip">Megachurch Pastor</div>
+      <div class="voice-card-body">
+        <div class="voice-photo"><div class="voice-photo-fallback">RJ</div></div>
+        <div class="voice-name">Pastor Robert Jeffress</div>
+        <div class="voice-title">First Baptist Dallas (16,000 members) · Fox News contributor</div>
+        <p class="voice-quote">On Trump's threat to destroy Iranian civilization: <em>"Nowhere in the Bible are nations commanded to forgive other nations or to turn the other cheek. If you're shot at, you shoot back in return."</em> Defended Trump's character: <em>"I have no stones to throw at President Trump and his character or his morality."</em> <a href="https://www.vanityfair.com/news/story/trump-gold-statue-golf-course" target="_blank" rel="noopener" class="src">Vanity Fair</a></p>
+      </div>
+    </div>
+
+    <div class="voice-card voice-card-sanctifying">
+      <div class="voice-strip">Evangelical Leader</div>
+      <div class="voice-card-body">
+        <div class="voice-photo"><div class="voice-photo-fallback">FG</div></div>
+        <div class="voice-name">Franklin Graham</div>
+        <div class="voice-title">President, Samaritan's Purse &amp; BGEA · Son of Billy Graham</div>
+        <p class="voice-quote">Defended Trump's Jesus image: <em>"I do not believe President Trump would knowingly depict himself as Jesus Christ."</em> On the second image with Jesus embracing Trump: <em>"I like the fact that this is a picture of Jesus whispering in his ear... we all need to be listening to Jesus."</em> Suggested Pope Leo should meet Trump <em>"to thank the President for his efforts to protect religious liberty."</em> <a href="https://www.thedailybeast.com/top-maga-evangelical-blasted-for-urging-pope-to-praise-trump/" target="_blank" rel="noopener" class="src">Daily Beast</a></p>
+      </div>
+    </div>
+
+    <div class="voice-card voice-card-sanctifying">
+      <div class="voice-strip">White House Faith Adviser</div>
+      <div class="voice-card-body">
+        <div class="voice-photo"><div class="voice-photo-fallback">PW</div></div>
+        <div class="voice-name">Paula White-Cain</div>
+        <div class="voice-title">Senior Adviser, White House Faith Office</div>
+        <p class="voice-quote">At a pre-Easter White House service, with Trump standing behind her, drew direct comparisons between Trump and Christ's Passion: <em>"It almost cost you your life. You were betrayed and arrested. And falsely accused... because of His resurrection, you rose up. Because He was victorious, you were victorious."</em> Trump <em>"burst into a wide smirk"</em> when the Jesus comparisons began. The White House quickly removed the event footage; clips circulated anyway. <a href="https://www.thedailybeast.com/white-house-censors-toe-curling-video-of-trump-being-compared-to-christ-by-paula-white/" target="_blank" rel="noopener" class="src">Daily Beast</a></p>
+      </div>
+    </div>
+
+    <div class="voice-card voice-card-sanctifying">
+      <div class="voice-strip">Christian Nationalist</div>
+      <div class="voice-card-body">
+        <div class="voice-photo"><div class="voice-photo-fallback">LW</div></div>
+        <div class="voice-name">Lance Wallnau</div>
+        <div class="voice-title">Seven Mountains Dominionist · Self-identified Christian Nationalist</div>
+        <p class="voice-quote">Declared Trump <em>"is an actual Old Testament prophet king."</em> Celebrated the U.S.–Israel strikes on Iran: religious-right MAGA activists, in his orbit, declared <em>"the return of Jesus is back on the menu."</em> Promotes Seven Mountains Dominionism — the doctrine that Christian nationalists should take control of the seven spheres of society. <a href="https://www.peoplefor.org/rightwingwatch/people/lance-wallnau" target="_blank" rel="noopener" class="src">Right Wing Watch</a></p>
+      </div>
+    </div>
+
+    <div class="voice-card voice-card-sanctifying">
+      <div class="voice-strip">Conservative Author</div>
+      <div class="voice-card-body">
+        <div class="voice-photo"><div class="voice-photo-fallback">EM</div></div>
+        <div class="voice-name">Eric Metaxas</div>
+        <div class="voice-title">Author of <em>Bonhoeffer</em> · Religious Liberty Commission Member</div>
+        <p class="voice-quote">After Trump's 2024 election: <em>"Let the AWESOMENESS begin! God bless America!"</em> Has framed opposition to Trump in apocalyptic terms throughout the second term. A sitting member of the Trump administration's Religious Liberty Commission. The author of an acclaimed biography of Dietrich Bonhoeffer — the German Lutheran pastor who refused to sanctify the Nazi state and was hanged for it — now blessing a President his subject would have warned against. <a href="https://rightingamerica.net/forget-the-sweet-by-and-by-for-maga-evangelicals-apocalypse-is-now/" target="_blank" rel="noopener" class="src">Righting America</a></p>
+      </div>
+    </div>
+
+    <div class="voice-card voice-card-sanctifying">
+      <div class="voice-strip">Vice President</div>
+      <div class="voice-card-body">
+        <div class="voice-photo"><div class="voice-photo-fallback">JDV</div></div>
+        <div class="voice-name">VP JD Vance</div>
+        <div class="voice-title">Vice President of the United States · Convert to Catholicism (2019)</div>
+        <p class="voice-quote">Catholic VP told the Vatican to <em>"stick to matters of morality"</em> and let the President handle war. Has publicly lectured the Pope on just-war theory, prompting Catholic theologians and a Nigerian Catholic priest teaching at DePaul to respond: <em>"I don't think that the vice president understands the just war theory. It's quite shocking to me for the vice president to lecture the pope on theology and morality."</em> Twice publicly rebuked by two successive popes for his framing of Catholic doctrine. <a href="https://time.com/article/2026/04/14/catholic-vance-breaks-silence-on-deleted-trump-jesus-image-amid-outcry/" target="_blank" rel="noopener" class="src">TIME</a></p>
+      </div>
+    </div>
+
+    <div class="voice-card voice-card-sanctifying">
+      <div class="voice-strip">Secretary of War</div>
+      <div class="voice-card-body">
+        <div class="voice-photo"><div class="voice-photo-fallback">PH</div></div>
+        <div class="voice-name">Sec. Pete Hegseth</div>
+        <div class="voice-title">Secretary of War (formerly Defense) · Christian Reconstructionist</div>
+        <p class="voice-quote">Called the press <em>"Pharisees"</em> in an official Pentagon briefing, on two separate occasions. Opened an official briefing reciting a fabricated Bible verse adapted from <em>Pulp Fiction</em>. Led a Pentagon morning prayer service asking God for <em>"overwhelming violence of action."</em> Asked Rep. Garamendi at a 2027 budget hearing: <em>"Who are you cheering for? Your hatred for President Trump blinds you to the truth."</em> Personal pastor is Doug Wilson — who called Trump's Jesus image "blasphemous." <a href="https://www.thedailybeast.com/pentagon-petes-bid-to-ease-navy-food-panic-backfires/" target="_blank" rel="noopener" class="src">Daily Beast</a></p>
+      </div>
+    </div>
+
+    <div class="voice-card voice-card-sanctifying">
+      <div class="voice-strip">Ambassador</div>
+      <div class="voice-card-body">
+        <div class="voice-photo"><div class="voice-photo-fallback">MH</div></div>
+        <div class="voice-name">Mike Huckabee</div>
+        <div class="voice-title">U.S. Ambassador to Israel · Ordained Southern Baptist minister</div>
+        <p class="voice-quote">Texted Trump urging strikes on Iran in Christian Zionist framing tied to apocalyptic prophecy. On Tucker Carlson's podcast — asked whether Israel had a right to land corresponding to a version of Greater Israel constituting <em>"essentially the entire Middle East"</em> — said it <em>"would be fine if they took it all."</em> The remarks were condemned by Jordan, Egypt, Pakistan, Qatar, Saudi Arabia, Turkey, the UAE, the Arab League, and the Organization of Islamic Cooperation. Has called Trump <em>"President Lazarus."</em> <a href="https://forward.com/opinion/729922/huckabee-text-to-trump-israeli-iranian-conflict/" target="_blank" rel="noopener" class="src">The Forward</a></p>
+      </div>
+    </div>
+
+    <div class="voice-card voice-card-sanctifying">
+      <div class="voice-strip">$PATRIOT Backer</div>
+      <div class="voice-card-body">
+        <div class="voice-photo"><div class="voice-photo-fallback">DS</div></div>
+        <div class="voice-name">Dustin Stockton</div>
+        <div class="voice-title">Republican strategist · $PATRIOT memecoin promoter</div>
+        <p class="voice-quote">One of the cryptocurrency promoters who commissioned and funded the 22-foot gold Trump statue at Doral as a marketing vehicle for the $PATRIOT memecoin. Previously investigated by federal agents in connection with his work on <em>"We Build the Wall"</em> — the Trump-aligned fundraising operation that resulted in Steve Bannon pleading guilty to defrauding donors. The money behind the golden statue is connected to a documented Trump-orbit fraud orbit. <a href="https://www.france24.com/en/live-news/20260207-don-colossus-golden-trump-statue-crippled-by-crypto-pay-dispute" target="_blank" rel="noopener" class="src">AFP</a></p>
+      </div>
+    </div>
+
+  </div><!-- end grid-sanctifying -->
+</section>
+
   <section id="about" style="margin-top:3rem;padding-top:2rem;border-top:1px solid #3a2e1c;">
     <p class="lead-label">About This Site</p>
     <p style="font-size:.9rem;line-height:1.8;color:#b5a488;max-width:700px;">
@@ -1543,6 +1683,30 @@ document.addEventListener('DOMContentLoaded', () => people.forEach(loadPhoto));
     const isCollapsed = feed.classList.toggle('is-collapsed');
     toggle.setAttribute('aria-expanded', String(!isCollapsed));
     toggle.firstChild.textContent = isCollapsed ? 'Show all updates ' : 'Show fewer updates ';
+  });
+})();
+
+// ── Collapsible timeline ──
+(function() {
+  const feed = document.getElementById('timeline-feed');
+  const toggle = document.getElementById('timeline-toggle');
+  if (!feed || !toggle) return;
+
+  const totalItems = feed.querySelectorAll('.timeline-item').length;
+
+  requestAnimationFrame(() => {
+    if (feed.scrollHeight <= feed.clientHeight + 5) {
+      toggle.style.display = 'none';
+      feed.classList.remove('is-collapsed');
+    }
+  });
+
+  toggle.addEventListener('click', () => {
+    const isCollapsed = feed.classList.toggle('is-collapsed');
+    toggle.setAttribute('aria-expanded', String(!isCollapsed));
+    toggle.firstChild.textContent = isCollapsed ? `Show all ${totalItems} events ` : 'Show fewer events ';
+    const countSpan = toggle.querySelector('.toggle-count');
+    if (countSpan) countSpan.textContent = isCollapsed ? '(currently showing 6)' : '';
   });
 })();
 </script>
